@@ -1,0 +1,158 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Cas d'Usage Industriels";
+const description = "L'orchestration cognitive en action.";
+
+// Définition des blocs cognitifs (pour l'affichage)
+const allBlocks = [
+  { id: 'perception', icon: '👁️', label: 'Perception' },
+  { id: 'attention', icon: '🔎', label: 'Attention' },
+  { id: 'memoire', icon: '🧠', label: 'Mémoire' },
+  { id: 'apprentissage', icon: '📚', label: 'Apprentissage' },
+  { id: 'langage', icon: '🗣️', label: 'Langage' },
+  { id: 'raisonnement', icon: '⚙️', label: 'Raisonnement' },
+  { id: 'decision', icon: '⚖️', label: 'Décision' },
+  { id: 'resolution', icon: '✅', label: 'Résolution' },
+];
+
+// Définition des Scénarios
+const scenarios = [
+  {
+    id: 'maintenance',
+    title: 'Maintenance Prédictive',
+    context: 'Une turbine critique vibre anormalement. Faut-il arrêter la production ?',
+    activeBlocks: ['perception', 'memoire', 'raisonnement', 'decision', 'resolution'],
+    flow: "Capteurs IoT → Historique des pannes → Calcul de probabilité → Vote Condorcet (Sécurité vs Coût) → Ordre d'arrêt.",
+  },
+  {
+    id: 'sourcing',
+    title: 'Sourcing Fournisseur Stratégique',
+    context: 'Choisir le meilleur fournisseur parmi 3 candidats complexes (Prix, RSE, Délai).',
+    activeBlocks: ['langage', 'attention', 'raisonnement', 'decision'],
+    flow: 'Lecture des Devis (PDF) → Extraction des critères clés → Comparaison matricielle → Vainqueur de Condorcet.',
+  },
+  {
+    id: 'quality',
+    title: 'Contrôle Qualité Zéro-Défaut',
+    context: 'Rejeter les flacons défectueux sur une ligne à haute cadence sans faux-positifs.',
+    activeBlocks: ['perception', 'attention', 'raisonnement', 'resolution'],
+    flow: "Caméra Vision → Focalisation sur l'étiquette → Règle stricte (Rust) → Actionneur pneumatique.",
+  },
+];
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <Header />
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
+          Orchestration <span class="text-rust">Dynamique</span>
+        </h1>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          Un cas d'usage n'est pas figé. C'est un pipeline vivant où le système séquence
+          l'attention, le raisonnement et la mémoire pour répondre précisément à une contrainte
+          métier.
+        </p>
+      </div>
+
+      <div class="space-y-24">
+        {
+          scenarios.map((scenario, index) => (
+            <div class="group relative bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden">
+              <div class="grid grid-cols-1 lg:grid-cols-3">
+                <div class="p-8 md:p-12 bg-slate-50 border-r border-slate-100 flex flex-col justify-center">
+                  <div class="text-sm font-mono text-rust mb-2 uppercase tracking-wide">
+                    Cas #{index + 1}
+                  </div>
+                  <h2 class="text-3xl font-bold text-slate-900 mb-4">{scenario.title}</h2>
+                  <p class="text-slate-600 mb-6 text-lg leading-relaxed">{scenario.context}</p>
+                  <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <strong class="block text-slate-900 text-sm mb-2">
+                      ⚡ Le Flux d'Exécution :
+                    </strong>
+                    <p class="text-slate-500 text-sm font-mono">{scenario.flow}</p>
+                  </div>
+                </div>
+
+                <div class="lg:col-span-2 p-8 md:p-12 bg-slate-900 relative overflow-hidden">
+                  <div
+                    class="absolute inset-0 opacity-10"
+                    style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"
+                  />
+
+                  <a href="/cognition" class="inline-block group/link relative z-20">
+                    <h3 class="text-white mb-8 font-mono text-sm border-b border-slate-700 pb-2 inline-flex items-center gap-2 group-hover/link:text-rust group-hover/link:border-rust transition-colors cursor-pointer">
+                      ACTIVATION DU BLOC COGNITIF
+                      <span class="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-rust">
+                        ↗
+                      </span>
+                    </h3>
+                  </a>
+
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10 pointer-events-none">
+                    {allBlocks.map((block) => {
+                      const isActive = scenario.activeBlocks.includes(block.id);
+                      return (
+                        <div
+                          class={`
+                                                relative p-4 rounded-xl border transition-all duration-500
+                                                ${
+                                                  isActive
+                                                    ? 'bg-rust/20 border-rust scale-105 shadow-[0_0_15px_rgba(194,65,12,0.3)]'
+                                                    : 'bg-slate-800/50 border-slate-700 opacity-40 grayscale'
+                                                }
+                                            `}
+                        >
+                          <div class="text-2xl mb-2">{block.icon}</div>
+                          <div
+                            class={`font-bold text-sm ${isActive ? 'text-white' : 'text-slate-400'}`}
+                          >
+                            {block.label}
+                          </div>
+
+                          {isActive && (
+                            <div class="absolute top-2 right-2 w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_5px_#4ade80]" />
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Connexion visuelle (Ligne du bas) */}
+                  <div class="mt-8 pt-6 border-t border-slate-700/50 flex items-center justify-between text-slate-400 text-xs font-mono">
+                    <span>INPUT: DATA STREAM</span>
+                    <span class="text-rust">
+                      PROCESSUS {scenario.activeBlocks.length} NOEUDS ACTIFS
+                    </span>
+                    <span>OUTPUT: DECISION</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-20 text-center">
+        <p class="text-slate-600 mb-6">Vous avez un processus complexe à rationaliser ?</p>
+        <a
+          href="mailto:contact@condorcet.io"
+          class="inline-flex items-center px-8 py-4 bg-slate-900 text-white font-bold rounded-lg hover:bg-rust transition-colors shadow-lg hover:shadow-xl"
+        >
+          Concevoir votre architecture cognitive →
+        </a>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
