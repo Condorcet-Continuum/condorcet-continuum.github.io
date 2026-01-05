@@ -19,7 +19,7 @@
 
 ## 🌐 Vision
 
-**Condorcet Continuum** est une initiative visant à restaurer la souveraineté cognitive humaine à l'ère des algorithmes opaques. Nous construisons une architecture logicielle "Local-First" qui assiste la prise de décision par la rationalité mathématique plutôt que par le profilage comportemental.
+**Condorcet Continuum** est une initiative visant à restaurer la souveraineté cognitive humaine à l'ère des algorithmes opaques. Nous construisons une architecture logicielle "Local-First" qui assiste la prise de décision via la rationalité mathématique plutôt que par le profilage comportemental.
 
 Le projet fusionne l'héritage des **Mathématiques Sociales** (Méthode Condorcet) avec la **Sûreté Mémoire** moderne (Rust) et la **Traçabilité** (Blockchain).
 
