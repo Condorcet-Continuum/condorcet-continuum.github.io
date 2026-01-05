@@ -105,7 +105,7 @@ npm run build
 
 ## 🤝 Contribuer
 
-Les contributions sont ouvertes aux développeurs, mathématiciens et philosophes.
+Les contributions sont ouvertes aux développeurs, mathématiciens, psychologue et philosophes.
 Pour proposer une modification sur le site ou la documentation :
 
 1. Forkez le projet.
