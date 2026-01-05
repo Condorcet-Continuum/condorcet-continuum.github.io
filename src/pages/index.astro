@@ -1,0 +1,208 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import logo from '../assets/logo-continuum.svg';
+
+// Récupération des articles de blog (Triés par date)
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <Header />
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <div class="flex flex-col items-center text-center mb-20 animate-fade-in">
+        <div
+          class="w-32 h-32 mb-8 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center"
+        >
+          <img
+            src={logo.src}
+            alt="Condorcet Continuum Logo"
+            class="w-full h-full object-contain"
+            width={logo.width}
+            height={logo.height}
+          />
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-6">
+          Décidez avec <br class="hidden md:block" />
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-rust via-orange-500 to-ethics"
+            >Souveraineté</span
+          >
+        </h1>
+
+        <p class="text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
+          Une fondation pour la rationalisation des systèmes de décision.
+          <br />
+          Une intelligence collective motorisée par <strong class="text-slate-900">Rust</strong> & <strong
+            class="text-slate-900">Blockchain</strong
+          >.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/vision"
+            class="px-8 py-3 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800 transition-transform hover:scale-105 shadow-lg shadow-slate-900/20"
+          >
+            Explorer la Vision
+          </a>
+          <a
+            href="/raise"
+            class="px-8 py-3 rounded-full bg-white text-slate-900 border border-slate-200 font-bold hover:bg-slate-50 transition-transform hover:scale-105"
+          >
+            Le Moteur R.A.I.S.E.
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+        <a
+          href="/vision"
+          class="group md:col-span-2 relative overflow-hidden rounded-3xl bg-white border border-slate-200 p-8 hover:shadow-xl transition-all hover:border-rust/30"
+        >
+          <div class="relative z-10">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rust/10 text-rust text-xs font-bold uppercase tracking-wider mb-4"
+            >
+              Manifeste
+            </div>
+            <h2
+              class="text-3xl font-bold text-slate-900 mb-2 group-hover:text-rust transition-colors"
+            >
+              Souveraineté Cognitive
+            </h2>
+            <p class="text-slate-500 max-w-md">
+              Pourquoi nous devons reprendre le contrôle sur nos décisions à l'ère des algorithmes
+              boîtes noires.
+            </p>
+          </div>
+          <div
+            class="absolute right-0 bottom-0 opacity-10 translate-x-1/4 translate-y-1/4 group-hover:scale-110 transition-transform duration-500"
+          >
+            <svg
+              width="300"
+              height="300"
+              viewBox="0 0 200 200"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="100" cy="100" r="80" stroke="#ea580c" stroke-width="20"></circle>
+            </svg>
+          </div>
+        </a>
+
+        <a
+          href="/architecture"
+          class="group relative overflow-hidden rounded-3xl bg-slate-100 border border-slate-200 p-8 hover:shadow-xl transition-all hover:border-logic/30"
+        >
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-logic/10 text-logic text-xs font-bold uppercase tracking-wider mb-4"
+          >
+            Système
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-2">Architecture</h2>
+          <p class="text-slate-500 text-sm">Le cycle Acquisition → Interprétation → Stockage.</p>
+          <div
+            class="absolute bottom-4 right-4 text-4xl opacity-50 group-hover:scale-110 transition-transform"
+          >
+            🧠
+          </div>
+        </a>
+
+        <a
+          href="/raise"
+          class="group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 p-8 hover:shadow-2xl hover:shadow-blue-900/20 transition-all md:col-span-1"
+        >
+          <div class="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-blue-500 to-purple-500">
+          </div>
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4 border border-slate-700"
+          >
+            Technologie
+          </div>
+          <h2 class="text-2xl font-bold text-white mb-2">Moteur R.A.I.S.E.</h2>
+          <p class="text-slate-400 text-sm">
+            Rust. React. Tauri. <br />
+            Performance native & Sûreté mémoire.
+          </p>
+          <div
+            class="mt-6 font-mono text-xs text-green-400 bg-slate-950 p-2 rounded border border-slate-800 group-hover:border-green-500/50 transition-colors"
+          >
+            $ cargo run release
+          </div>
+        </a>
+
+        <a
+          href="https://github.com/condorcet-continuum"
+          target="_blank"
+          class="group md:col-span-2 relative overflow-hidden rounded-3xl bg-white border border-slate-200 p-8 hover:shadow-xl transition-all hover:border-slate-400"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider mb-4"
+              >
+                Open Source
+              </div>
+              <h2 class="text-2xl font-bold text-slate-900 mb-2">Rejoindre le Continuum</h2>
+              <p class="text-slate-500">
+                Contribuez au code source, auditez les smart-contracts et participez à la
+                gouvernance.
+              </p>
+            </div>
+            <div
+              class="text-5xl opacity-80 group-hover:rotate-12 transition-transform duration-300"
+            >
+              🐙
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <section>
+        <div class="flex items-center justify-between mb-8">
+          <h3 class="text-2xl font-bold text-slate-900">Dernières Actualités</h3>
+          <a
+            href="/blog"
+            class="text-sm font-bold text-rust hover:text-orange-700 transition-colors"
+            >Voir tout →</a
+          >
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {
+            posts.map((post) => (
+              <a href={`/blog/${post.id}/`} class="group block">
+                <article class="bg-white rounded-xl border border-slate-100 p-6 hover:shadow-md transition-shadow h-full flex flex-col">
+                  <h4 class="font-bold text-lg text-slate-800 group-hover:text-rust transition-colors mb-2">
+                    {post.data.title}
+                  </h4>
+                  <p class="text-sm text-slate-400 mt-auto">
+                    {post.data.pubDate.toLocaleDateString('fr-FR', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </p>
+                </article>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>

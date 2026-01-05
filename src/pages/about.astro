@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+// On remplace l'image manquante par votre logo officiel
+import logo from '../assets/logo-continuum.svg';
+
+const title = 'À Propos';
+const description = 'Le projet Condorcet Continuum.';
+---
+
+<Layout title={title} description={description} pubDate={new Date('August 08 2024')}>
+  <div class="flex flex-col items-center justify-center text-center">
+    <div
+      class="w-48 h-48 mb-8 p-6 bg-white rounded-full shadow-lg border border-slate-100 flex items-center justify-center"
+    >
+      <img src={logo.src} alt="Condorcet Logo" class="w-full h-full object-contain" />
+    </div>
+
+    <h1 class="text-3xl font-bold text-slate-900 mb-6">Condorcet Continuum</h1>
+
+    <p class="text-slate-600 mb-8 max-w-2xl">
+      Ce projet vise à restaurer la souveraineté de la décision humaine face à la complexité
+      algorithmique.
+    </p>
+
+    <a
+      href="/vision"
+      class="px-6 py-3 bg-rust text-white font-bold rounded-lg hover:bg-orange-700 transition-colors"
+    >
+      Lire notre Vision →
+    </a>
+  </div>
+</Layout>

@@ -1,0 +1,31 @@
+/* 1. Import des polices Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* 2. Import du moteur Tailwind v4 */
+@import 'tailwindcss';
+
+/* 3. Configuration de votre Charte Graphique (Directement ici !) */
+@theme {
+  /* Vos polices personnalisées */
+  --font-sans: 'Inter', 'Roboto', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Vos couleurs R.A.I.S.E. */
+  --color-rust: #ea580c;
+  --color-rust-light: #ffedd5;
+
+  --color-logic: #2563eb;
+  --color-logic-light: #dbeafe;
+
+  --color-ethics: #7c3aed;
+  --color-ethics-light: #f3e8ff;
+
+  /* Le gris slate est inclus par défaut, pas besoin de le redéfinir */
+}
+
+/* 4. Styles globaux spécifiques */
+body {
+  font-family: var(--font-sans);
+  background-color: white;
+  color: #0f172a; /* Slate 900 */
+}

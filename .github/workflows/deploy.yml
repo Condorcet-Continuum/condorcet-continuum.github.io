@@ -1,0 +1,42 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Déclenche le déploiement à chaque push sur la branche main
+  push:
+    branches: [ main ]
+  # Permet de lancer manuellement depuis l'onglet "Actions" sur GitHub
+  workflow_dispatch:
+
+# Permissions nécessaires pour que le bot GitHub puisse écrire sur Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# La sécurité anti-collision dont on a parlé
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      # Cette action détecte automatiquement npm/pnpm/yarn et construit le site
+      - name: Install, build, and upload your site
+        uses: withastro/action@v2
+        # Note : Pas besoin de préciser "npm run build", l'action le sait déjà !
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

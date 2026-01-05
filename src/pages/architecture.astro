@@ -1,0 +1,198 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+import architectureImg from '../assets/architecture.svg';
+
+const title = 'Architecture Cognitive';
+const description = 'Le Cerveau R.A.I.S.E. : Une approche Neuro-Symbolique de la Souveraineté.';
+---
+
+<Layout title={title} description={description} pubDate={new Date('August 08 2024')}>
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="text-xl text-slate-500 leading-relaxed max-w-3xl mx-auto">
+        Exploration du code source <span class="font-bold text-rust">R.A.I.S.E.</span> : Une implémentation
+        Rust de la conscience artificielle, conçue pour l'ingénierie critique.
+      </p>
+    </div>
+
+    <div class="bg-white border border-slate-200 rounded-xl p-4 mb-16 shadow-sm">
+      <img
+        src={architectureImg.src}
+        alt="Schéma de l'Architecture Cognitive R.A.I.S.E."
+        class="w-full h-auto rounded-lg"
+        width={architectureImg.width}
+        height={architectureImg.height}
+      />
+      <p class="text-sm text-center text-slate-400 mt-3 font-mono">
+        Figure 1 : Cycle de traitement de l'information (Acquisition → Interprétation → Utilisation)
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div
+        class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow hover:border-rust/30 group"
+      >
+        <h4
+          class="text-xl font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2 group-hover:text-rust transition-colors"
+        >
+          1. Acquisition (Entrée)
+        </h4>
+        <ul class="space-y-4">
+          <li>
+            <strong class="block text-slate-800">👁️ Perception</strong>
+            <code
+              class="text-xs bg-slate-100 text-rust px-1.5 py-0.5 rounded font-mono border border-slate-200"
+              >src-tauri/src/commands.rs</code
+            >
+            <span class="block text-slate-500 text-sm mt-1"
+              >Porte d'entrée typée par les Schémas JSON. Ingestion normalisée.</span
+            >
+          </li>
+          <li>
+            <strong class="block text-slate-800">🔎 Attention</strong>
+            <code
+              class="text-xs bg-slate-100 text-rust px-1.5 py-0.5 rounded font-mono border border-slate-200"
+              >src-tauri/src/rules_engine</code
+            >
+            <span class="block text-slate-500 text-sm mt-1"
+              >Filtrage immédiat. Rejet du "bruit" et des données invalides.</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow hover:border-rust/30 group"
+      >
+        <h4
+          class="text-xl font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2 group-hover:text-rust transition-colors"
+        >
+          2. Traitement (Cortex)
+        </h4>
+        <ul class="space-y-4">
+          <li>
+            <strong class="block text-slate-800">🗣️ Langage & Sémantique</strong>
+            <code
+              class="text-xs bg-slate-100 text-rust px-1.5 py-0.5 rounded font-mono border border-slate-200"
+              >src-tauri/src/ai</code
+            >
+            <span class="block text-slate-500 text-sm mt-1"
+              >Inférence locale (llama.cpp / GGUF). Compréhension du contexte naturel.</span
+            >
+          </li>
+          <li>
+            <strong class="block text-slate-800">⚙️ Raisonnement Logique</strong>
+            <code
+              class="text-xs bg-slate-100 text-rust px-1.5 py-0.5 rounded font-mono border border-slate-200"
+              >src-tauri/src/workflow_engine</code
+            >
+            <span class="block text-slate-500 text-sm mt-1"
+              >Orchestration procédurale stricte et délégation aux Agents.</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="bg-ethics-light/10 border-2 border-ethics/20 rounded-xl p-6 relative overflow-hidden"
+      >
+        <div
+          class="absolute top-0 right-0 bg-ethics text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider"
+        >
+          Souveraineté
+        </div>
+        <h4 class="text-xl font-bold text-ethics mb-4 border-b border-ethics/20 pb-2">
+          🛡️ Le "Sur-Moi" (Contrôle)
+        </h4>
+        <ul class="space-y-4">
+          <li>
+            <strong class="block text-slate-800">Conscience Sociale & XAI</strong>
+            <div class="flex gap-2 flex-wrap mb-1">
+              <code
+                class="text-xs bg-white text-ethics px-1.5 py-0.5 rounded font-mono border border-ethics/20"
+                >src-tauri/src/traceability</code
+              >
+              <code
+                class="text-xs bg-white text-ethics px-1.5 py-0.5 rounded font-mono border border-ethics/20"
+                >src-tauri/src/blockchain</code
+              >
+            </div>
+            <span class="block text-slate-600 text-sm leading-relaxed">
+              Garant de la vérité. Chaque calcul vectoriel et chaque décision logique sont audités
+              et ancrés cryptographiquement. Assure une IA Explicable (XAI) totale.
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow hover:border-rust/30 group"
+      >
+        <h4
+          class="text-xl font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2 group-hover:text-rust transition-colors"
+        >
+          3. Mémoire (Stockage)
+        </h4>
+        <ul class="space-y-4">
+          <li>
+            <strong class="block text-slate-800">🧠 Structure Mentale</strong>
+            <code
+              class="text-xs bg-slate-100 text-rust px-1.5 py-0.5 rounded font-mono border border-slate-200"
+              >src-tauri/src/model_engine</code
+            >
+            <span class="block text-slate-500 text-sm mt-1"
+              >Graphe des Exigences, Fonctions et Composants.</span
+            >
+          </li>
+          <li>
+            <strong class="block text-slate-800">📚 Persistance</strong>
+            <code
+              class="text-xs bg-slate-100 text-rust px-1.5 py-0.5 rounded font-mono border border-slate-200"
+              >src-tauri/src/json_db</code
+            >
+            <span class="block text-slate-500 text-sm mt-1"
+              >Base de données JSON locale. Souveraineté des données.</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-md transition-shadow hover:border-rust/30 group md:col-span-2"
+      >
+        <h4
+          class="text-xl font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2 group-hover:text-rust transition-colors"
+        >
+          4. Utilisation (Sortie)
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <strong class="block text-slate-800">⚖️ Prise de Décision</strong>
+            <code
+              class="text-xs bg-slate-100 text-rust px-1.5 py-0.5 rounded font-mono border border-slate-200"
+              >raise-core (Condorcet)</code
+            >
+            <span class="block text-slate-500 text-sm mt-1">Arbitrage mathématique rationnel.</span>
+          </div>
+          <div>
+            <strong class="block text-slate-800">✋ Validation Humaine</strong>
+            <code
+              class="text-xs bg-slate-100 text-rust px-1.5 py-0.5 rounded font-mono border border-slate-200"
+              >NodeType::GateHitl</code
+            >
+            <span class="block text-slate-500 text-sm mt-1">L'IA propose, l'Humain dispose.</span>
+          </div>
+          <div>
+            <strong class="block text-slate-800">🔧 Résolution</strong>
+            <code
+              class="text-xs bg-slate-100 text-rust px-1.5 py-0.5 rounded font-mono border border-slate-200"
+              >code_generator</code
+            >
+            <span class="block text-slate-500 text-sm mt-1">Production d'artefacts techniques.</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

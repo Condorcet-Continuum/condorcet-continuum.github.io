@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="condorcetGrad" x1="0" y1="100" x2="200" y2="100">
+      <stop offset="0%" stop-color="#64748b" /> <stop offset="40%" stop-color="#2563eb" /> <stop offset="100%" stop-color="#ea580c" /> </linearGradient>
+  </defs>
+  
+  <path d="M20 60 C 70 60, 90 100, 140 100" stroke="url(#condorcetGrad)" stroke-width="12" stroke-linecap="round" />
+  <path d="M20 100 C 70 100, 90 100, 140 100" stroke="url(#condorcetGrad)" stroke-width="12" stroke-linecap="round" />
+  <path d="M20 140 C 70 140, 90 100, 140 100" stroke="url(#condorcetGrad)" stroke-width="12" stroke-linecap="round" />
+  
+  <path d="M135 100 L 175 100" stroke="#ea580c" stroke-width="16" stroke-linecap="round"/>
+  <path d="M160 85 L 180 100 L 160 115" stroke="#ea580c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+import logo from '../assets/logo-continuum.svg';
+
+const title = 'Vision & Philosophie';
+const description =
+  "De l'Homme Éclairé à l'Homme Augmenté : Restaurer la souveraineté par la rationalité.";
+---
+
+<Layout title={title} description={description} pubDate={new Date('August 08 2024')}>
+  <div class="max-w-4xl mx-auto">
+    <div class="flex flex-col items-center text-center mb-16">
+      <div class="w-32 h-32 mb-6 flex items-center justify-center">
+        <img
+          src={logo.src}
+          alt="Logo Continuum"
+          class="w-full h-full object-contain opacity-90 animate-fade-in"
+        />
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-6">
+        La Souveraineté <span
+          class="text-transparent bg-clip-text bg-linear-to-r from-rust to-ethics">Cognitive</span
+        >
+      </h1>
+      <p class="text-xl text-slate-600 leading-relaxed max-w-2xl">
+        Dans un monde saturé de bruit et de biais, la liberté ne consiste plus seulement à agir,
+        mais à <span class="font-bold text-slate-900">décider</span> en pleine conscience.
+      </p>
+    </div>
+
+    <hr class="border-t border-slate-200 my-12" />
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+        <span class="text-rust">01.</span> La Crise de la Décision
+      </h2>
+      <div class="bg-slate-50 border-l-4 border-rust p-6 rounded-r-lg shadow-sm">
+        <p class="mb-4 text-slate-700">
+          Nous vivons le paradoxe de l'information : jamais nous n'avons eu accès à autant de
+          données, et jamais il n'a été aussi difficile de prendre une décision rationnelle.
+        </p>
+        <p class="text-slate-700">
+          Les algorithmes opaques (Black Boxes) dictent nos flux d'information.
+          <strong class="text-slate-900">Condorcet Continuum</strong> est la réponse à cette perte de
+          contrôle. C'est un outil pour reprendre la main sur son propre jugement.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+          <span class="text-logic">02.</span> L'Héritage Condorcet
+        </h2>
+        <p class="text-slate-600 mb-4 text-justify">
+          Nicolas de Condorcet (1743-1794) rêvait d'une "Mathématique Sociale". Il croyait que
+          l'application de la raison et du calcul aux choix humains pouvait mener à la vérité et à
+          la justice.
+        </p>
+        <p class="text-slate-600 text-justify">
+          Nous reprenons ce flambeau avec les outils du 21ème siècle : le langage <span
+            class="font-mono text-rust bg-rust-light/20 px-1 rounded">Rust</span
+          > pour la robustesse, et l'<span
+            class="font-mono text-logic bg-logic-light/20 px-1 rounded">IA Locale</span
+          > pour l'analyse.
+        </p>
+      </div>
+      <div
+        class="bg-white border border-slate-200 p-6 rounded-xl shadow-lg rotate-1 hover:rotate-0 transition-transform duration-300"
+      >
+        <blockquote class="italic text-slate-500 font-serif text-lg text-center">
+          "Sous une loi libre, l'homme ignorant n'est qu'à moitié libre."
+        </blockquote>
+        <div class="mt-4 text-center">
+          <cite class="not-italic font-bold text-slate-900 block">— Nicolas de Condorcet</cite>
+          <span class="text-xs text-slate-400">Cinq mémoires sur l'instruction publique (1791)</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Les 3 Piliers du Continuum</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-rust/30 transition-all group"
+        >
+          <div
+            class="w-12 h-12 bg-rust-light rounded-lg flex items-center justify-center mb-4 text-2xl group-hover:scale-110 transition-transform"
+          >
+            🦀
+          </div>
+          <h3 class="font-bold text-lg mb-2">Robustesse</h3>
+          <p class="text-sm text-slate-500">
+            Architecture "Zero-Cost Abstraction". Pas de crash, pas de fuite mémoire. Une fondation
+            saine pour penser sainement.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-logic/30 transition-all group"
+        >
+          <div
+            class="w-12 h-12 bg-logic-light rounded-lg flex items-center justify-center mb-4 text-2xl group-hover:scale-110 transition-transform"
+          >
+            🧠
+          </div>
+          <h3 class="font-bold text-lg mb-2">Rationalité</h3>
+          <p class="text-sm text-slate-500">
+            Moteur d'inférence R.A.I.S.E. qui sépare les faits des émotions. Une IA qui assiste le
+            jugement sans le remplacer.
+          </p>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-ethics/30 transition-all group"
+        >
+          <div
+            class="w-12 h-12 bg-ethics-light rounded-lg flex items-center justify-center mb-4 text-2xl group-hover:scale-110 transition-transform"
+          >
+            🛡️
+          </div>
+          <h3 class="font-bold text-lg mb-2">Éthique</h3>
+          <p class="text-sm text-slate-500">
+            Traçabilité immuable via Blockchain. Chaque décision est auditée par un "Sur-Moi"
+            numérique transparent.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="bg-slate-900 text-white rounded-2xl p-8 md:p-12 text-center relative overflow-hidden"
+    >
+      <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"></path>
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#grid)"></rect>
+        </svg>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 relative z-10">Rejoignez l'Ère de la Décision Éclairée</h3>
+      <p class="text-slate-300 mb-8 max-w-lg mx-auto relative z-10">
+        Découvrez comment le moteur R.A.I.S.E. transforme le chaos en clarté.
+      </p>
+      <div class="flex justify-center gap-4 relative z-10">
+        <a
+          href="/architecture"
+          class="bg-rust hover:bg-orange-700 text-white font-bold py-2 px-6 rounded-full transition-colors"
+        >
+          Voir l'Architecture
+        </a>
+        <a
+          href="https://github.com/condorcet-continuum"
+          target="_blank"
+          class="bg-slate-700 hover:bg-slate-600 text-white font-bold py-2 px-6 rounded-full transition-colors"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
