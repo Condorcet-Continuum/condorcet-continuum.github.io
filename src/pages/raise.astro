@@ -2,10 +2,10 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import raiseEmblem from '../assets/logo-raise-emblem.svg';
 
-const title = 'Moteur R.A.I.S.E.';
-const description = 'Documentation technique des modules internes.';
+const title = 'Le Moteur R.A.I.S.E.';
+const description =
+  'Rationalized Advanced Intelligence System Engine. Le standard industriel pour la décision critique.';
 ---
 
 <!doctype html>
@@ -17,39 +17,26 @@ const description = 'Documentation technique des modules internes.';
     <Header />
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-      <div class="text-center mb-20 flex flex-col items-center">
-        <div class="w-40 h-40 mb-8 relative hover:scale-105 transition-transform duration-500">
-          <div
-            class="absolute inset-0 bg-linear-to-r from-blue-500/20 to-rust/20 blur-3xl rounded-full scale-125 -z-10"
-          >
-          </div>
-          <img
-            src={raiseEmblem.src}
-            alt="R.A.I.S.E. Engine Emblem"
-            class="w-full h-full drop-shadow-2xl"
-          />
-        </div>
-
+      <div class="text-center mb-24 animate-fade-in">
         <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-6 border border-amber-200 font-mono shadow-sm"
+          class="inline-flex items-center gap-2 px-3 py-1 rounded border border-amber-200 bg-amber-50 text-amber-900 text-[10px] font-mono uppercase tracking-widest mb-6"
         >
           <span class="text-amber-600 animate-pulse">●</span> Prototype v0.1.0
         </div>
 
-        <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
-          Le Moteur <span
-            class="text-transparent bg-clip-text bg-linear-to-r from-blue-700 via-blue-500 to-rust"
-            >R.A.I.S.E.</span
-          >
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tighter">
+          R.A.I.S.E.
         </h1>
-
-        <p class="text-2xl text-slate-700 max-w-3xl mx-auto font-medium mb-4">
-          <span class="italic">Rationalized Advanced Intelligence System Engine.</span>
-        </p>
-        <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed mb-8">
-          L'architecture hybride (Neuro-Symbolique) de référence pour l'industrie. Propulsée par <strong
-            >Rust</strong
-          >, accélérée par <strong>WASM</strong> et ancrée localement.
+        <p
+          class="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed mb-12"
+        >
+          <strong class="text-slate-900">R</strong>ationalized
+          <strong class="text-slate-900">A</strong>dvanced
+          <strong class="text-slate-900">I</strong>ntelligence
+          <strong class="text-slate-900">S</strong>ystem
+          <strong class="text-slate-900">E</strong>ngine.
+          <br />
+          Plus qu'un logiciel, c'est le moteur de la décision rationnelle.
         </p>
 
         <div
@@ -69,302 +56,490 @@ const description = 'Documentation technique des modules internes.';
         </div>
       </div>
 
-      <div class="max-w-5xl mx-auto mb-24">
-        <div class="bg-blue-50 rounded-t-3xl border-x border-t border-blue-200 p-8 relative">
+      <div class="grid grid-cols-1 md:grid-cols-1 gap-8 mb-32 max-w-5xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row gap-8 items-start bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-200 hover:border-rust/30 transition-all group"
+        >
           <div
-            class="absolute top-0 left-0 bg-blue-200 text-blue-800 text-[10px] font-bold px-2 py-1 rounded-br-lg font-mono"
+            class="shrink-0 w-20 h-20 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-4xl font-bold shadow-lg group-hover:bg-rust transition-colors"
           >
-            🖥️ PRESENTATION LAYER (src/view)
+            R
           </div>
-
-          <div class="bg-white rounded-xl border border-blue-200 p-6 shadow-sm">
-            <h3 class="text-center font-bold text-slate-700 mb-4 text-sm uppercase tracking-widest">
-              Espace de Travail Unifié (IDE)
-            </h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div
-                class="bg-slate-50 p-3 rounded border border-slate-200 text-center hover:border-blue-400 transition-colors"
-              >
-                <div class="text-2xl mb-1">🤖</div>
-                <div class="font-bold text-sm">AI Chat</div>
-              </div>
-              <div
-                class="bg-slate-50 p-3 rounded border border-slate-200 text-center hover:border-blue-400 transition-colors"
-              >
-                <div class="text-2xl mb-1">📐</div>
-                <div class="font-bold text-sm">Diagrammes</div>
-              </div>
-              <div
-                class="bg-slate-50 p-3 rounded border border-slate-200 text-center hover:border-blue-400 transition-colors"
-              >
-                <div class="text-2xl mb-1">📝</div>
-                <div class="font-bold text-sm">Code Edit</div>
-              </div>
-              <div
-                class="bg-slate-50 p-3 rounded border border-slate-200 text-center hover:border-blue-400 transition-colors"
-              >
-                <div class="text-2xl mb-1">⚙️</div>
-                <div class="font-bold text-sm">Dash</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-yellow-50 border-x border-yellow-200 p-6 relative">
-          <div
-            class="absolute top-0 right-0 bg-yellow-200 text-yellow-800 text-[10px] font-bold px-2 py-1 rounded-bl-lg font-mono"
-          >
-            🚀 WASM SHARED LOGIC (src-wasm/)
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div
-              class="bg-white p-3 rounded border border-yellow-300 shadow-sm flex items-center gap-3"
-            >
-              <span class="text-xl">⚡</span>
-              <div>
-                <div class="font-bold text-sm">Analyseurs</div>
-                <div class="text-[10px] text-slate-500">Consistency Check</div>
-              </div>
-            </div>
-            <div
-              class="bg-white p-3 rounded border border-yellow-300 shadow-sm flex items-center gap-3"
-            >
-              <span class="text-xl">🛡️</span>
-              <div>
-                <div class="font-bold text-sm">Validateurs</div>
-                <div class="text-[10px] text-slate-500">Syntax Check</div>
-              </div>
-            </div>
-            <div
-              class="bg-white p-3 rounded border border-yellow-300 shadow-sm flex items-center gap-3"
-            >
-              <span class="text-xl">🔄</span>
-              <div>
-                <div class="font-bold text-sm">Parsers</div>
-                <div class="text-[10px] text-slate-500">Fast Feedback</div>
-              </div>
-            </div>
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-3">Rationalized (Rationalisation)</h2>
+            <p class="text-slate-600 mb-4 leading-relaxed">
+              Nous remplaçons le chaos probabiliste par la rationalité logique. Le système ne
+              "devine" pas, il déduit. Chaque output est le fruit d'un calcul déterministe.
+            </p>
           </div>
         </div>
 
         <div
-          class="bg-slate-800 text-white py-3 px-6 text-center text-xs font-mono font-bold tracking-widest border-x border-slate-800 relative z-10"
+          class="flex flex-col md:flex-row gap-8 items-start bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-200 hover:border-blue-500/30 transition-all group"
         >
-          🌉 TAURI BRIDGE (IPC / COMMANDS / EVENTS)
-        </div>
-
-        <div class="bg-orange-50 border-x border-orange-200 p-8 relative">
           <div
-            class="absolute top-0 left-0 bg-orange-200 text-orange-900 text-[10px] font-bold px-2 py-1 rounded-br-lg font-mono"
+            class="shrink-0 w-20 h-20 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-4xl font-bold shadow-lg group-hover:bg-blue-600 transition-colors"
           >
-            ⚙️ RUST BACKEND (src-tauri/)
+            A
           </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-            <div
-              class="bg-white p-5 rounded-xl border-l-4 border-purple-500 shadow-sm hover:shadow-md transition-shadow group"
-            >
-              <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span
-                  class="bg-purple-100 p-1 rounded text-lg group-hover:scale-110 transition-transform"
-                  >🧠</span
-                > NEURO
-              </h4>
-              <p
-                class="text-xs text-slate-500 mb-2 font-mono bg-slate-50 inline-block px-1 rounded"
-              >
-                ai/agents/
-              </p>
-              <ul class="text-xs text-slate-600 list-disc list-inside">
-                <li>Business Agents</li>
-                <li>LLM Context / RAG</li>
-              </ul>
-            </div>
-
-            <div
-              class="bg-white p-5 rounded-xl border-l-4 border-rust shadow-md scale-105 z-10 relative"
-            >
-              <div
-                class="absolute -top-3 left-1/2 -translate-x-1/2 bg-rust text-white px-2 py-0.5 rounded text-[10px] font-bold"
-              >
-                MASTER
-              </div>
-              <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span class="bg-orange-100 p-1 rounded text-lg">⚡</span> ORCHESTRATION
-              </h4>
-              <p
-                class="text-xs text-slate-500 mb-2 font-mono bg-slate-50 inline-block px-1 rounded"
-              >
-                workflow_engine/
-              </p>
-              <ul class="text-xs text-slate-600 list-disc list-inside">
-                <li>Scheduler</li>
-                <li>State Machine</li>
-              </ul>
-            </div>
-
-            <div
-              class="bg-white p-5 rounded-xl border-l-4 border-blue-500 shadow-sm hover:shadow-md transition-shadow group"
-            >
-              <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span
-                  class="bg-blue-100 p-1 rounded text-lg group-hover:scale-110 transition-transform"
-                  >📐</span
-                > SYMBOLIQUE
-              </h4>
-              <p
-                class="text-xs text-slate-500 mb-2 font-mono bg-slate-50 inline-block px-1 rounded"
-              >
-                model_engine/
-              </p>
-              <ul class="text-xs text-slate-600 list-disc list-inside">
-                <li>Arcadia / Capella</li>
-                <li>Transformers</li>
-              </ul>
-            </div>
-
-            <div
-              class="bg-white p-5 rounded-xl border-l-4 border-green-500 shadow-sm hover:shadow-md transition-shadow group"
-            >
-              <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span
-                  class="bg-green-100 p-1 rounded text-lg group-hover:scale-110 transition-transform"
-                  >🧬</span
-                > GÉNÉTIQUE
-              </h4>
-              <p
-                class="text-xs text-slate-500 mb-2 font-mono bg-slate-50 inline-block px-1 rounded"
-              >
-                genetics/
-              </p>
-              <ul class="text-xs text-slate-600 list-disc list-inside">
-                <li>Optimization</li>
-                <li>Constraint Solving</li>
-              </ul>
-            </div>
-
-            <div
-              class="bg-white p-5 rounded-xl border-l-4 border-slate-500 shadow-sm hover:shadow-md transition-shadow group"
-            >
-              <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span
-                  class="bg-slate-100 p-1 rounded text-lg group-hover:scale-110 transition-transform"
-                  >🏭</span
-                > CODE GEN
-              </h4>
-              <p
-                class="text-xs text-slate-500 mb-2 font-mono bg-slate-50 inline-block px-1 rounded"
-              >
-                code_generator/
-              </p>
-              <ul class="text-xs text-slate-600 list-disc list-inside">
-                <li>Scaffolding</li>
-                <li>Templates Jinja2</li>
-              </ul>
-            </div>
-
-            <div
-              class="bg-white p-5 rounded-xl border-l-4 border-indigo-500 shadow-sm hover:shadow-md transition-shadow group"
-            >
-              <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <span
-                  class="bg-indigo-100 p-1 rounded text-lg group-hover:scale-110 transition-transform"
-                  >🔍</span
-                > AUDIT
-              </h4>
-              <p
-                class="text-xs text-slate-500 mb-2 font-mono bg-slate-50 inline-block px-1 rounded"
-              >
-                traceability/
-              </p>
-              <ul class="text-xs text-slate-600 list-disc list-inside">
-                <li>Data Lineage</li>
-                <li>Impact Analysis</li>
-              </ul>
-            </div>
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-3">Advanced (Avant-Garde)</h2>
+            <p class="text-slate-600 mb-4 leading-relaxed">
+              L'état de l'art de l'ingénierie. Utilisation de <strong>Rust</strong> pour la sécurité mémoire
+              absolue et de <strong>WebAssembly</strong> pour l'isolation.
+            </p>
           </div>
         </div>
 
-        <div class="bg-slate-100 rounded-b-3xl border-x border-b border-slate-200 p-8 relative">
+        <div
+          class="flex flex-col md:flex-row gap-8 items-start bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-200 hover:border-purple-500/30 transition-all group"
+        >
           <div
-            class="absolute bottom-0 right-0 bg-slate-300 text-slate-800 text-[10px] font-bold px-2 py-1 rounded-tl-lg font-mono"
+            class="shrink-0 w-20 h-20 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-4xl font-bold shadow-lg group-hover:bg-purple-600 transition-colors"
           >
-            💾 LOCAL INFRASTRUCTURE
+            I
           </div>
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-3">Intelligence (Hybride)</h2>
+            <p class="text-slate-600 mb-4 leading-relaxed">
+              Le meilleur des deux mondes : <strong>Neuro</strong> (LEANN) pour percevoir la nuance du
+              réel, et <strong>Symbolique</strong> (SurrealDB) pour structurer le raisonnement.
+            </p>
+          </div>
+        </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div
-              class="bg-white rounded-lg p-4 border border-slate-300 shadow-inner flex flex-col items-center text-center"
-            >
-              <div class="text-3xl mb-2">🗄️</div>
-              <div class="font-bold text-sm text-slate-700">JSON DB</div>
-              <div class="text-[10px] text-slate-500 font-mono">ACID / BTree / WAL</div>
-            </div>
-            <div
-              class="bg-white rounded-lg p-4 border border-slate-300 shadow-inner flex flex-col items-center text-center"
-            >
-              <div class="text-3xl mb-2">🔍</div>
-              <div class="font-bold text-sm text-slate-700">TRACEABILITY</div>
-              <div class="text-[10px] text-slate-500 font-mono">DO-178C Standard</div>
-            </div>
-            <div
-              class="bg-white rounded-lg p-4 border border-slate-300 shadow-inner flex flex-col items-center text-center"
-            >
-              <div class="text-3xl mb-2">⛓️</div>
-              <div class="font-bold text-sm text-slate-700">BLOCKCHAIN</div>
-              <div class="text-[10px] text-slate-500 font-mono">Hyperledger / VPN</div>
-            </div>
+        <div
+          class="flex flex-col md:flex-row gap-8 items-start bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-200 hover:border-green-500/30 transition-all group"
+        >
+          <div
+            class="shrink-0 w-20 h-20 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-4xl font-bold shadow-lg group-hover:bg-green-600 transition-colors"
+          >
+            S
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-3">System (Souveraineté)</h2>
+            <p class="text-slate-600 mb-4 leading-relaxed">
+              Architecture "Local-First". Vos données ne quittent jamais votre infrastructure.
+              Indépendance totale vis-à-vis du Cloud.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row gap-8 items-start bg-white p-8 md:p-10 rounded-[2.5rem] shadow-sm border border-slate-200 hover:border-orange-500/30 transition-all group"
+        >
+          <div
+            class="shrink-0 w-20 h-20 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-4xl font-bold shadow-lg group-hover:bg-orange-500 transition-colors"
+          >
+            E
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-slate-900 mb-3">Engine (Exécutif)</h2>
+            <p class="text-slate-600 mb-4 leading-relaxed">
+              Le moteur d'exécution. Il applique le mandat du Médiateur, arbitre les conflits via
+              Condorcet et génère une trace d'audit.
+            </p>
           </div>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900 mb-4">Architecture Hybride</h2>
-          <p class="text-slate-600 leading-relaxed mb-4">
-            R.A.I.S.E. implémente une approche <strong>Neuro-Symbolique</strong>.
-          </p>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3">
-              <span class="text-purple-500 text-xl">🧠</span>
-              <p class="text-sm text-slate-600">
-                <strong>Module Neuro :</strong> Utilise des LLM locaux (llama.cpp) pour comprendre l'intention
-                floue et le contexte sémantique.
+      <section class="mb-32">
+        <div
+          class="bg-slate-900 rounded-[3rem] p-8 md:p-16 relative overflow-hidden text-white shadow-2xl"
+        >
+          <div
+            class="absolute inset-0 opacity-10"
+            style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"
+          >
+          </div>
+
+          <div class="text-center mb-16 relative z-10">
+            <h2 class="text-3xl font-bold mb-4">L'Anatomie du Moteur</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">
+              Une orchestration précise de modules indépendants. Chaque bloc remplit une fonction
+              cognitive spécifique.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+            <div
+              class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-blue-500/50 transition-colors"
+            >
+              <div
+                class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center text-2xl mb-6"
+              >
+                👁️
+              </div>
+              <h3 class="text-xl font-bold mb-2">1. Perception</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Ingestion et normalisation des flux (Capteurs, Documents, API).
               </p>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-blue-500 text-xl">📐</span>
-              <p class="text-sm text-slate-600">
-                <strong>Module Symbolique :</strong> Maintient la cohérence formelle du modèle (Arcadia/Capella)
-                et empêche les hallucinations.
+              <div class="bg-slate-900 p-3 rounded-lg text-xs font-mono text-blue-300">
+                > Input: Raw Data<br />
+                > Output: Tensors
+              </div>
+            </div>
+
+            <div
+              class="bg-slate-800/80 p-8 rounded-3xl border border-rust/50 shadow-lg shadow-rust/10 relative transform md:-translate-y-4"
+            >
+              <div class="absolute top-0 right-0 p-2">
+                <span class="bg-rust text-white text-[10px] font-bold px-2 py-1 rounded">CORE</span>
+              </div>
+              <div
+                class="w-12 h-12 bg-rust/20 text-rust rounded-xl flex items-center justify-center text-2xl mb-6"
+              >
+                ⚙️
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-white">2. Cognition</h3>
+              <p class="text-sm text-slate-300 mb-4">
+                Le cœur hybride. Confrontation des vecteurs (Mémoire) aux règles (Logique).
               </p>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-rust text-xl">⚡</span>
-              <p class="text-sm text-slate-600">
-                <strong>Orchestrateur :</strong> Le chef d'orchestre écrit en Rust qui synchronise ces
-                deux mondes via une State Machine stricte.
+              <div class="bg-slate-900 p-3 rounded-lg text-xs font-mono text-rust">
+                > Process: Neuro-Symbolic<br />
+                > Logic: Rust Native
+              </div>
+            </div>
+
+            <div
+              class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-green-500/50 transition-colors"
+            >
+              <div
+                class="w-12 h-12 bg-green-500/20 text-green-400 rounded-xl flex items-center justify-center text-2xl mb-6"
+              >
+                ⚖️
+              </div>
+              <h3 class="text-xl font-bold mb-2">3. Décision</h3>
+              <p class="text-sm text-slate-400 mb-4">
+                Arbitrage final via la méthode de Condorcet et génération de la preuve.
               </p>
-            </li>
-          </ul>
+              <div class="bg-slate-900 p-3 rounded-lg text-xs font-mono text-green-300">
+                > Method: Condorcet<br />
+                > Output: Signed Action
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900 mb-4">Pourquoi ce découpage ?</h2>
-          <div class="space-y-4">
-            <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
-              <h3 class="font-bold text-slate-800 text-sm mb-1">Local-First & Performance</h3>
-              <p class="text-xs text-slate-500">
-                En séparant la logique rapide (WASM) du moteur lourd (Rust), l'interface reste
-                fluide (60fps) même lors de calculs génétiques complexes.
-              </p>
+      </section>
+
+      <section class="mb-32 relative">
+        <div
+          class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-slate-200 hidden lg:block"
+        >
+        </div>
+
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-slate-900">Cartographie du Code Source</h2>
+          <p class="text-slate-500 mt-2">Projection directe de l'arborescence réelle du projet.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+          <div class="space-y-8">
+            <div class="flex items-center gap-4 mb-4 lg:flex-row-reverse lg:text-right">
+              <div>
+                <h3 class="text-xl font-bold text-blue-900">Presentation Layer</h3>
+                <p class="text-xs font-mono text-blue-500">React • TypeScript • Tauri</p>
+              </div>
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl"
+              >
+                🖥️
+              </div>
             </div>
-            <div class="bg-white p-4 rounded-lg border border-slate-200 shadow-sm">
-              <h3 class="font-bold text-slate-800 text-sm mb-1">Auditabilité (DO-178C)</h3>
-              <p class="text-xs text-slate-500">
-                Chaque module (Génération, Génétique) écrit ses actions dans le module de
-                Traçabilité avant d'appliquer un changement. Rien n'est invisible.
-              </p>
+
+            <div
+              class="bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden group hover:border-blue-400 transition-colors"
+            >
+              <div
+                class="bg-slate-50 px-4 py-2 border-b border-slate-200 flex items-center gap-2 text-xs font-mono text-slate-500"
+              >
+                <span class="text-blue-500">📁</span> src/components/ai-chat
+              </div>
+              <div class="p-4 space-y-2">
+                <div class="flex items-center gap-2 text-sm text-slate-700">
+                  <span class="text-blue-400 text-xs">tsx</span>
+                  <span class="font-bold">ChatInterface.tsx</span>
+                  <span class="text-xs text-slate-400 ml-auto">UI Conversationnelle</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-slate-700">
+                  <span class="text-blue-400 text-xs">tsx</span>
+                  <span>IntentClassifier.tsx</span>
+                  <span class="text-xs text-slate-400 ml-auto">Détection d'intention</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-slate-700">
+                  <span class="text-blue-400 text-xs">tsx</span>
+                  <span>ContextDisplay.tsx</span>
+                  <span class="text-xs text-slate-400 ml-auto">Visualisation RAG</span>
+                </div>
+              </div>
             </div>
+
+            <div
+              class="bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden group hover:border-blue-400 transition-colors"
+            >
+              <div
+                class="bg-slate-50 px-4 py-2 border-b border-slate-200 flex items-center gap-2 text-xs font-mono text-slate-500"
+              >
+                <span class="text-blue-500">📁</span> src/components/model-viewer
+              </div>
+              <div class="p-4 space-y-2">
+                <div class="flex items-center gap-2 text-sm text-slate-700">
+                  <span class="text-blue-400 text-xs">tsx</span>
+                  <span class="font-bold">CapellaViewer.tsx</span>
+                  <span class="text-xs text-slate-400 ml-auto">Rendu MBSE</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-slate-700">
+                  <span class="text-blue-400 text-xs">tsx</span>
+                  <span>ArcadiaLayerView.tsx</span>
+                  <span class="text-xs text-slate-400 ml-auto">Gestion des calques</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-slate-700">
+                  <span class="text-blue-400 text-xs">tsx</span>
+                  <span>DiagramRenderer.tsx</span>
+                  <span class="text-xs text-slate-400 ml-auto">Canvas Graphique</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-xl border border-slate-200 shadow-lg overflow-hidden group hover:border-blue-400 transition-colors"
+            >
+              <div
+                class="bg-slate-50 px-4 py-2 border-b border-slate-200 flex items-center gap-2 text-xs font-mono text-slate-500"
+              >
+                <span class="text-blue-500">📁</span> src/features
+              </div>
+              <div class="p-4 space-y-2">
+                <div class="flex items-center gap-2 text-sm text-slate-700">
+                  <span class="text-orange-400 text-xs">dir</span>
+                  <span>hardware-engineering/</span>
+                  <span class="text-xs text-slate-400 ml-auto">PCB & Signals</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-slate-700">
+                  <span class="text-purple-400 text-xs">dir</span>
+                  <span>system-engineering/</span>
+                  <span class="text-xs text-slate-400 ml-auto">Requirements & Chains</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-8">
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="w-12 h-12 bg-rust/10 rounded-xl flex items-center justify-center text-2xl"
+              >
+                ⚙️
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-rust">Rust Backend</h3>
+                <p class="text-xs font-mono text-orange-600">Kernel • Logic • Storage</p>
+              </div>
+            </div>
+
+            <div
+              class="bg-slate-900 rounded-xl border border-slate-700 shadow-2xl overflow-hidden group hover:border-rust transition-colors text-white relative"
+            >
+              <div class="absolute top-0 right-0 p-2">
+                <span class="bg-rust text-white text-[9px] font-bold px-2 py-0.5 rounded uppercase"
+                  >Core Engine</span
+                >
+              </div>
+              <div
+                class="bg-slate-950 px-4 py-2 border-b border-slate-800 flex items-center gap-2 text-xs font-mono text-slate-400"
+              >
+                <span class="text-rust">📁</span> src/rust/json_db
+              </div>
+              <div class="p-4 space-y-2 font-mono text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="text-rust">rs</span>
+                  <span class="font-bold text-white">transactions/wal.rs</span>
+                  <span class="text-slate-500 ml-auto">Write-Ahead Logging</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-rust">rs</span>
+                  <span>jsonld/processor.rs</span>
+                  <span class="text-slate-500 ml-auto">Semantic Graph</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-rust">rs</span>
+                  <span>indexes/btree.rs</span>
+                  <span class="text-slate-500 ml-auto">High-Perf Indexing</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-slate-900 rounded-xl border border-slate-700 shadow-2xl overflow-hidden group hover:border-purple-500 transition-colors text-white"
+            >
+              <div
+                class="bg-slate-950 px-4 py-2 border-b border-slate-800 flex items-center gap-2 text-xs font-mono text-slate-400"
+              >
+                <span class="text-purple-500">📁</span> src/rust/ai
+              </div>
+              <div class="p-4 space-y-2 font-mono text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="text-rust">rs</span>
+                  <span class="font-bold text-purple-300">agents/epbs_agent.rs</span>
+                  <span class="text-slate-500 ml-auto">System Architecture</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-rust">rs</span>
+                  <span>memory/qdrant_store.rs</span>
+                  <span class="text-slate-500 ml-auto">Vector Database</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-rust">rs</span>
+                  <span>nlp/embeddings/candle.rs</span>
+                  <span class="text-slate-500 ml-auto">Local Inference</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-slate-900 rounded-xl border border-slate-700 shadow-2xl overflow-hidden group hover:border-green-500 transition-colors text-white"
+            >
+              <div
+                class="bg-slate-950 px-4 py-2 border-b border-slate-800 flex items-center gap-2 text-xs font-mono text-slate-400"
+              >
+                <span class="text-green-500">📁</span> src/rust/genetics
+              </div>
+              <div class="p-4 space-y-2 font-mono text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="text-rust">rs</span>
+                  <span class="font-bold text-green-300">genomes/arcadia_arch.rs</span>
+                  <span class="text-slate-500 ml-auto">Arch Optimization</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-rust">rs</span>
+                  <span>operators/crossover.rs</span>
+                  <span class="text-slate-500 ml-auto">Genetic Evolution</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-slate-900 rounded-xl border border-slate-700 shadow-2xl overflow-hidden group hover:border-indigo-500 transition-colors text-white"
+            >
+              <div
+                class="bg-slate-950 px-4 py-2 border-b border-slate-800 flex items-center gap-2 text-xs font-mono text-slate-400"
+              >
+                <span class="text-indigo-500">📁</span> src/rust/traceability
+              </div>
+              <div class="p-4 space-y-2 font-mono text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="text-rust">rs</span>
+                  <span class="font-bold text-indigo-300">compliance/eu_ai_act.rs</span>
+                  <span class="text-slate-500 ml-auto">Regulatory Checks</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-rust">rs</span>
+                  <span>compliance/iso_26262.rs</span>
+                  <span class="text-slate-500 ml-auto">Safety Standards</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-32">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-slate-900">Le Changement de Paradigme</h2>
+          <p class="text-slate-600 mt-4">Pourquoi R.A.I.S.E. est une rupture d'ingénierie.</p>
+        </div>
+
+        <div class="overflow-hidden rounded-4xl border border-slate-200 shadow-xl">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="p-6 md:p-8 font-bold text-lg w-1/3">Critère</th>
+                <th
+                  class="p-6 md:p-8 font-bold text-lg w-1/3 text-slate-400 border-r border-slate-700"
+                  >Approche Standard (Python/AI)</th
+                >
+                <th class="p-6 md:p-8 font-bold text-lg w-1/3 text-rust bg-slate-800"
+                  >Approche R.A.I.S.E. (Rust)</th
+                >
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr class="border-b border-slate-100 hover:bg-slate-50">
+                <td class="p-6 font-bold text-slate-700">Gestion Mémoire</td>
+                <td class="p-6 text-slate-500 border-r border-slate-100"
+                  >Garbage Collector (Pauses imprévisibles)</td
+                >
+                <td class="p-6 text-slate-900 font-bold bg-orange-50/30"
+                  >Ownership (Déterministe & Safe)</td
+                >
+              </tr>
+              <tr class="border-b border-slate-100 hover:bg-slate-50">
+                <td class="p-6 font-bold text-slate-700">Gestion des Erreurs</td>
+                <td class="p-6 text-slate-500 border-r border-slate-100"
+                  >Exceptions (Try/Catch fragiles)</td
+                >
+                <td class="p-6 text-slate-900 font-bold bg-orange-50/30"
+                  >Result&lt;T, E&gt; (Strict)</td
+                >
+              </tr>
+              <tr class="border-b border-slate-100 hover:bg-slate-50">
+                <td class="p-6 font-bold text-slate-700">Performance</td>
+                <td class="p-6 text-slate-500 border-r border-slate-100"
+                  >Interprété (Lent sans C++ backend)</td
+                >
+                <td class="p-6 text-slate-900 font-bold bg-orange-50/30"
+                  >Native (Vitesse du C/C++)</td
+                >
+              </tr>
+              <tr class="border-b border-slate-100 hover:bg-slate-50">
+                <td class="p-6 font-bold text-slate-700">Déploiement</td>
+                <td class="p-6 text-slate-500 border-r border-slate-100"
+                  >"Dependency Hell" (pip, venv)</td
+                >
+                <td class="p-6 text-slate-900 font-bold bg-orange-50/30"
+                  >Binaire Unique (Standalone)</td
+                >
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-6 font-bold text-slate-700">Décision</td>
+                <td class="p-6 text-slate-500 border-r border-slate-100">Opaque (Boîte Noire)</td>
+                <td class="p-6 text-slate-900 font-bold bg-orange-50/30"
+                  >Auditable (Boîte de Verre)</td
+                >
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="bg-slate-900 rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
+        <div
+          class="absolute inset-0 opacity-20"
+          style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 32px 32px;"
+        >
+        </div>
+
+        <div class="relative z-10">
+          <h2 class="text-3xl font-bold mb-6">Un Code Auditable par Design</h2>
+          <p class="text-slate-300 mb-8 max-w-2xl mx-auto">
+            Chaque module présenté ci-dessus est indépendant, typé strictement et testable. Pas de
+            boîte noire.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="https://github.com/Condorcet-Continuum/raise"
+              target="_blank"
+              class="bg-rust hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg flex items-center gap-2 justify-center"
+            >
+              <span>Voir le Repository</span>
+              <span class="text-xl">↗</span>
+            </a>
+            <a
+              href="/architecture"
+              class="bg-transparent border border-white/30 hover:bg-white/10 text-white font-bold py-4 px-10 rounded-full transition-all"
+            >
+              Retour à l'Architecture
+            </a>
           </div>
         </div>
       </div>

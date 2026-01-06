@@ -4,9 +4,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import logo from '../assets/logo-continuum.svg';
 
-const title = 'Vision & Système';
+const title = 'Vision & Manifeste | R.A.I.S.E.';
 const description =
-  'De la Boîte Noire à la Boîte de Verre : Une approche systémique de la décision.';
+  'De la Boîte Noire à la Boîte de Verre : Restaurer la souveraineté humaine par la preuve.';
 ---
 
 <!doctype html>
@@ -18,97 +18,113 @@ const description =
     <Header />
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-      <div class="flex flex-col items-center text-center mb-20">
+      <div class="flex flex-col items-center text-center mb-24 animate-fade-in">
         <div
-          class="w-32 h-32 mb-8 flex items-center justify-center p-4 bg-white rounded-full shadow-lg border border-slate-100"
+          class="w-32 h-32 mb-8 flex items-center justify-center p-4 bg-white rounded-full shadow-lg border border-slate-100 hover:scale-105 transition-transform duration-500"
         >
           <img src={logo.src} alt="Logo Continuum" class="w-full h-full object-contain" />
         </div>
-        <h1
-          class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight"
+
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 text-white text-xs font-bold uppercase tracking-widest mb-6 shadow-xl"
         >
-          L'Exosquelette <br class="hidden md:block" />
+          <span class="text-rust">●</span> Manifeste Industriel
+        </div>
+
+        <h1
+          class="text-4xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight"
+        >
+          L'Intelligence <br class="hidden md:block" />
           <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-rust"
-            >Cognitif</span
+            >Souveraine</span
           >
         </h1>
-        <p class="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-          Nous ne cherchons pas à créer une conscience artificielle. Nous construisons un système
-          immunitaire contre le chaos informationnel.
+        <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-light">
+          Nous refusons l'avenir où l'humain est spectateur d'algorithmes opaques.
+          <strong class="text-slate-900 font-bold">R.A.I.S.E.</strong> est l'infrastructure de la reprise
+          de contrôle.
         </p>
       </div>
 
-      <hr class="border-t border-slate-200 my-16 max-w-5xl mx-auto" />
-
-      <section class="mb-24 max-w-5xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 class="text-3xl font-bold text-slate-900 mb-6">
-              La Rupture <span class="text-rust">Systémique</span>
+      <section class="mb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 items-stretch">
+          <div
+            class="bg-slate-200/50 p-10 md:p-14 rounded-t-[3rem] md:rounded-l-[3rem] md:rounded-tr-none border border-slate-300 relative overflow-hidden group"
+          >
+            <div
+              class="absolute inset-0 bg-slate-300/20 opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+            </div>
+            <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">
+              L'Impasse Actuelle
             </h2>
-            <p class="text-slate-600 mb-4 text-lg leading-relaxed">
-              Dans l'industrie comme dans la gouvernance, le danger ne vient plus du manque
-              d'information, mais de son opacité.
+            <h3 class="text-3xl font-bold text-slate-800 mb-6">
+              L'Ère de la <span class="text-slate-500">Boîte Noire</span>
+            </h3>
+            <p class="text-slate-600 mb-8 leading-relaxed">
+              Les modèles probabilistes (LLM purs) sont des boîtes magiques. Ils "hallucinent",
+              changent d'avis et ne peuvent pas expliquer leurs choix.
+              <br /><br />
+              Dans un contexte industriel ou critique, l'incertitude est un risque inacceptable. <strong
+                class="text-red-700">On ne bâtit pas une stratégie sur un jet de dés.</strong
+              >
             </p>
-            <p class="text-slate-600 text-lg leading-relaxed">
-              L'usage actuel de l'IA est une <strong>"Boîte Noire"</strong> : on entre une donnée, on
-              obtient une réponse, mais le cheminement logique est invisible. C'est inacceptable pour
-              une décision critique.
-            </p>
+            <div class="flex gap-4 opacity-50 grayscale">
+              <div class="bg-white p-4 rounded-xl text-center w-full">
+                <div class="text-2xl">🎲</div>
+                <div class="text-xs font-bold mt-1">Probabiliste</div>
+              </div>
+              <div class="bg-white p-4 rounded-xl text-center w-full">
+                <div class="text-2xl">🌫️</div>
+                <div class="text-xs font-bold mt-1">Opaque</div>
+              </div>
+            </div>
           </div>
 
-          <div class="bg-slate-900 rounded-3xl p-8 text-white shadow-2xl">
-            <h3 class="font-bold text-lg mb-6 border-b border-slate-700 pb-2">
-              Changement de Paradigme
+          <div
+            class="bg-slate-900 p-10 md:p-14 rounded-b-[3rem] md:rounded-r-[3rem] md:rounded-bl-none border border-slate-800 text-white relative overflow-hidden shadow-2xl"
+          >
+            <div
+              class="absolute top-0 right-0 w-64 h-64 bg-rust opacity-10 rounded-full blur-3xl translate-x-10 -translate-y-10"
+            >
+            </div>
+
+            <h2 class="text-xs font-bold text-rust uppercase tracking-widest mb-4">
+              La Réponse R.A.I.S.E.
+            </h2>
+            <h3 class="text-3xl font-bold text-white mb-6">
+              Le Standard <span class="text-blue-400">Glass Box</span>
             </h3>
-
-            <div class="space-y-6">
-              <div class="opacity-50 hover:opacity-100 transition-opacity">
-                <div class="flex items-center gap-3 mb-2 text-red-400 font-mono text-sm uppercase">
-                  <span>❌ Modèle Actuel (Black Box)</span>
-                </div>
-                <div
-                  class="flex items-center gap-4 bg-slate-800 p-4 rounded-xl border border-slate-700"
-                >
-                  <span class="text-2xl">🎲</span>
-                  <div>
-                    <div class="font-bold">Probabiliste</div>
-                    <div class="text-xs text-slate-400">"L'IA pense que c'est ça (90%)"</div>
-                  </div>
-                </div>
+            <p class="text-slate-300 mb-8 leading-relaxed">
+              Nous construisons des systèmes <strong>Déterministes</strong>. Pour une entrée donnée,
+              la sortie est mathématiquement certaine, traçable et auditable.
+              <br /><br />
+              L'IA redevient un outil de précision. <strong class="text-white"
+                >Le Médiateur humain légifère, l'Agent machine exécute et prouve.</strong
+              >
+            </p>
+            <div class="flex gap-4">
+              <div class="bg-slate-800 p-4 rounded-xl text-center w-full border border-slate-700">
+                <div class="text-2xl">📐</div>
+                <div class="text-xs font-bold mt-1 text-blue-300">Déterministe</div>
               </div>
-
-              <div class="flex justify-center text-slate-600 text-xl">↓</div>
-
-              <div>
-                <div
-                  class="flex items-center gap-3 mb-2 text-green-400 font-mono text-sm uppercase"
-                >
-                  <span>✅ Modèle Continuum (Glass Box)</span>
-                </div>
-                <div
-                  class="flex items-center gap-4 bg-slate-800 p-4 rounded-xl border border-green-500/30 ring-1 ring-green-500/50"
-                >
-                  <span class="text-2xl">📐</span>
-                  <div>
-                    <div class="font-bold">Déterministe & Auditable</div>
-                    <div class="text-xs text-slate-400">"Voici la preuve logique et signée"</div>
-                  </div>
-                </div>
+              <div class="bg-slate-800 p-4 rounded-xl text-center w-full border border-slate-700">
+                <div class="text-2xl">🔎</div>
+                <div class="text-xs font-bold mt-1 text-rust">Auditable</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="mb-24 max-w-6xl mx-auto">
+      <section class="mb-32 max-w-6xl mx-auto">
         <div class="text-center mb-16">
-          <h2 class="text-3xl font-bold text-slate-900 mb-4">
-            La Boucle de <span class="text-blue-600">Confiance</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Le Continuum de <span class="text-rust">Confiance</span>
           </h2>
-          <p class="text-slate-600 max-w-2xl mx-auto">
-            Comment s'utilise le système au quotidien ? Ce n'est pas un outil passif, c'est une
-            boucle de rétroaction continue en 3 temps.
+          <p class="text-slate-600 max-w-2xl mx-auto text-lg">
+            Comment garantir la souveraineté ? En remplaçant la confiance aveugle par une chaîne de
+            preuves cryptographiques et logiques.
           </p>
         </div>
 
@@ -119,62 +135,61 @@ const description =
           </div>
 
           <div
-            class="bg-white p-8 rounded-3xl border border-slate-200 shadow-lg hover:-translate-y-2 transition-transform duration-300"
+            class="bg-white p-8 rounded-3xl border border-slate-200 shadow-lg hover:-translate-y-2 transition-transform duration-300 group"
           >
             <div
-              class="w-16 h-16 bg-rust text-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg shadow-orange-900/20"
+              class="w-16 h-16 bg-white text-rust border-2 border-rust rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg shadow-orange-900/10 group-hover:bg-rust group-hover:text-white transition-colors"
             >
-              👁️
+              🏛️
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-3">1. Augmenter</h3>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">1. Légiférer</h3>
             <p class="text-sm text-slate-600 leading-relaxed">
-              <strong>Usage :</strong> L'opérateur fait face à une surcharge de données.
-              <br /><br />
-              Le système filtre le bruit, détecte les signaux faibles et présente un contexte structuré,
-              sans jamais décider à la place de l'humain.
+              Le pouvoir reste humain. Le <strong>Médiateur</strong> définit les règles, les poids éthiques
+              et les interdictions formelles. L'IA n'a pas d'agenda propre, elle suit un mandat.
             </p>
           </div>
 
           <div
-            class="bg-white p-8 rounded-3xl border border-slate-200 shadow-lg hover:-translate-y-2 transition-transform duration-300"
+            class="bg-white p-8 rounded-3xl border border-slate-200 shadow-lg hover:-translate-y-2 transition-transform duration-300 group"
           >
             <div
-              class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg shadow-blue-900/20"
+              class="w-16 h-16 bg-white text-blue-600 border-2 border-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg shadow-blue-900/10 group-hover:bg-blue-600 group-hover:text-white transition-colors"
             >
-              ⚖️
+              ⚙️
             </div>
-            <h3 class="text-xl font-bold text-slate-900 mb-3">2. Rationaliser</h3>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">2. Exécuter</h3>
             <p class="text-sm text-slate-600 leading-relaxed">
-              <strong>Usage :</strong> L'opérateur doit choisir entre plusieurs options complexes.
-              <br /><br />
-              Le moteur applique la <em>Méthode de Condorcet</em> pour classer les options par préférence
-              mathématique pure, éliminant les biais émotionnels.
+              Le moteur <strong>Neuro-Symbolique</strong> (Rust) exécute le mandat sans déviation. Il
+              filtre le bruit, raisonne logiquement et applique la Méthode Condorcet pour trancher.
             </p>
           </div>
 
           <div
-            class="bg-white p-8 rounded-3xl border border-slate-200 shadow-lg hover:-translate-y-2 transition-transform duration-300"
+            class="bg-white p-8 rounded-3xl border border-slate-200 shadow-lg hover:-translate-y-2 transition-transform duration-300 group"
           >
             <div
-              class="w-16 h-16 bg-slate-800 text-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg shadow-slate-900/20"
+              class="w-16 h-16 bg-white text-green-600 border-2 border-green-600 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-lg shadow-green-900/10 group-hover:bg-green-600 group-hover:text-white transition-colors"
             >
               ⚓
             </div>
             <h3 class="text-xl font-bold text-slate-900 mb-3">3. Ancrer</h3>
             <p class="text-sm text-slate-600 leading-relaxed">
-              <strong>Usage :</strong> La décision est prise. Elle doit être défendable.
-              <br /><br />
-              Le système génère un "Hash de Preuve" sur la Blockchain. Dans 10 ans, vous pourrez prouver
-              pourquoi vous avez agi ainsi ce jour-là.
+              La décision n'est pas volatile. Elle est signée cryptographiquement et ancrée. Dans 10
+              ans, vous pourrez <strong>prouver</strong> pourquoi et comment vous avez agi.
             </p>
           </div>
         </div>
       </section>
 
       <section
-        class="bg-slate-50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 max-w-5xl mx-auto"
+        class="bg-slate-50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 max-w-5xl mx-auto relative overflow-hidden"
       >
-        <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div
+          class="absolute top-0 right-0 w-96 h-96 bg-slate-200 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/3"
+        >
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-12 items-center relative z-10">
           <div class="md:w-1/3 text-center md:text-left">
             <div class="text-sm font-bold text-rust uppercase tracking-widest mb-2">
               L'Origine du Nom
@@ -184,36 +199,43 @@ const description =
           </div>
 
           <div class="md:w-2/3">
-            <p class="text-slate-700 text-lg mb-6">
-              Nicolas de Condorcet n'était pas qu'un mathématicien. C'était le premier <strong
-                >Architecte Système</strong
-              > de la société.
+            <p class="text-slate-700 text-lg mb-6 leading-relaxed">
+              Nicolas de Condorcet (1743-1794) était bien plus qu'un mathématicien. Figure des
+              Lumières, abolitionniste convaincu et père de l'Instruction Publique, il a posé une
+              équation fondamentale : <strong
+                >"Il n'y a pas de liberté sans maîtrise de l'information."</strong
+              >
             </p>
-            <p class="text-slate-600">
-              Il a compris le premier que la vérité émerge de la confrontation structurée des points
-              de vue, et non de l'autorité d'un seul.
-              <br /><br />
-              Notre technologie est la continuation directe de sa "Mathématique Sociale" : nous remplaçons
-              simplement les urnes en papier par des nœuds <strong>Rust</strong> et des registres distribués.
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Il savait que l'obscurantisme est la racine de l'esclavage. Pour lui, la Démocratie ne
+              survit que si le citoyen est éclairé, éduqué et capable de comprendre les mécanismes
+              de la décision.
+            </p>
+            <p class="text-slate-600 leading-relaxed">
+              Notre projet est sa continuation technique. Face au risque d'un nouvel asservissement
+              par des "Boîtes Noires", nous fournissons l'outil d'émancipation : une intelligence <strong
+                >auditable, éducative et transparente</strong
+              >.
             </p>
           </div>
         </div>
       </section>
 
-      <div class="mt-20 text-center">
-        <h3 class="text-2xl font-bold text-slate-900 mb-6">Prêt à architecturer vos décisions ?</h3>
+      <div class="mt-24 text-center">
+        <h3 class="text-2xl font-bold text-slate-900 mb-8">Passez de l'opacité à la preuve</h3>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href="/use-cases"
-            class="bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg hover:shadow-xl"
+            href="/value"
+            class="bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-10 rounded-full transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2"
           >
-            Voir les Cas d'Usage
+            <span>Mesurer l'Impact (ROI)</span>
+            <span class="text-rust">→</span>
           </a>
           <a
-            href="/raise"
-            class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-900 font-bold py-3 px-8 rounded-full transition-all"
+            href="/use-cases"
+            class="bg-white border border-slate-300 hover:bg-slate-50 text-slate-900 font-bold py-4 px-10 rounded-full transition-all"
           >
-            Le Moteur Technique
+            Voir les Preuves Industrielles
           </a>
         </div>
       </div>

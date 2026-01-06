@@ -2,203 +2,258 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import logo from '../assets/logo-continuum.svg';
 
-// Récupération des articles de blog (Triés par date)
-import { getCollection } from 'astro:content';
-const posts = (await getCollection('blog'))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
+const title = 'R.A.I.S.E. | Intelligence Souveraine & Déterministe';
+const description =
+  "L'architecture Neuro-Symbolique pour les industries critiques. Passez de la boîte noire à la preuve formelle.";
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={title} description={description} />
   </head>
   <body class="bg-slate-50 text-slate-900 font-sans antialiased">
     <Header />
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-      <div class="flex flex-col items-center text-center mb-20 animate-fade-in">
-        <div
-          class="w-32 h-32 mb-8 p-4 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center"
-        >
-          <img
-            src={logo.src}
-            alt="Condorcet Continuum Logo"
-            class="w-full h-full object-contain"
-            width={logo.width}
-            height={logo.height}
-          />
-        </div>
-
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-6">
-          La Décision par la <br class="hidden md:block" />
-          <span
-            class="text-transparent bg-clip-text bg-linear-to-r from-rust via-orange-500 to-ethics"
-            >Preuve</span
+    <main>
+      <section class="relative pt-20 pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8 animate-fade-in-down"
           >
-        </h1>
-
-        <p class="text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
-          Ne subissez plus l'IA. Orchestrez vos flux cognitifs avec une architecture
-          <strong class="text-slate-900">locale</strong>, <strong class="text-slate-900"
-            >systémique</strong
-          > et <strong class="text-slate-900">auditable</strong>.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a
-            href="/use-cases"
-            class="px-8 py-3 rounded-full bg-slate-900 text-white font-bold hover:bg-rust transition-colors shadow-lg shadow-slate-900/20"
-          >
-            Voir les Cas d'Usage
-          </a>
-          <a
-            href="/cognition"
-            class="px-8 py-3 rounded-full bg-white text-slate-900 border border-slate-200 font-bold hover:bg-slate-50 transition-transform hover:scale-105"
-          >
-            Comprendre le Système
-          </a>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
-        <a
-          href="/cognition"
-          class="group md:col-span-2 relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 p-8 hover:shadow-2xl hover:border-rust/50 transition-all"
-        >
-          <div class="relative z-10">
-            <div
-              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rust text-white text-xs font-bold uppercase tracking-wider mb-4"
+            <span class="w-2 h-2 rounded-full bg-rust animate-pulse"></span>
+            <span class="text-xs font-bold text-slate-600 tracking-widest uppercase"
+              >Système Neuro-Symbolique v1.0</span
             >
-              Systémique
-            </div>
-            <h2 class="text-3xl font-bold text-white mb-2 group-hover:text-rust transition-colors">
-              Le Bloc Cognitif
+          </div>
+
+          <h1
+            class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-tight animate-fade-in"
+          >
+            Ne subissez plus l'IA.<br />
+            <span class="text-transparent bg-clip-text bg-linear-to-r from-rust to-orange-600"
+              >Mandatez-la.</span
+            >
+          </h1>
+
+          <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600 mb-10 animate-fade-in delay-100">
+            Pour l'Industrie, la Finance et la Défense. Remplacez l'incertitude des modèles
+            probabilistes par la <strong>rigueur déterministe</strong> d'une architecture auditable.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-200">
+            <a
+              href="/vision"
+              class="group bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2"
+            >
+              Lire le Manifeste
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+            <a
+              href="/use-cases"
+              class="bg-white text-slate-900 border border-slate-300 px-8 py-4 rounded-full font-bold hover:bg-slate-50 transition-colors"
+            >
+              Voir les preuves (Cas d'usage)
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-slate-200/50 rounded-full blur-3xl -z-10 opacity-50"
+        >
+        </div>
+      </section>
+
+      <section class="py-24 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900">
+              L'Architecture de la <span class="text-rust">Confiance</span>
             </h2>
-            <p class="text-slate-400 max-w-md">
-              Plongez dans l'anatomie du système : Perception, Attention, Mémoire, Raisonnement...
-              Découvrez comment les modules s'assemblent pour créer une intelligence vérifiable.
+            <p class="text-slate-500 mt-4">
+              Trois piliers pour transformer le chaos des données en décisions certifiées.
             </p>
           </div>
-          <div
-            class="absolute right-0 top-0 w-64 h-64 bg-rust/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-rust/20 transition-colors"
-          >
-          </div>
-          <div
-            class="absolute bottom-4 right-4 text-6xl opacity-20 group-hover:scale-110 transition-transform grayscale group-hover:grayscale-0"
-          >
-            🧠
-          </div>
-        </a>
 
-        <a
-          href="/use-cases"
-          class="group relative overflow-hidden rounded-3xl bg-white border border-slate-200 p-8 hover:shadow-xl transition-all hover:border-blue-400/50"
-        >
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4"
-          >
-            Pragmatique
-          </div>
-          <h2 class="text-2xl font-bold text-slate-900 mb-2">Cas d'Usage</h2>
-          <p class="text-slate-500 text-sm">
-            Maintenance prédictive, Sourcing, Qualité... <br />
-            La "Conjugaison" cognitive appliquée au terrain.
-          </p>
-          <div
-            class="absolute bottom-4 right-4 text-4xl opacity-50 group-hover:scale-110 transition-transform"
-          >
-            🏭
-          </div>
-        </a>
-
-        <a
-          href="/raise"
-          class="group relative overflow-hidden rounded-3xl bg-slate-50 border border-slate-200 p-8 hover:shadow-xl transition-all md:col-span-1"
-        >
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200 text-slate-600 text-xs font-bold uppercase tracking-wider mb-4"
-          >
-            Technologie
-          </div>
-          <h2 class="text-2xl font-bold text-slate-900 mb-2">Moteur R.A.I.S.E.</h2>
-          <p class="text-slate-500 text-sm">
-            Powered by <strong>Rust</strong> & <strong>Tauri</strong>. <br />
-            Performance native & Sûreté mémoire.
-          </p>
-          <div
-            class="mt-6 font-mono text-xs text-slate-500 bg-white p-2 rounded border border-slate-200 group-hover:border-rust/30 transition-colors"
-          >
-            > cargo build --release
-          </div>
-        </a>
-
-        <a
-          href="/architecture"
-          class="group md:col-span-2 relative overflow-hidden rounded-3xl bg-white border border-slate-200 p-8 hover:shadow-xl transition-all hover:border-slate-400"
-        >
-          <div class="flex items-center justify-between relative z-10">
-            <div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[500px]">
+            <div
+              class="md:col-span-2 bg-slate-900 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group hover:shadow-2xl transition-all duration-500 flex flex-col justify-between text-white"
+            >
               <div
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider mb-4"
+                class="absolute top-0 right-0 w-64 h-64 bg-rust/20 rounded-full blur-3xl group-hover:bg-rust/30 transition-colors"
               >
-                Vision
               </div>
-              <h2 class="text-2xl font-bold text-slate-900 mb-2">Architecture Globale</h2>
-              <p class="text-slate-500 max-w-sm">
-                Comprendre le flux complet : De l'Acquisition (Local) vers l'Ancrage de Preuve
-                (Blockchain).
-              </p>
+
+              <div class="relative z-10">
+                <div
+                  class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl mb-6 backdrop-blur-sm"
+                >
+                  🧠
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Moteur R.A.I.S.E.</h3>
+                <p class="text-slate-300 max-w-md leading-relaxed">
+                  L'alliance du <strong>Neuro</strong> (pour percevoir le monde flou) et du <strong
+                    >Symbolique</strong
+                  > (pour raisonner logiquement). Fini les hallucinations : si le système ne sait pas,
+                  il ne devine pas.
+                </p>
+              </div>
+
+              <div class="mt-8 flex gap-2">
+                <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono">Perception</span>
+                <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono">Mémoire</span>
+                <span class="px-3 py-1 bg-rust text-white rounded-full text-xs font-mono"
+                  >Décision</span
+                >
+              </div>
+
+              <a
+                href="/cognition"
+                class="absolute bottom-8 right-8 w-12 h-12 bg-white text-slate-900 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                >↗</a
+              >
+            </div>
+
+            <div class="flex flex-col gap-6">
+              <div
+                class="bg-slate-50 rounded-[2.5rem] p-8 border border-slate-200 hover:border-rust/30 transition-colors flex-1 flex flex-col justify-center relative overflow-hidden"
+              >
+                <div
+                  class="absolute -right-4 -top-4 text-9xl text-slate-100 font-bold -z-10 select-none"
+                >
+                  Fn
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Rust & Wasm</h3>
+                <p class="text-sm text-slate-600 mb-4">
+                  Performance native, sécurité mémoire absolue et frugalité énergétique (Green IT).
+                </p>
+                <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                  <div class="bg-rust h-full w-[95%]"></div>
+                </div>
+                <div class="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+                  <span>Safety</span>
+                  <span>99.9%</span>
+                </div>
+              </div>
+
+              <div
+                class="bg-slate-50 rounded-[2.5rem] p-8 border border-slate-200 hover:border-rust/30 transition-colors flex-1 flex flex-col justify-center"
+              >
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="text-2xl">⚖️</span>
+                  <h3 class="text-xl font-bold text-slate-900">Condorcet</h3>
+                </div>
+                <p class="text-sm text-slate-600">
+                  Le consensus mathématique plutôt que les seuils arbitraires. Résolvez les conflits
+                  d'intérêts par le vote.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-slate-900 rounded-[3rem] p-8 md:p-20 text-center relative overflow-hidden">
+          <div
+            class="absolute inset-0 opacity-10"
+            style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 32px 32px;"
+          >
+          </div>
+
+          <div class="relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
+              Vous êtes le <span class="text-blue-400">Législateur</span>.<br />
+              L'IA est votre <span class="text-rust">Exécutif</span>.
+            </h2>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+              Nous formalisons le contrat social numérique. Vous définissez la finalité et l'éthique
+              (le "Quoi"). Nos agents autonomes gèrent la complexité (le "Comment") sous votre
+              supervision stricte.
+            </p>
+
+            <a
+              href="/value"
+              class="inline-flex items-center gap-3 text-white border-b border-rust pb-1 hover:text-rust transition-colors font-bold tracking-wide"
+            >
+              DÉCOUVRIR LE MODÈLE DE VALEUR
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-slate-100 pb-8"
+          >
+            <div>
+              <h2 class="text-3xl font-bold text-slate-900">
+                Conçu pour le <span class="text-rust">Critique</span>
+              </h2>
+              <p class="text-slate-500 mt-2">Là où l'erreur n'est pas une option.</p>
+            </div>
+            <a
+              href="/use-cases"
+              class="hidden md:block text-sm font-bold text-slate-900 hover:text-rust transition-colors"
+              >Explorer tous les cas →</a
+            >
+          </div>
+
+          <div
+            class="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+          >
+            <div
+              class="flex flex-col items-center gap-4 p-6 border border-slate-100 rounded-2xl hover:border-slate-300 hover:bg-slate-50 transition-colors"
+            >
+              <span class="text-4xl">🏭</span>
+              <span class="font-bold text-slate-700">Industrie 4.0</span>
             </div>
             <div
-              class="text-5xl opacity-80 group-hover:rotate-12 transition-transform duration-300"
+              class="flex flex-col items-center gap-4 p-6 border border-slate-100 rounded-2xl hover:border-slate-300 hover:bg-slate-50 transition-colors"
             >
-              📐
+              <span class="text-4xl">⚡</span>
+              <span class="font-bold text-slate-700">Énergie</span>
+            </div>
+            <div
+              class="flex flex-col items-center gap-4 p-6 border border-slate-100 rounded-2xl hover:border-slate-300 hover:bg-slate-50 transition-colors"
+            >
+              <span class="text-4xl">🚉</span>
+              <span class="font-bold text-slate-700">Transport</span>
+            </div>
+            <div
+              class="flex flex-col items-center gap-4 p-6 border border-slate-100 rounded-2xl hover:border-slate-300 hover:bg-slate-50 transition-colors"
+            >
+              <span class="text-4xl">🏦</span>
+              <span class="font-bold text-slate-700">Finance</span>
             </div>
           </div>
-          <svg
-            class="absolute bottom-0 left-0 w-full h-24 opacity-5 text-slate-900"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <path d="M0 100 L0 50 Q50 0 100 50 L100 100 Z" fill="currentColor"></path>
-          </svg>
-        </a>
-      </div>
 
-      <section>
-        <div class="flex items-center justify-between mb-8">
-          <h3 class="text-2xl font-bold text-slate-900">Dernières Actualités</h3>
-          <a
-            href="/blog"
-            class="text-sm font-bold text-rust hover:text-orange-700 transition-colors"
-            >Voir tout →</a
-          >
+          <div class="mt-8 text-center md:hidden">
+            <a href="/use-cases" class="text-sm font-bold text-slate-900">Explorer tous les cas →</a
+            >
+          </div>
         </div>
+      </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {
-            posts.map((post) => (
-              <a href={`/blog/${post.id}/`} class="group block">
-                <article class="bg-white rounded-xl border border-slate-100 p-6 hover:shadow-md transition-shadow h-full flex flex-col">
-                  <h4 class="font-bold text-lg text-slate-800 group-hover:text-rust transition-colors mb-2">
-                    {post.data.title}
-                  </h4>
-                  <p class="text-sm text-slate-400 mt-auto">
-                    {post.data.pubDate.toLocaleDateString('fr-FR', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}
-                  </p>
-                </article>
-              </a>
-            ))
-          }
+      <section class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto text-center px-4">
+          <h2 class="text-4xl font-extrabold text-slate-900 mb-6">
+            Prêt à auditer votre processus ?
+          </h2>
+          <p class="text-xl text-slate-600 mb-10">
+            Ne laissez pas vos données critiques dans une boîte noire. Construisons votre preuve de
+            concept souveraine.
+          </p>
+          <a
+            href="/contact"
+            class="inline-block bg-rust hover:bg-orange-700 text-white font-bold py-4 px-12 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+          >
+            Lancer un Audit
+          </a>
         </div>
       </section>
     </main>

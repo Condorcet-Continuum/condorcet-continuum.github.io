@@ -3,10 +3,10 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const title = "Cas d'Usage Industriels";
-const description = "L'orchestration cognitive en action.";
+const title = "Cas d'Usage & Projections | R.A.I.S.E.";
+const description = "Scénarios d'application industrielle de l'architecture Neuro-Symbolique. Projections et cibles de performance.";
 
-// Définition des blocs cognitifs (pour l'affichage)
+// Définition des blocs cognitifs
 const allBlocks = [
   { id: 'perception', icon: '👁️', label: 'Perception' },
   { id: 'attention', icon: '🔎', label: 'Attention' },
@@ -18,28 +18,102 @@ const allBlocks = [
   { id: 'resolution', icon: '✅', label: 'Résolution' },
 ];
 
-// Définition des Scénarios
+// SCÉNARIOS (Exemples Anonymisés)
 const scenarios = [
   {
     id: 'maintenance',
-    title: 'Maintenance Prédictive',
-    context: 'Une turbine critique vibre anormalement. Faut-il arrêter la production ?',
+    title: 'Arbitrage Critique (Maintenance)',
+    subtitle: 'Secteur Énergie (Simulation)',
+    context: 'Scénario type : Turbine Gaz T-400. Dérive vibratoire sur l\'axe Z. Risque de casse imminent vs Coût d\'arrêt (200k€/h).',
+    actors: {
+        mediator: { role: 'Directeur de Site', icon: '👨‍💼', type: 'Législateur' },
+        agent: { role: 'Agent Sûreté', icon: '🛡️', type: 'Exécutif' },
+        mandate: 'Priorité absolue : Zéro blessé (Poids x3)'
+    },
     activeBlocks: ['perception', 'memoire', 'raisonnement', 'decision', 'resolution'],
-    flow: "Capteurs IoT → Historique des pannes → Calcul de probabilité → Vote Condorcet (Sécurité vs Coût) → Ordre d'arrêt.",
+    flow: "IoT (Vibration) → RAG (Historique Pannes) → Calcul Probabiliste → Vote Condorcet → Ordre d'arrêt ciblé.",
+    impact: {
+      kpi_main: '2.4 M€',
+      label_main: 'Économie Cible (Casse)',
+      kpi_sec: '-90%',
+      label_sec: 'Temps de Décision'
+    }
   },
   {
     id: 'sourcing',
-    title: 'Sourcing Fournisseur Stratégique',
-    context: 'Choisir le meilleur fournisseur parmi 3 candidats complexes (Prix, RSE, Délai).',
+    title: 'Sourcing Stratégique',
+    subtitle: 'Secteur Défense (Simulation)',
+    context: 'Scénario type : Appel d\'offre "Acier Haute Résistance". Analyse de 1500 pages de documentation hétérogène pour détecter la non-conformité RSE.',
+    actors: {
+        mediator: { role: 'Lead Acheteur', icon: '👩‍💻', type: 'Législateur' },
+        agent: { role: 'Agent Strategy', icon: '📊', type: 'Exécutif' },
+        mandate: 'Exclure si Score RSE < 80/100'
+    },
     activeBlocks: ['langage', 'attention', 'raisonnement', 'decision'],
-    flow: 'Lecture des Devis (PDF) → Extraction des critères clés → Comparaison matricielle → Vainqueur de Condorcet.',
+    flow: 'Ingestion PDF (OCR) → Extraction Critères (LLM Local) → Matrice de Comparaison → Vainqueur de Condorcet.',
+    impact: {
+      kpi_main: '3 min',
+      label_main: 'Temps Cible (vs 3 sem.)',
+      kpi_sec: '100%',
+      label_sec: 'Auditabilité'
+    }
   },
   {
     id: 'quality',
     title: 'Contrôle Qualité Zéro-Défaut',
-    context: 'Rejeter les flacons défectueux sur une ligne à haute cadence sans faux-positifs.',
+    subtitle: 'Secteur Pharma (Simulation)',
+    context: 'Scénario type : Ligne haute cadence (600 coups/min). Réduction des "Faux-Positifs" générés par les caméras classiques.',
+    actors: {
+        mediator: { role: 'Resp. Qualité', icon: '👨‍🔬', type: 'Législateur' },
+        agent: { role: 'Agent Vision', icon: '👁️', type: 'Exécutif' },
+        mandate: 'Seuil de tolérance : 0.05mm'
+    },
     activeBlocks: ['perception', 'attention', 'raisonnement', 'resolution'],
-    flow: "Caméra Vision → Focalisation sur l'étiquette → Règle stricte (Rust) → Actionneur pneumatique.",
+    flow: "Vision Haute Fréquence → Focalisation (Attention) → Règle Géométrique Stricte (Rust) → Éjection.",
+    impact: {
+      kpi_main: '< 0.01%',
+      label_main: 'Taux Faux-Positifs Cible',
+      kpi_sec: 'ROI',
+      label_sec: '12 Mois'
+    }
+  },
+  {
+    id: 'engineering',
+    title: 'Modernisation Legacy',
+    subtitle: 'Secteur Banque (Simulation)',
+    context: 'Scénario type : Moteur de calcul actuariel (C++/Java) vieux de 15 ans. Refactoring automatisé vers Rust avec preuve d\'iso-fonctionnalité.',
+    actors: {
+        mediator: { role: 'Lead Architecte', icon: '👷', type: 'Législateur' },
+        agent: { role: 'Agent Refactoring', icon: '🧹', type: 'Exécutif' },
+        mandate: 'Garantir l\'iso-fonctionnalité stricte'
+    },
+    activeBlocks: ['perception', 'memoire', 'raisonnement', 'resolution'],
+    flow: "Ingestion Code (AST) → Extraction Règles (Neuro) → Vérification (Symbolique) → Transpilation Rust.",
+    impact: {
+      kpi_main: '-60%',
+      label_main: 'Dette Technique',
+      kpi_sec: 'Safe',
+      label_sec: 'Memory Safety'
+    }
+  },
+  {
+    id: 'railway',
+    title: 'Gestion de Crise Ferroviaire',
+    subtitle: 'Transport (Simulation)',
+    context: 'Scénario type : Nœud ferroviaire saturé. Incident signalisation. Re-planification temps réel pour minimiser l\'effet domino.',
+    actors: {
+        mediator: { role: 'Chef Régulateur', icon: '🚉', type: 'Législateur' },
+        agent: { role: 'Agent Circulation', icon: '🚦', type: 'Exécutif' },
+        mandate: 'Minimiser retard global (Poids x2)'
+    },
+    activeBlocks: ['perception', 'attention', 'raisonnement', 'decision', 'resolution'],
+    flow: "Topologie Graphe (Rust) → Simulation Scénarios → Détection Conflits → Vote Condorcet → Plan.",
+    impact: {
+      kpi_main: '-35%',
+      label_main: 'Retard Cumulé Cible',
+      kpi_sec: '15s',
+      label_sec: 'Temps de Calcul'
+    }
   },
 ];
 ---
@@ -53,88 +127,151 @@ const scenarios = [
     <Header />
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="text-center mb-16">
+      
+      <div class="text-center mb-16 animate-fade-in">
+        
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-blue-200 bg-blue-50 text-blue-800 text-[10px] font-mono uppercase tracking-widest mb-6">
+          <span class="text-blue-500 animate-pulse">●</span> Scénarios Prospectifs
+        </div>
+
         <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
-          Orchestration <span class="text-rust">Dynamique</span>
+          L'Orchestration <span class="text-rust">en Action</span>
         </h1>
-        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-          Un cas d'usage n'est pas figé. C'est un pipeline vivant où le système séquence
-          l'attention, le raisonnement et la mémoire pour répondre précisément à une contrainte
-          métier.
+        
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-10">
+          Comment l'architecture R.A.I.S.E. s'appliquera au monde réel.
         </p>
+
+        <div
+          class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl max-w-3xl mx-auto text-left flex gap-4 shadow-sm"
+        >
+          <div class="text-2xl pt-1">🚧</div>
+          <div>
+            <h3 class="font-bold text-amber-900 text-sm uppercase tracking-wide mb-1">
+              Projections & Simulations
+            </h3>
+            <p class="text-sm text-amber-800/80 leading-snug">
+              Les cas d'usage ci-dessous sont des <strong>exemples théoriques anonymisés</strong>.
+              Ils illustrent la capacité cible du moteur R.A.I.S.E. à résoudre des problèmes industriels complexes une fois le <strong>MVP (v1.0)</strong> déployé en production.
+            </p>
+          </div>
+        </div>
+
       </div>
 
       <div class="space-y-24">
         {
           scenarios.map((scenario, index) => (
-            <div class="group relative bg-white rounded-3xl shadow-lg border border-slate-200 overflow-hidden">
-              <div class="grid grid-cols-1 lg:grid-cols-3">
-                <div class="p-8 md:p-12 bg-slate-50 border-r border-slate-100 flex flex-col justify-center">
-                  <div class="text-sm font-mono text-rust mb-2 uppercase tracking-wide">
-                    Cas #{index + 1}
+            <div class="group relative bg-white rounded-[2.5rem] shadow-xl border border-slate-200 overflow-hidden hover:shadow-2xl transition-shadow duration-500">
+              <div class="grid grid-cols-1 lg:grid-cols-12">
+                
+                <div class="lg:col-span-7 p-8 md:p-12 flex flex-col justify-center relative z-10">
+                  <div class="flex items-center justify-between mb-4">
+                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider border border-slate-200">
+                        Cas #{index + 1} • {scenario.subtitle}
+                     </div>
                   </div>
-                  <h2 class="text-3xl font-bold text-slate-900 mb-4">{scenario.title}</h2>
-                  <p class="text-slate-600 mb-6 text-lg leading-relaxed">{scenario.context}</p>
-                  <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                    <strong class="block text-slate-900 text-sm mb-2">
-                      ⚡ Le Flux d'Exécution :
+                  
+                  <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">{scenario.title}</h2>
+                  
+                  <div class="mb-8">
+                    <h3 class="text-xs font-bold text-rust uppercase tracking-widest mb-2">Le Problème (Simulation)</h3>
+                    <p class="text-slate-600 text-lg leading-relaxed border-l-4 border-rust/20 pl-4">
+                      {scenario.context}
+                    </p>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-4 mb-8">
+                     <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 group-hover:border-green-400/50 transition-colors">
+                        <div class="text-3xl font-extrabold text-slate-900 mb-1">{scenario.impact.kpi_main}</div>
+                        <div class="text-xs font-bold text-green-600 uppercase">{scenario.impact.label_main}</div>
+                     </div>
+                     <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200">
+                        <div class="text-xl font-bold text-slate-700 mb-1">{scenario.impact.kpi_sec}</div>
+                        <div class="text-xs font-bold text-slate-400 uppercase">{scenario.impact.label_sec}</div>
+                     </div>
+                  </div>
+
+                  <div class="bg-slate-900 text-slate-300 p-5 rounded-2xl text-xs font-mono shadow-inner border border-slate-800">
+                    <strong class="block text-rust mb-2 uppercase tracking-widest text-[10px]">
+                      > Target_Execution_Flow
                     </strong>
-                    <p class="text-slate-500 text-sm font-mono">{scenario.flow}</p>
+                    {scenario.flow}
                   </div>
                 </div>
 
-                <div class="lg:col-span-2 p-8 md:p-12 bg-slate-900 relative overflow-hidden">
-                  <div
-                    class="absolute inset-0 opacity-10"
-                    style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"
-                  />
+                <div class="lg:col-span-5 bg-slate-900 relative overflow-hidden flex flex-col justify-center p-8 border-t lg:border-t-0 lg:border-l border-slate-800">
+                  <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 20px 20px;"></div>
+                  <div class="absolute top-0 right-0 w-64 h-64 bg-rust opacity-10 rounded-full blur-3xl translate-x-10 -translate-y-10"></div>
 
-                  <a href="/cognition" class="inline-block group/link relative z-20">
-                    <h3 class="text-white mb-8 font-mono text-sm border-b border-slate-700 pb-2 inline-flex items-center gap-2 group-hover/link:text-rust group-hover/link:border-rust transition-colors cursor-pointer">
-                      ACTIVATION DU BLOC COGNITIF
-                      <span class="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-rust">
-                        ↗
-                      </span>
-                    </h3>
-                  </a>
-
-                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10 pointer-events-none">
-                    {allBlocks.map((block) => {
-                      const isActive = scenario.activeBlocks.includes(block.id);
-                      return (
-                        <div
-                          class={`
-                                                relative p-4 rounded-xl border transition-all duration-500
-                                                ${
-                                                  isActive
-                                                    ? 'bg-rust/20 border-rust scale-105 shadow-[0_0_15px_rgba(194,65,12,0.3)]'
-                                                    : 'bg-slate-800/50 border-slate-700 opacity-40 grayscale'
-                                                }
-                                            `}
-                        >
-                          <div class="text-2xl mb-2">{block.icon}</div>
-                          <div
-                            class={`font-bold text-sm ${isActive ? 'text-white' : 'text-slate-400'}`}
-                          >
-                            {block.label}
-                          </div>
-
-                          {isActive && (
-                            <div class="absolute top-2 right-2 w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_5px_#4ade80]" />
-                          )}
+                  <div class="relative z-20">
+                     
+                     <div class="mb-8 bg-slate-800/60 rounded-2xl p-4 border border-slate-700 backdrop-blur-sm relative group/link">
+                        <div class="flex items-center justify-between mb-4 border-b border-slate-700 pb-2">
+                           <a href="/cognition" class="text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:text-rust transition-colors">
+                             Médiateurs & Agents
+                             <span class="opacity-50 group-hover/link:opacity-100 transition-opacity">↗</span>
+                           </a>
+                           <span class="text-[10px] text-rust font-mono">Simulated</span>
                         </div>
-                      );
-                    })}
+                        
+                        <div class="flex items-center justify-between">
+                           <div class="flex flex-col items-center gap-1">
+                              <span class="text-2xl mb-1">{scenario.actors.mediator.icon}</span>
+                              <span class="text-[10px] font-bold text-white text-center leading-tight">{scenario.actors.mediator.role}</span>
+                              <span class="text-[9px] text-blue-400 uppercase">{scenario.actors.mediator.type}</span>
+                           </div>
+
+                           <div class="grow px-2 flex flex-col items-center">
+                              <div class="w-full h-px bg-slate-600 relative">
+                                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-900 px-2 text-[10px] text-slate-500 font-mono">
+                                    MANDAT
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="flex flex-col items-center gap-1">
+                              <span class="text-2xl mb-1">{scenario.actors.agent.icon}</span>
+                              <span class="text-[10px] font-bold text-white text-center leading-tight">{scenario.actors.agent.role}</span>
+                              <span class="text-[9px] text-rust uppercase">{scenario.actors.agent.type}</span>
+                           </div>
+                        </div>
+
+                        <div class="mt-3 bg-slate-900 rounded p-2 text-center border border-slate-800">
+                           <p class="text-[10px] text-slate-300 font-mono">"{scenario.actors.mandate}"</p>
+                        </div>
+                     </div>
+                     <div class="flex items-center justify-between mb-6 border-b border-slate-700 pb-2">
+                        <span class="text-white font-bold text-sm flex items-center gap-2">
+                           <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                           ACTIVATION COGNITIVE
+                        </span>
+                     </div>
+
+                     <div class="grid grid-cols-2 gap-3">
+                        {allBlocks.map((block) => {
+                           const isActive = scenario.activeBlocks.includes(block.id);
+                           return (
+                              <div
+                              class={`
+                                 relative p-3 rounded-xl border transition-all duration-500 flex items-center gap-3
+                                 ${isActive 
+                                    ? 'bg-slate-800 border-rust/50 text-white shadow-lg shadow-rust/10 scale-105' 
+                                    : 'bg-slate-900/50 border-slate-800 text-slate-600 grayscale'}
+                              `}
+                              >
+                              <span class="text-xl">{block.icon}</span>
+                              <span class="text-xs font-bold tracking-wide">{block.label}</span>
+                              
+                              {isActive && (
+                                 <div class="absolute top-2 right-2 w-1.5 h-1.5 bg-rust rounded-full shadow-[0_0_8px_#c2410c]" />
+                              )}
+                              </div>
+                           );
+                        })}
+                     </div>
                   </div>
 
-                  {/* Connexion visuelle (Ligne du bas) */}
-                  <div class="mt-8 pt-6 border-t border-slate-700/50 flex items-center justify-between text-slate-400 text-xs font-mono">
-                    <span>INPUT: DATA STREAM</span>
-                    <span class="text-rust">
-                      PROCESSUS {scenario.activeBlocks.length} NOEUDS ACTIFS
-                    </span>
-                    <span>OUTPUT: DECISION</span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -142,14 +279,27 @@ const scenarios = [
         }
       </div>
 
-      <div class="mt-20 text-center">
-        <p class="text-slate-600 mb-6">Vous avez un processus complexe à rationaliser ?</p>
-        <a
-          href="mailto:contact@condorcet.io"
-          class="inline-flex items-center px-8 py-4 bg-slate-900 text-white font-bold rounded-lg hover:bg-rust transition-colors shadow-lg hover:shadow-xl"
-        >
-          Concevoir votre architecture cognitive →
-        </a>
+      <div class="mt-24 text-center bg-slate-100 rounded-[3rem] p-12 border border-slate-200">
+        <h2 class="text-3xl font-bold text-slate-900 mb-6">Vous avez un processus critique ?</h2>
+        <p class="text-slate-600 mb-8 max-w-2xl mx-auto text-lg">
+           Participez à la définition du MVP. Soumettez votre cas d'usage pour que nous puissions simuler sa résolution avec R.A.I.S.E.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+            href="/contact"
+            class="inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-rust transition-colors shadow-lg hover:shadow-xl gap-2"
+            >
+            <span>Proposer mon cas (Audit)</span>
+            <span>→</span>
+            </a>
+            
+            <a
+            href="/value"
+            class="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 border border-slate-300 font-bold rounded-full hover:bg-slate-50 transition-colors"
+            >
+            Voir le modèle de ROI
+            </a>
+        </div>
       </div>
     </main>
 

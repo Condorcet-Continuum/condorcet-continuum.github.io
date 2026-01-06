@@ -54,7 +54,7 @@ Notre moteur **R.A.I.S.E.** (_Rationalized Advanced Intelligence System Engine_)
 ### Rejoindre le Mouvement
 
 Ce lancement n'est que le début (v0.1.0). Le code est ouvert, la vision est claire.
-Nous invitons les développeurs, les ingénieurs et les philosophes à explorer notre documentation.
+Nous invitons les métiers, architectes, psychologues et sociologues à explorer notre documentation.
 
 <div class="flex flex-col sm:flex-row gap-4 mt-8 not-prose">
   <a href="/architecture" class="px-6 py-3 rounded-lg bg-slate-900 text-white font-bold text-center no-underline hover:bg-blue-700 transition-colors shadow-lg shadow-blue-900/20">

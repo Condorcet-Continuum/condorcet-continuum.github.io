@@ -2,14 +2,14 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
-const title = 'Le Bloc Cognitif';
-const description = "Décomposition fonctionnelle de l'intelligence artificielle souveraine.";
+const title = 'Le Bloc Cognitif | R.A.I.S.E.';
+const description =
+  "Symbiose Homme-Machine : Définition des rôles et architecture de l'intelligence souveraine.";
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
   <head>
     <BaseHead title={title} description={description} />
   </head>
@@ -17,24 +17,173 @@ const description = "Décomposition fonctionnelle de l'intelligence artificielle
     <Header />
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="text-center mb-16">
+      <div class="text-center mb-16 animate-fade-in">
         <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
-          Cartographie du Système <span class="text-rust">Cognitif</span>
+          L'Alliance <span class="text-rust">Cognitive</span>
         </h1>
         <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-          Une intelligence souveraine ne naît pas du chaos, mais de l'ordre. Découvrez comment
-          R.A.I.S.E. orchestre ses modules spécialisés pour transformer une donnée brute en une
-          décision prouvée.
+          Une intelligence souveraine ne naît pas du chaos, mais de l'ordre. R.A.I.S.E. formalise le
+          contrat entre le <strong>Médiateur Humain</strong> (qui légifère) et l'<strong
+            >Agent Artificiel</strong
+          > (qui exécute).
         </p>
       </div>
 
-      <div class="bg-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-800">
+      <section class="mb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div
+            class="bg-white rounded-[2.5rem] p-8 md:p-10 border border-slate-200 shadow-xl relative overflow-hidden group hover:border-blue-300 transition-colors"
+          >
+            <div class="absolute top-0 left-0 w-full h-1 bg-blue-600"></div>
+            <div class="flex items-center gap-3 mb-8">
+              <span class="text-3xl">👨‍✈️</span>
+              <div>
+                <h2 class="text-2xl font-bold text-slate-900">Le Médiateur</h2>
+                <p class="text-blue-600 font-mono text-xs uppercase tracking-widest">
+                  Pouvoir Législatif (Design & Validation)
+                </p>
+              </div>
+            </div>
+
+            <ul class="space-y-6">
+              <li class="flex gap-4 items-start">
+                <div
+                  class="shrink-0 w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-xl border border-blue-100"
+                >
+                  💼
+                </div>
+                <div>
+                  <h3 class="font-bold text-slate-900 text-sm">Le Métier (Business Owner)</h3>
+                  <p class="text-xs text-slate-600 mt-1">
+                    Définit la <strong>Finalité</strong> : Objectifs de production, ROI cible et contraintes
+                    de marché.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-4 items-start">
+                <div
+                  class="shrink-0 w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-xl border border-blue-100"
+                >
+                  📐
+                </div>
+                <div>
+                  <h3 class="font-bold text-slate-900 text-sm">L'Architecte</h3>
+                  <p class="text-xs text-slate-600 mt-1">
+                    Définit la <strong>Structure</strong> : Modélisation (UML, Arcadia), Simulation (Jumeaux
+                    Numériques) et sécurité système.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-4 items-start">
+                <div
+                  class="shrink-0 w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-xl border border-blue-100"
+                >
+                  🧠
+                </div>
+                <div>
+                  <h3 class="font-bold text-slate-900 text-sm">Le Psychologue & Sociologue</h3>
+                  <p class="text-xs text-slate-600 mt-1">
+                    Définit l'<strong>Acceptabilité</strong> : Charge cognitive maximale, poids éthiques
+                    des votes et gestion des biais.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-slate-900 rounded-[2.5rem] p-8 md:p-10 border border-slate-800 shadow-xl relative overflow-hidden group text-white"
+          >
+            <div class="absolute top-0 left-0 w-full h-1 bg-rust"></div>
+
+            <div class="flex items-center gap-3 mb-8">
+              <span class="text-3xl">🤖</span>
+              <div>
+                <h2 class="text-2xl font-bold text-white">L'Agent</h2>
+                <p class="text-rust font-mono text-xs uppercase tracking-widest">
+                  Pouvoir Exécutif (Orchestration)
+                </p>
+              </div>
+            </div>
+
+            <ul class="space-y-6">
+              <li class="flex gap-4 items-start">
+                <div
+                  class="shrink-0 w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-xl border border-slate-700"
+                >
+                  🗣️
+                </div>
+                <div>
+                  <h3 class="font-bold text-white text-sm">Agents d'Interface (Acquisition)</h3>
+                  <p class="text-xs text-slate-400 mt-1 mb-2">
+                    <em>"Comprendre l'intention humaine et le signal brut."</em>
+                  </p>
+                  <div class="flex gap-2">
+                    <span class="text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300"
+                      >Orchestre: Perception</span
+                    >
+                    <span class="text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300"
+                      >Orchestre: Langage</span
+                    >
+                  </div>
+                </div>
+              </li>
+
+              <li class="flex gap-4 items-start">
+                <div
+                  class="shrink-0 w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-xl border border-slate-700"
+                >
+                  ⚙️
+                </div>
+                <div>
+                  <h3 class="font-bold text-white text-sm">Agents de Conformité (Expertise)</h3>
+                  <p class="text-xs text-slate-400 mt-1 mb-2">
+                    <em>"Garantir la cohérence logique et réglementaire."</em>
+                  </p>
+                  <div class="flex gap-2">
+                    <span class="text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300"
+                      >Orchestre: Mémoire</span
+                    >
+                    <span class="text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300"
+                      >Orchestre: Raisonnement</span
+                    >
+                  </div>
+                </div>
+              </li>
+
+              <li class="flex gap-4 items-start">
+                <div
+                  class="shrink-0 w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-xl border border-slate-700"
+                >
+                  🗳️
+                </div>
+                <div>
+                  <h3 class="font-bold text-white text-sm">Agents de Stratégie (Arbitrage)</h3>
+                  <p class="text-xs text-slate-400 mt-1 mb-2">
+                    <em>"Négocier le meilleur compromis opérationnel."</em>
+                  </p>
+                  <div class="flex gap-2">
+                    <span
+                      class="text-[10px] bg-rust/20 text-rust px-2 py-0.5 rounded border border-rust/30"
+                      >Orchestre: Décision (Condorcet)</span
+                    >
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="bg-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-800 mb-24">
         <div class="flex justify-between items-center mb-8 border-b border-slate-700 pb-4">
           <h2 class="text-white text-2xl font-bold flex items-center gap-3">
             <span class="w-3 h-3 rounded-full bg-rust animate-pulse"></span>
-            BLOC_COGNITIF_v1.0
+            Les Blocs Cognitifs Orchestrés
           </h2>
-          <div class="text-slate-400 font-mono text-xs hidden md:block">SYSTEM_STATUS: NOMINAL</div>
+          <div class="text-slate-400 font-mono text-xs hidden md:block">System: Ready</div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -141,7 +290,6 @@ const description = "Décomposition fonctionnelle de l'intelligence artificielle
           </div>
         </div>
       </div>
-      <div class="my-24 border-t border-slate-200"></div>
 
       <div class="mb-20">
         <div class="text-center mb-12">
