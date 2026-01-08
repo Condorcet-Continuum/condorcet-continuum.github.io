@@ -1,0 +1,114 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Mentions Légales | Condorcet Continuum';
+const description = 'Informations juridiques, éditeur et hébergement.';
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <Header />
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-12">Mentions Légales</h1>
+
+      <div
+        class="prose prose-slate max-w-none prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-rust"
+      >
+        <p class="lead text-lg text-slate-600 mb-8">
+          Conformément aux dispositions des articles 6-III et 19 de la Loi pour la Confiance dans
+          l'Économie Numérique, nous vous informons que :
+        </p>
+
+        <section class="mb-12 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+          <h2 class="mt-0">1. Éditeur du Site</h2>
+          <p>
+            Le site internet accessible à l'adresse <strong
+              ><a href="https://condorcet-continuum.github.io/"
+                >https://condorcet-continuum.github.io/</a
+              ></strong
+            > (ci-après "le Site") est édité à titre individuel par :
+          </p>
+          <ul class="list-none pl-0 space-y-2">
+            <li><strong>Nom :</strong> M. Zaïr BEZGHICHE</li>
+            <li>
+              <strong>Qualité :</strong> Fondateur de l'initiative <em>Condorcet Continuum</em>
+            </li>
+            <li>
+              <strong>Contact :</strong>
+              <a href="mailto:zair@bezghiche.com">zair@bezghiche.com</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="mb-12 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+          <h2 class="mt-0">2. Hébergement</h2>
+          <p>
+            Le Site est hébergé gratuitement sur l'infrastructure Cloud de GitHub (GitHub Pages).
+          </p>
+          <ul class="list-none pl-0 space-y-2">
+            <li><strong>Hébergeur :</strong> GitHub Inc.</li>
+            <li>
+              <strong>Siège social :</strong> 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis
+            </li>
+            <li>
+              <strong>Site Web :</strong>
+              <a href="https://pages.github.com/" target="_blank">pages.github.com</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="mb-12 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+          <h2 class="mt-0">3. Propriété Intellectuelle & Open Source</h2>
+          <p>
+            Le projet <strong>R.A.I.S.E.</strong> présenté sur ce site est une initiative Open Source.
+          </p>
+          <ul>
+            <li>
+              <strong>Code Source :</strong> Distribué sous licence <strong>Apache 2.0</strong>.
+              Vous êtes libre d'utiliser, modifier et distribuer le code via notre <a
+                href="https://github.com/Condorcet-Continuum/raise"
+                target="_blank">dépôt GitHub</a
+              >.
+            </li>
+            <li>
+              <strong>Contenus :</strong> Les textes, images et concepts originaux présents sur le Site
+              sont la propriété exclusive de leur auteur, sauf mention contraire. Toute reproduction non
+              autorisée à des fins commerciales est interdite.
+            </li>
+          </ul>
+        </section>
+
+        <section class="mb-12 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+          <h2 class="mt-0">4. Protection des Données (RGPD)</h2>
+          <p>La politique de confidentialité du Site est stricte ("Privacy First").</p>
+          <ul>
+            <li>
+              <strong>Cookies :</strong> Ce site n'utilise <strong>aucun cookie</strong> de traçage publicitaire
+              ou d'analyse comportementale tiers.
+            </li>
+            <li>
+              <strong>Données collectées :</strong> Seules les informations soumises volontairement via
+              le formulaire de candidature (Programme Pilote) sont traitées.
+            </li>
+            <li>
+              <strong>Finalité :</strong> Ces données sont utilisées exclusivement par M. Zaïr BEZGHICHE
+              pour la gestion des candidatures et ne sont jamais cédées à des tiers.
+            </li>
+            <li>
+              <strong>Vos Droits :</strong> Conformément au RGPD, vous disposez d'un droit d'accès, de
+              rectification et de suppression de vos données en nous contactant par email.
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

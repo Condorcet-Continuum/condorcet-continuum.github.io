@@ -1,0 +1,144 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Charte des Valeurs | Condorcet Continuum';
+const description =
+  'Notre manifeste pour une IA industrielle sûre, transparente et sous contrôle humain.';
+
+const values = [
+  {
+    icon: '🏛️',
+    title: 'Le Politique prime sur le Technique',
+    desc: "L'IA ne décide pas de ses propres objectifs. Elle est un exécutant. C'est à l'humain (le Législateur) de définir le Mandat, et à la machine de s'y soumettre sans ambiguïté.",
+  },
+  {
+    icon: '🔍',
+    title: 'Transparence Radicale (Glass Box)',
+    desc: "Une IA critique ne peut pas être une boîte noire. Nous refusons la 'magie'. Chaque décision doit être traçable, explicable et auditée cryptographiquement.",
+  },
+  {
+    icon: '🤝',
+    title: 'Consensus par le Vote',
+    desc: "La vérité émerge de la contradiction. Nous utilisons la méthode Condorcet pour faire voter plusieurs modèles spécialisés. Si le doute persiste, le système s'abstient.",
+  },
+  {
+    icon: '🛡️',
+    title: 'Souveraineté des Données',
+    desc: "L'intelligence ne doit pas fuiter. Nos architectures sont conçues pour tourner 'On-Premise', isolées (Air-Gap) et sans dépendance critique au Cloud public.",
+  },
+];
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <Header />
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <div class="text-center mb-20 animate-fade-in">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-900 text-white text-[10px] font-bold uppercase tracking-widest mb-6"
+        >
+          Manifeste v1.0
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6">
+          Charte <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-rust"
+            >Condorcet</span
+          >
+        </h1>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          Nous ne construisons pas seulement du logiciel. Nous défendons une vision de
+          l'automatisation où l'humain garde le dernier mot.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+        {
+          values.map((v) => (
+            <div class="bg-white p-10 rounded-3xl border border-slate-200 shadow-xl hover:shadow-2xl transition-shadow group relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-[100px] -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700" />
+
+              <div class="relative z-10">
+                <div class="text-5xl mb-6">{v.icon}</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">{v.title}</h3>
+                <p class="text-slate-600 leading-relaxed text-lg">{v.desc}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <section
+        class="mb-24 py-16 px-8 md:px-16 bg-white rounded-[3rem] border border-slate-200 shadow-sm relative"
+      >
+        <div class="max-w-3xl mx-auto">
+          <div
+            class="text-rust font-bold text-sm uppercase tracking-[0.2em] mb-8 flex items-center gap-4"
+          >
+            <span class="w-12 h-px bg-rust"></span>
+            L'Héritage des Lumières
+          </div>
+
+          <blockquote class="mb-10">
+            <p class="text-2xl md:text-3xl font-serif italic text-slate-800 leading-snug mb-6">
+              "Il n'y a pas de liberté sans maîtrise de l'information."
+            </p>
+            <cite class="text-slate-500 font-bold not-italic"
+              >— Nicolas de Condorcet (1743-1794)</cite
+            >
+          </blockquote>
+
+          <div class="prose prose-slate prose-lg text-slate-600">
+            <p>
+              Nicolas de Condorcet était bien plus qu'un mathématicien. Figure des Lumières,
+              abolitionniste convaincu et père de l'Instruction Publique, il a posé une équation
+              fondamentale pour notre modernité.
+            </p>
+            <p>
+              Il savait que l'obscurantisme est la racine de l'esclavage. Pour lui, la Démocratie ne
+              survit que si le citoyen est éclairé, éduqué et capable de comprendre les mécanismes
+              de la décision.
+            </p>
+            <p class="font-bold text-slate-900">Notre projet est sa continuation technique.</p>
+            <p>
+              Face au risque d'un nouvel asservissement par des « Boîtes Noires » technologiques,
+              nous fournissons l'outil d'émancipation : une intelligence auditable, éducative et
+              transparente.
+            </p>
+          </div>
+        </div>
+        <div class="absolute bottom-12 right-12 text-8xl opacity-5 pointer-events-none grayscale">
+          ✒️
+        </div>
+      </section>
+
+      <div class="bg-slate-900 rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
+        <div
+          class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"
+        >
+        </div>
+        <div class="relative z-10">
+          <h2 class="text-3xl font-bold mb-6">L'Engagement Open Source</h2>
+          <p class="text-slate-300 mb-8 max-w-2xl mx-auto text-lg">
+            Cette charte n'est pas une promesse marketing. C'est une contrainte technique vérifiable
+            dans notre code source.
+          </p>
+          <a
+            href="https://github.com/Condorcet-Continuum/raise"
+            target="_blank"
+            class="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 font-bold rounded-full hover:bg-rust hover:text-white transition-all gap-2"
+          >
+            <span>Consulter le Dépôt GitHub</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -19,7 +19,7 @@ const description =
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
       <div class="text-center mb-20 animate-fade-in">
         <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
-          Du Signal à la <span class="text-blue-600">Preuve</span>
+          Du Signal à la <span class='\"text-blue-600\"'>Preuve</span>
         </h1>
         <p class="text-xl text-slate-600 max-w-3xl mx-auto">
           Une stack technologique conçue pour l'auditabilité. Voici le flux complet de la donnée :
@@ -27,230 +27,266 @@ const description =
         </p>
       </div>
 
-      <div class="relative max-w-5xl mx-auto mb-32">
-        <div
-          class="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-linear-to-b from-slate-300 via-rust to-blue-500 -ml-0.5 z-0"
-        >
-        </div>
-
-        <div class="relative z-10 mb-16">
-          <div
-            class="bg-white p-6 rounded-3xl border-2 border-slate-300 border-dashed shadow-sm max-w-3xl mx-auto relative group hover:border-blue-400 transition-colors"
-          >
-            <div
-              class="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-100 text-slate-500 px-3 py-1 text-xs font-bold uppercase tracking-wider rounded border border-slate-200"
-            >
-              🛡️ Sovereign Boundary (Local)
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div class="flex flex-col items-center text-center">
-                <div
-                  class="w-16 h-16 bg-slate-800 text-white rounded-full flex items-center justify-center text-3xl mb-2 shadow-lg group-hover:scale-110 transition-transform"
-                >
-                  👨‍✈️
-                </div>
-                <h3 class="font-bold text-slate-900">Opérateur Humain</h3>
-                <p class="text-xs text-slate-500">Médiateur (Législateur)</p>
-              </div>
-
-              <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 relative">
-                <div class="text-center mb-4">
-                  <h4 class="font-bold text-slate-700">🖥️ Interface Tauri v2</h4>
-                  <p class="text-[10px] text-slate-400">Frontend Webview (HTML/JS)</p>
-                </div>
-                <div class="flex justify-center mb-2 animate-bounce">⬇️</div>
-                <div
-                  class="bg-slate-900 text-white rounded-lg p-3 text-center text-sm font-mono shadow-md border border-slate-700"
-                >
-                  ⚡ Secure IPC Bridge<br />
-                  <span class="text-rust text-xs">Rust Channel</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative z-10 mb-16">
-          <div
-            class="bg-orange-50/80 p-1 md:p-8 rounded-[2.5rem] border-4 border-rust shadow-2xl relative overflow-hidden backdrop-blur-sm"
-          >
-            <div class="absolute top-0 left-0 w-full h-2 bg-rust"></div>
-
-            <div class="text-center mb-8 mt-4 md:mt-0">
-              <h2 class="text-2xl font-extrabold text-rust flex items-center justify-center gap-2">
-                <span>⚙️</span> R.A.I.S.E. KERNEL
-              </h2>
-              <p class="text-xs font-mono text-orange-900/60">
-                Architecture Hybride : Rust Core + Docker Extensions
-              </p>
-            </div>
-
-            <div
-              class="bg-slate-900 text-white p-4 rounded-xl mb-8 text-center shadow-lg mx-auto max-w-lg relative border border-slate-700"
-            >
-              <h3
-                class="font-bold text-sm uppercase tracking-widest mb-1 flex justify-center items-center gap-2"
+      <section class="mb-32 relative">
+        <div class="absolute inset-0 bg-slate-100 rounded-[3rem] -z-10 transform -rotate-1"></div>
+        <div class="bg-white rounded-[3rem] shadow-xl border border-slate-200 p-8 md:p-12">
+          <div class="text-center mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 mb-2">
+              L'Hybridation <span
+                class="text-transparent bg-clip-text bg-linear-to-r from-purple-600 to-rust"
+                >Neuro-Symbolique</span
               >
-                <span class="text-rust">🦀</span> Rust Orchestrator
-              </h3>
-              <p class="text-xs text-slate-400">Gestion des Threads & Sécurité Mémoire</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-              <div
-                class="bg-white p-4 rounded-2xl border-b-4 border-slate-400 shadow-sm hover:-translate-y-1 transition-transform"
-              >
-                <div class="flex items-center gap-2 mb-2">
-                  <div class="text-xl">⚡</div>
-                  <h3 class="font-bold text-slate-900 text-sm">JSON-DB</h3>
-                </div>
-                <p class="text-[10px] font-mono text-slate-500 mb-2">Hot State & Config</p>
-                <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
-                  <div class="bg-slate-500 h-full w-[95%]"></div>
-                </div>
-                <p class="text-[9px] text-right mt-1 text-slate-400">Latence &lt;1ms</p>
-              </div>
-
-              <div
-                class="bg-white p-4 rounded-2xl border-b-4 border-pink-500 shadow-sm hover:-translate-y-1 transition-transform"
-              >
-                <div class="flex items-center gap-2 mb-2">
-                  <div class="text-xl">🕸️</div>
-                  <h3 class="font-bold text-slate-900 text-sm">SurrealDB</h3>
-                </div>
-                <p class="text-[10px] font-mono text-slate-500 mb-2">Knowledge Graph</p>
-                <div class="w-full bg-pink-100 h-1.5 rounded-full overflow-hidden">
-                  <div class="bg-pink-500 h-full w-[80%]"></div>
-                </div>
-                <p class="text-[9px] text-right mt-1 text-slate-400">Relations Complexes</p>
-              </div>
-
-              <div
-                class="bg-white p-4 rounded-2xl border-b-4 border-red-500 shadow-sm hover:-translate-y-1 transition-transform"
-              >
-                <div class="flex items-center gap-2 mb-2">
-                  <div class="text-xl">🧠</div>
-                  <h3 class="font-bold text-slate-900 text-sm">LEANN</h3>
-                </div>
-                <p class="text-[10px] font-mono text-slate-500 mb-2">Vector Memory</p>
-                <div class="w-full bg-red-100 h-1.5 rounded-full overflow-hidden">
-                  <div class="bg-red-500 h-full w-[60%]"></div>
-                </div>
-                <p class="text-[9px] text-right mt-1 text-slate-400">Compression 95%</p>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div
-                class="bg-white/80 p-4 rounded-xl border border-indigo-200 flex items-center gap-4"
-              >
-                <div class="text-2xl">⚖️</div>
-                <div>
-                  <h4 class="font-bold text-indigo-900 text-sm">Condorcet Logic</h4>
-                  <p class="text-xs text-indigo-600">Resolution des conflits</p>
-                </div>
-              </div>
-
-              <div
-                class="bg-white/80 p-4 rounded-xl border border-emerald-200 flex items-center gap-4"
-              >
-                <div class="text-2xl">📝</div>
-                <div>
-                  <h4 class="font-bold text-emerald-900 text-sm">Audit Log</h4>
-                  <p class="text-xs text-emerald-600">Hash cryptographique</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative z-10 text-center">
-          <div
-            class="inline-block bg-blue-600 text-white p-8 rounded-3xl shadow-xl shadow-blue-900/20 border-4 border-blue-100 max-w-2xl w-full relative overflow-hidden group"
-          >
-            <div
-              class="absolute top-0 -left-full w-1/2 h-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12 group-hover:left-[200%] transition-all duration-1000 ease-in-out"
-            >
-            </div>
-
-            <div class="text-4xl mb-3">🔗</div>
-            <h3 class="text-2xl font-bold mb-2">Proof of Integrity</h3>
-            <p class="text-blue-100 text-sm mb-6 max-w-md mx-auto">
-              Une fois validée par la boucle HITL et le moteur R.A.I.S.E., la décision est ancrée
-              sur un registre immuable.
+            </h2>
+            <p class="text-slate-500 max-w-2xl mx-auto">
+              Comment transformer une perception floue (IA) en une décision certaine (Code) ? Le
+              système R.A.I.S.E. agit comme un filtre de vérité.
             </p>
-            <div class="flex justify-center gap-3">
-              <span
-                class="bg-blue-800/50 border border-blue-400 px-4 py-1.5 rounded-full text-xs font-mono flex items-center gap-2"
+          </div>
+
+          <div class="relative max-w-6xl mx-auto">
+            <div
+              class="absolute top-1/2 left-0 w-full h-2 bg-slate-100 -translate-y-1/2 rounded-full hidden lg:block"
+            >
+            </div>
+            <div
+              class="absolute top-1/2 left-0 w-full h-2 bg-linear-to-r from-purple-500 via-blue-500 to-rust -translate-y-1/2 rounded-full hidden lg:block opacity-30 animate-pulse"
+            >
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 relative z-10">
+              <div
+                class="bg-slate-50 p-6 rounded-2xl border border-purple-100 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow"
               >
-                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> Hyperledger
-              </span>
-              <span
-                class="bg-blue-800/50 border border-blue-400 px-4 py-1.5 rounded-full text-xs font-mono flex items-center gap-2"
+                <div
+                  class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg relative overflow-hidden"
+                >
+                  <div class="flex gap-1 items-end h-8">
+                    <div class="w-1 bg-purple-500 animate-bounce h-4"></div>
+                    <div class="w-1 bg-purple-500 animate-[bounce_1.2s_infinite] h-8"></div>
+                    <div class="w-1 bg-purple-500 animate-[bounce_0.8s_infinite] h-6"></div>
+                  </div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">1. Perception</h3>
+                <p class="text-xs text-slate-500 mb-4 mt-1">Capteurs & Caméras (Bruit)</p>
+                <div
+                  class="bg-slate-900 text-purple-300 font-mono text-[10px] p-3 rounded w-full text-left overflow-hidden"
+                >
+                  > Input: Signal Audio<br />
+                  > Status: <span class="text-purple-400 animate-pulse">NOISY</span>
+                </div>
+              </div>
+
+              <div
+                class="bg-slate-50 p-6 rounded-2xl border border-blue-100 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow"
               >
-                <span class="w-2 h-2 bg-blue-300 rounded-full"></span> Tezos
-              </span>
+                <div
+                  class="absolute -top-3 bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-bold shadow-lg uppercase tracking-widest"
+                >
+                  Moteur LEANN
+                </div>
+                <div
+                  class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg relative"
+                >
+                  <span class="text-2xl">🧠</span>
+                  <div
+                    class="absolute inset-0 border-2 border-blue-200 border-t-blue-600 rounded-full animate-spin"
+                  >
+                  </div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">2. Qualification</h3>
+                <p class="text-xs text-slate-500 mb-4 mt-1">Classification (Probabilité)</p>
+                <div
+                  class="bg-slate-900 text-blue-300 font-mono text-[10px] p-3 rounded w-full text-left overflow-hidden"
+                >
+                  > Score: <span class="text-blue-400 font-bold">0.94</span><br />
+                  > Confidence: HIGH
+                </div>
+              </div>
+
+              <div
+                class="bg-slate-50 p-6 rounded-2xl border border-rust/20 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div
+                  class="absolute -top-3 bg-rust text-white px-3 py-1 rounded-full text-[10px] font-bold shadow-lg uppercase tracking-widest"
+                >
+                  Moteur Rust
+                </div>
+                <div
+                  class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-4 border-4 border-white shadow-lg"
+                >
+                  <span class="text-2xl">🔒</span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">3. Cristallisation</h3>
+                <p class="text-xs text-slate-500 mb-4 mt-1">Fait Booléen (Vérité)</p>
+                <div
+                  class="bg-slate-900 text-orange-200 font-mono text-[10px] p-3 rounded w-full text-left border-l-2 border-rust overflow-hidden"
+                >
+                  struct Fact &#123;<br />
+                  &nbsp;is_critical: <span class="text-rust font-bold">true</span><br />
+                  &#125;
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div
-        class="bg-slate-900 rounded-3xl p-8 md:p-16 text-center shadow-2xl border border-slate-800"
-      >
-        <h2 class="text-3xl font-bold text-white mb-12">Le Résumé de la Stack</h2>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          <div class="group">
+      <section class="mb-32">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
             <div
-              class="text-5xl mb-4 grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:-translate-y-2"
+              class="inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest mb-6"
             >
-              🦀
+              <span class="w-2 h-2 rounded-full bg-rust"></span> Standardisation des Données
             </div>
-            <h4 class="text-white font-bold mb-1">Rust</h4>
-            <p class="text-slate-400 text-xs">Moteur Core (Safe)</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+              Au-delà de la Syntaxe : <br />
+              <span class="text-rust">L'Ontologie du Réel</span>
+            </h2>
+            <div class="prose prose-slate text-slate-600">
+              <p class="mb-4">
+                Stocker de la donnée ne suffit pas. Il faut stocker son <strong>sens</strong>.
+                R.A.I.S.E. refuse le "Schemaless" chaotique et impose un double verrouillage :
+              </p>
+              <ul class="space-y-4 mb-8">
+                <li class="flex gap-4">
+                  <div
+                    class="w-8 h-8 rounded bg-blue-100 text-blue-600 flex items-center justify-center font-bold shrink-0"
+                  >
+                    1
+                  </div>
+                  <div>
+                    <strong class="text-slate-900 block">Structure Stricte (JSON Schema)</strong>
+                    <span class="text-sm"
+                      >Le système rejette toute donnée mal formée. Si le champ "température" est
+                      attendu comme un nombre, une chaîne de caractères provoquera une erreur
+                      immédiate avant même l'écriture.</span
+                    >
+                  </div>
+                </li>
+                <li class="flex gap-4">
+                  <div
+                    class="w-8 h-8 rounded bg-rust/20 text-rust flex items-center justify-center font-bold shrink-0"
+                  >
+                    2
+                  </div>
+                  <div>
+                    <strong class="text-slate-900 block">Sémantique Universelle (JSON-LD)</strong>
+                    <span class="text-sm"
+                      >Nous utilisons le standard <em>Linked Data</em>. Une donnée n'est pas isolée
+                      : elle possède un contexte (Ontologie). Cela transforme votre base de données
+                      en un <strong>Graphe de Connaissance</strong> interopérable.</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div class="group">
+          <div
+            class="bg-slate-900 rounded-2xl p-6 shadow-2xl border border-slate-700 font-mono text-xs relative overflow-hidden group"
+          >
             <div
-              class="text-5xl mb-4 grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:-translate-y-2"
+              class="absolute top-4 right-4 bg-white/10 backdrop-blur text-white px-3 py-1 rounded text-[10px] font-bold border border-white/20"
             >
-              🔮
+              Ontologie R.A.I.S.E.
             </div>
+
+            <div class="grid grid-rows-2 gap-6">
+              <div class="opacity-50 hover:opacity-100 transition-opacity">
+                <div class="text-red-400 font-bold mb-2 flex items-center gap-2">
+                  <span>🚫 Sans Structure (Risque)</span>
+                </div>
+                <div class="bg-black/30 p-4 rounded border border-red-900/30 text-slate-500">
+                  &#123;<br />
+                  &nbsp;&nbsp;"data": "Turbine T400", <span class="text-red-500"
+                    >// Ambigu : String ? ID ?</span
+                  ><br />
+                  &nbsp;&nbsp;"temp": "chaud" <span class="text-red-500"
+                    >// Erreur : Texte au lieu de Float</span
+                  ><br />
+                  &#125;
+                </div>
+              </div>
+
+              <div>
+                <div class="text-green-400 font-bold mb-2 flex items-center gap-2">
+                  <span>✅ JSON-LD + Schema (Validé)</span>
+                </div>
+                <div class="bg-black/50 p-4 rounded border border-green-900/30 text-blue-300">
+                  &#123;<br />
+                  &nbsp;&nbsp;<span class="text-purple-400">"@context"</span>:
+                  "https://schema.org/Industry",<br />
+                  &nbsp;&nbsp;<span class="text-purple-400">"@type"</span>: "CriticalAsset",<br />
+                  &nbsp;&nbsp;<span class="text-white">"assetID"</span>: "urn:turbine:t400", <span
+                    class="text-slate-500">// Linked Data URI</span
+                  ><br />
+                  &nbsp;&nbsp;<span class="text-white">"sensors"</span>: &#123;<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;"temperature": <span class="text-orange-400">420.5</span>
+                  <span class="text-green-500">// Validated Float (f64)</span><br />
+                  &nbsp;&nbsp;&#125;<br />
+                  &#125;
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">L'Arsenal Technologique</h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div
+            class="bg-slate-900 p-6 rounded-2xl flex flex-col items-center text-center group hover:-translate-y-1 transition-transform"
+          >
+            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">⚙️</div>
+            <h4 class="text-white font-bold mb-1">Rust Core</h4>
+            <p class="text-slate-400 text-xs">Sûreté Mémoire & Vitesse</p>
+          </div>
+
+          <div
+            class="bg-slate-900 p-6 rounded-2xl flex flex-col items-center text-center group hover:-translate-y-1 transition-transform"
+          >
+            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🖥️</div>
+            <h4 class="text-white font-bold mb-1">Tauri v2</h4>
+            <p class="text-slate-400 text-xs">Interface Légère (Wasm)</p>
+          </div>
+
+          <div
+            class="bg-slate-900 p-6 rounded-2xl flex flex-col items-center text-center group hover:-translate-y-1 transition-transform"
+          >
+            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🔮</div>
             <h4 class="text-white font-bold mb-1">SurrealDB</h4>
             <p class="text-slate-400 text-xs">Graphe & Structure</p>
           </div>
 
-          <div class="group">
-            <div
-              class="text-5xl mb-4 grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:-translate-y-2"
-            >
-              🧠
-            </div>
+          <div
+            class="bg-slate-900 p-6 rounded-2xl flex flex-col items-center text-center group hover:-translate-y-1 transition-transform"
+          >
+            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🧠</div>
             <h4 class="text-white font-bold mb-1">LEANN</h4>
             <p class="text-slate-400 text-xs">Mémoire Vectorielle</p>
           </div>
 
-          <div class="group">
-            <div
-              class="text-5xl mb-4 grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:-translate-y-2"
-            >
-              🔗
-            </div>
+          <div
+            class="bg-slate-900 p-6 rounded-2xl flex flex-col items-center text-center group hover:-translate-y-1 transition-transform"
+          >
+            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🔗</div>
             <h4 class="text-white font-bold mb-1">Ledger</h4>
             <p class="text-slate-400 text-xs">Ancrage Public/Privé</p>
           </div>
         </div>
 
-        <div class="mt-16 pt-8 border-t border-slate-800">
-          <p class="text-slate-400 mb-6">Tout le code source est auditable sur GitHub.</p>
+        <div class="mt-16 pt-8 border-t border-slate-200 text-center">
+          <p class="text-slate-600 mb-6">Tout le code source est auditable. Pas de boîte noire.</p>
           <a
             href="https://github.com/Condorcet-Continuum/raise"
             target="_blank"
-            class="inline-flex items-center px-6 py-3 rounded-lg bg-white text-slate-900 font-bold hover:bg-rust hover:text-white transition-colors"
+            class="inline-flex items-center px-6 py-3 rounded-lg bg-white border border-slate-300 text-slate-900 font-bold hover:bg-slate-50 transition-colors gap-2"
           >
-            Auditer le Repository →
+            <span class="text-xl">🐙</span>
+            <span>Explorer le GitHub</span>
           </a>
         </div>
       </div>

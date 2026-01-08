@@ -9,8 +9,33 @@ const description =
 
 const GOOGLE_SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbzEJqLNKILLdCQo6GuQGrDhMPlkcZ2kWRFz58vkgysAA1-3YvLPT5GKOWE6Hp3Qib23/exec';
+
+const benefits = [
+  {
+    icon: '🚀',
+    title: 'Accès Anticipé (Early Access)',
+    desc: "Déployez le moteur Rust 6 mois avant la concurrence. Prenez une avance décisive sur l'automatisation souveraine.",
+  },
+  {
+    icon: '🛠️',
+    title: 'Co-Design de la Roadmap',
+    desc: 'Vos contraintes spécifiques (protocoles, formats) deviennent prioritaires dans notre backlog de développement.',
+  },
+  {
+    icon: '💎',
+    title: 'Pricing "Fondateur"',
+    desc: "Bénéficiez d'un tarif préférentiel verrouillé à vie (Lifetime Lock) en échange de vos retours techniques.",
+  },
+];
+
+const criteria = [
+  { label: 'Secteur', val: 'Industrie, Défense, Énergie ou Logistique Critique.' },
+  { label: 'Maturité', val: 'Equipes techniques familières avec Docker/Linux.' },
+  { label: 'Volume', val: 'Flux de données nécessitant une décision < 100ms.' },
+];
 ---
 
+<!doctype html>
 <html lang="fr" class="scroll-smooth">
   <head>
     <BaseHead title={title} description={description} />
@@ -23,14 +48,22 @@ const GOOGLE_SCRIPT_URL =
         <div
           class="inline-flex items-center gap-2 px-3 py-1 rounded border border-rust/30 bg-orange-50 text-rust text-[10px] font-mono uppercase tracking-widest mb-6"
         >
-          <span class="w-2 h-2 rounded-full bg-rust animate-pulse"></span> 3 Slots Disponibles
+          <span class="relative flex h-2 w-2">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rust opacity-75"
+            ></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-rust"></span>
+          </span>
+          3 Slots Disponibles
         </div>
         <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6">
-          Rejoindre le <span class="text-rust">Programme Pilote</span>
+          Devenez <span class="text-transparent bg-clip-text bg-linear-to-r from-rust to-orange-500"
+            >Partenaire Fondateur</span
+          >
         </h1>
         <p class="text-xl text-slate-600 max-w-2xl mx-auto">
-          Nous recherchons des partenaires industriels exigeants pour éprouver le moteur R.A.I.S.E.
-          sur des cas réels avant la sortie publique.
+          Nous limitons l'accès au Kernel v1.0 à <strong>3 partenaires industriels</strong> pour garantir
+          un accompagnement "Gant Blanc".
         </p>
       </div>
 
@@ -41,7 +74,7 @@ const GOOGLE_SCRIPT_URL =
           >
             <div
               id="success-message"
-              class="hidden absolute inset-0 bg-white z-20 flex flex-col items-center justify-center text-center p-8 animate-fade-in"
+              class="hidden absolute inset-0 bg-white z-20 flex-col items-center justify-center text-center p-8 animate-fade-in"
             >
               <div
                 class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-4xl mb-6"
@@ -56,12 +89,14 @@ const GOOGLE_SCRIPT_URL =
               <a href="/" class="text-rust font-bold hover:underline">Retour à l'accueil</a>
             </div>
 
-            <h2 class="text-2xl font-bold text-slate-900 mb-6">Dossier de Candidature</h2>
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+              <span>🚀</span> Postuler au Programme
+            </h2>
 
             <form id="pilot-form" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label for="nom" class="block text-sm font-bold text-slate-700 mb-2"
+                  <label for="nom" class="block text-xs font-bold text-slate-500 uppercase mb-2"
                     >Nom complet</label
                   >
                   <input
@@ -74,8 +109,8 @@ const GOOGLE_SCRIPT_URL =
                   />
                 </div>
                 <div>
-                  <label for="email" class="block text-sm font-bold text-slate-700 mb-2"
-                    >Email professionnel</label
+                  <label for="email" class="block text-xs font-bold text-slate-500 uppercase mb-2"
+                    >Email pro</label
                   >
                   <input
                     type="email"
@@ -90,7 +125,7 @@ const GOOGLE_SCRIPT_URL =
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label for="company" class="block text-sm font-bold text-slate-700 mb-2"
+                  <label for="company" class="block text-xs font-bold text-slate-500 uppercase mb-2"
                     >Entreprise</label
                   >
                   <input
@@ -103,7 +138,7 @@ const GOOGLE_SCRIPT_URL =
                   />
                 </div>
                 <div>
-                  <label for="role" class="block text-sm font-bold text-slate-700 mb-2"
+                  <label for="role" class="block text-xs font-bold text-slate-500 uppercase mb-2"
                     >Fonction</label
                   >
                   <select
@@ -121,7 +156,7 @@ const GOOGLE_SCRIPT_URL =
               </div>
 
               <div>
-                <label for="usecase" class="block text-sm font-bold text-slate-700 mb-2"
+                <label for="usecase" class="block text-xs font-bold text-slate-500 uppercase mb-2"
                   >Description du Cas d'Usage</label
                 >
                 <textarea
@@ -131,20 +166,6 @@ const GOOGLE_SCRIPT_URL =
                   class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-rust focus:ring-1 focus:ring-rust outline-none transition-all"
                   placeholder="Ex: Analyse de 5000 PDF techniques..."
                   required></textarea>
-              </div>
-
-              <div class="pt-4 border-t border-slate-100 mt-4">
-                <label for="question" class="block text-sm font-bold text-slate-900 mb-2">
-                  Une question avant de postuler ? <span
-                    class="text-slate-400 font-normal text-xs ml-1">(Optionnel)</span
-                  >
-                </label>
-                <textarea
-                  name="question"
-                  id="question"
-                  rows="2"
-                  class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-rust focus:ring-1 focus:ring-rust outline-none transition-all placeholder:text-slate-400"
-                ></textarea>
               </div>
 
               <div class="flex items-start gap-3 pt-2">
@@ -180,49 +201,40 @@ const GOOGLE_SCRIPT_URL =
             <div class="absolute top-0 right-0 w-64 h-64 bg-rust/20 rounded-full blur-[80px]"></div>
             <h3 class="text-xl font-bold mb-6 relative z-10">Pourquoi ce programme ?</h3>
             <ul class="space-y-6 relative z-10">
-              <li class="flex gap-4">
-                <div
-                  class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0 border border-white/20"
-                >
-                  🚀
-                </div>
-                <div>
-                  <h4 class="font-bold text-rust text-sm uppercase">Accès Anticipé</h4><p
-                    class="text-sm text-slate-300 mt-1"
-                  >
-                    Accès aux builds Alpha/Beta.
-                  </p>
-                </div>
-              </li>
-              <li class="flex gap-4">
-                <div
-                  class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0 border border-white/20"
-                >
-                  💎
-                </div>
-                <div>
-                  <h4 class="font-bold text-rust text-sm uppercase">Conditions "Founder"</h4><p
-                    class="text-sm text-slate-300 mt-1"
-                  >
-                    Tarif préférentiel à vie.
-                  </p>
-                </div>
-              </li>
+              {
+                benefits.map((benefit) => (
+                  <li class="flex gap-4">
+                    <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0 border border-white/20 text-xl">
+                      {benefit.icon}
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-rust text-sm uppercase">{benefit.title}</h4>
+                      <p class="text-sm text-slate-300 mt-1 leading-relaxed">{benefit.desc}</p>
+                    </div>
+                  </li>
+                ))
+              }
             </ul>
           </div>
 
           <div class="bg-orange-50 p-8 rounded-3xl border border-rust/20">
             <h3 class="text-lg font-bold text-slate-900 mb-4">Critères d'éligibilité</h3>
-            <ul class="space-y-3 text-sm text-slate-700">
-              <li class="flex items-center gap-2">
-                <span class="text-green-600">✓</span> Besoin On-Premise / Souverain.
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-green-600">✓</span> Migration Cloud Souverain (ex: S3NS).
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-green-600">✓</span> Cas d'usage critique.
-              </li>
+            <ul class="space-y-4">
+              {
+                criteria.map((c) => (
+                  <li class="flex items-start gap-3">
+                    <div class="mt-1 w-4 h-4 rounded-full bg-rust flex items-center justify-center shrink-0 text-white text-[10px]">
+                      ✓
+                    </div>
+                    <div>
+                      <strong class="block text-slate-900 text-xs uppercase tracking-wide">
+                        {c.label}
+                      </strong>
+                      <span class="text-slate-600 text-sm">{c.val}</span>
+                    </div>
+                  </li>
+                ))
+              }
             </ul>
           </div>
         </div>
@@ -247,19 +259,17 @@ const GOOGLE_SCRIPT_URL =
           // 1. On capture les données du formulaire
           const formData = new FormData(form);
 
-          // 2. Gestion manuelle de la checkbox NDA (car une checkbox non cochée n'envoie rien)
-          // On ajoute manuellement la clé "nda" qui correspond à la colonne du Sheet
+          // 2. Gestion manuelle de la checkbox NDA
+          // (car une checkbox non cochée n'envoie rien)
           formData.append('nda', form.querySelector('#nda').checked ? 'OUI' : 'NON');
 
           // 3. Envoi simple via Fetch (Pas de JSON, on envoie le FormData direct)
-          // C'est ce format que le script "Contact" attend (e.parameter)
           await fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
             body: formData,
-            // Note: Pas besoin de headers Content-Type, fetch le fait auto pour FormData
           });
 
-          // 4. Succès (On assume le succès car 'no-cors' rend la réponse opaque, mais ça marche)
+          // 4. Succès
           form.classList.add('opacity-0');
           setTimeout(() => {
             successMsg.classList.remove('hidden');

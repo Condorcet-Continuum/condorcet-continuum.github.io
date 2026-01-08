@@ -4,7 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const title = 'Roadmap & Stratégie | R.A.I.S.E.';
-const description = "De l'Alpha au MVP en 6 mois. Planning d'exécution accéléré.";
+const description =
+  "De l'Alpha au MVP en 6 mois. Planning d'exécution, jalons techniques et gestion des risques.";
 
 const phases = [
   {
@@ -24,27 +25,58 @@ const phases = [
     period: 'Mois 3-4',
     name: 'Phase 2 : Cognition',
     status: 'Planifié',
-    desc: 'Intégration du moteur vectoriel LEANN et du RAG Local.',
+    desc: 'Intégration du moteur vectoriel SurrealDB et du RAG Local.',
     agent_task: 'Optimisation des embeddings & Validation croisée.',
-    milestones: ['Moteur LEANN', 'Connecteur Surreal', 'RAG Pipeline'],
+    milestones: ['Moteur SurrealDB', 'Connecteur Vector', 'RAG Pipeline'],
     kpis: [
       { label: 'Compression', value: '-95%' },
       { label: 'Recall @10', value: '> 85%' },
-      { label: 'Inference CPU', value: '< 100ms' },
+      { label: 'Inference CPU', value: '< 200ms' },
     ],
   },
   {
     period: 'Mois 5-6',
-    name: 'Phase 3 : Release',
+    name: 'Phase 3 : Industrialisation',
     status: 'Planifié',
-    desc: 'Interface Tauri v2, Packaging et Audit de sécurité.',
-    agent_task: 'Rédaction Documentation & Tests E2E.',
-    milestones: ['UI Opérateur', 'Module Compliance', 'Release v1.0'],
+    desc: 'Packaging Tauri, Signature binaire et Audit de sécurité.',
+    agent_task: 'Simulation de charge & Pentest automatisé.',
+    milestones: ['Release v1.0', 'Signature Ed25519', 'Audit Externe'],
     kpis: [
-      { label: 'Security Audit', value: 'Pass' },
       { label: 'Binary Size', value: '< 80MB' },
       { label: 'Cold Start', value: '< 300ms' },
+      { label: 'Install Time', value: '< 1min' },
     ],
+  },
+];
+
+// DATA : MATRICE DES RISQUES
+const risks = [
+  {
+    id: 1,
+    challenge: "Le risque d'Hallucination",
+    context: 'Les LLMs inventent des faits plausibles mais faux.',
+    mitigation: 'Architecture de Vote',
+    details:
+      'Le moteur Rust rejette toute proposition du LLM qui ne passe pas le seuil de consensus (Condorcet). Si doute = Silence.',
+    icon: '👻',
+  },
+  {
+    id: 2,
+    challenge: "La Latence d'Inférence",
+    context: "L'IA locale peut être lente sur CPU standard.",
+    mitigation: 'Zero-Copy & Rust',
+    details:
+      "Pas de Garbage Collector. Utilisation de SurrealDB (Rust native) pour éviter l'overhead Python/Torch. Optimisation SIMD (Single Instruction, Multiple Data).",
+    icon: '🐢',
+  },
+  {
+    id: 3,
+    challenge: 'La Dette Technique',
+    context: "L'hybridation complexifie la maintenance.",
+    mitigation: 'Typage Fort & Schéma',
+    details:
+      'Tout est typé strictement (Rust). Le compilateur bloque les erreurs logiques. JSON-LD garantit la structure des données.',
+    icon: '🏗️',
   },
 ];
 ---
@@ -59,201 +91,151 @@ const phases = [
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
       <div class="text-center mb-20 animate-fade-in">
-        <div
-          class="inline-flex items-center gap-2 px-3 py-1 rounded border border-green-200 bg-green-50 text-green-800 text-[10px] font-mono uppercase tracking-widest mb-6"
-        >
-          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Velocity Protocol
-        </div>
-        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6">
-          La Route vers le <span class="text-rust">MVP</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
+          Trajectoire vers la <span class="text-rust">v1.0</span>
         </h1>
         <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-          Objectif : Passer du Prototype (v0.1.0) à la Production (v1.0) en <strong
-            class="text-slate-900">6 mois</strong
-          >.
+          Nous construisons une infrastructure critique, pas un gadget. Notre roadmap privilégie la <strong
+            >sécurité</strong
+          > et la <strong>stabilité</strong> sur la vitesse de déploiement.
         </p>
       </div>
 
-      <section class="mb-24 relative">
-        <div
-          class="bg-slate-900 rounded-4xl p-8 md:p-12 text-white shadow-2xl overflow-hidden relative"
-        >
-          <div
-            class="absolute top-0 right-0 w-96 h-96 bg-rust/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"
-          >
-          </div>
-          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 class="text-2xl font-bold mb-4">Le Principe de Récursivité</h2>
-              <p class="text-slate-300 mb-6 text-lg">
-                Nous utilisons une version primitive de <strong
-                  >l'architecture Médiateur/Agents</strong
-                > pour générer le code du MVP.
-              </p>
-              <div class="inline-block bg-white/10 border border-white/20 rounded-xl p-4">
-                <div class="text-center">
-                  <span class="block text-3xl font-bold text-white mb-1">x2.5</span>
-                  <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest"
-                    >Accélération Dev</span
-                  >
+      <div class="relative mb-32">
+        <div class="absolute left-1/2 w-0.5 bg-slate-200 h-full -translate-x-1/2 hidden md:block">
+        </div>
+
+        <div class="space-y-12">
+          {
+            phases.map((phase, index) => (
+              <div
+                class={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+              >
+                <div class="w-full md:w-1/2" />
+
+                <div class="relative z-10 flex items-center justify-center w-12 h-12 bg-white border-4 border-slate-100 rounded-full shadow-sm">
+                  <div
+                    class={`w-4 h-4 rounded-full ${phase.status === 'En cours' ? 'bg-rust animate-pulse' : 'bg-slate-300'}`}
+                  />
                 </div>
-              </div>
-            </div>
-            <div
-              class="bg-slate-950 rounded-xl border border-slate-800 p-6 font-mono text-xs shadow-inner"
-            >
-              <div class="text-slate-500 mb-2">// Agent générant du code Rust</div>
-              <div class="text-purple-400">fn</div>
-              <div class="text-blue-300 inline">generate_struct</div>(name: &str) &#123;<br />
-              &nbsp;&nbsp;<span class="text-slate-500">// Code généré par IA...</span><br />
-              &nbsp;&nbsp;<span class="text-rust">Ok</span>(format!("struct &#123;&#125; ...",
-              name))<br />
-              &#125;
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="max-w-5xl mx-auto mb-24">
-        <div class="flex items-center gap-4 mb-6 opacity-80">
-          <div class="w-3 h-3 bg-slate-400 rounded-full"></div>
-          <h3 class="font-bold text-slate-500 uppercase text-xs tracking-widest">
-            Start : Prototype v0.1.0-alpha
-          </h3>
-        </div>
-
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
-          <div
-            class="hidden md:grid grid-cols-12 bg-slate-50 border-b border-slate-200 p-4 text-xs font-bold text-slate-400 uppercase tracking-widest"
-          >
-            <div class="col-span-3 pl-4">Calendrier</div>
-            <div class="col-span-9 pl-4">Programme Technique</div>
-          </div>
-
-          <div class="divide-y divide-slate-100">
-            {
-              phases.map((phase) => (
-                <div
-                  class={`grid grid-cols-1 md:grid-cols-12 group transition-colors hover:bg-slate-50/50
-                        ${phase.status === 'En cours' ? 'bg-green-50/30' : ''}
-                    `}
-                >
-                  <div class="md:col-span-3 p-6 md:p-8 md:border-r border-slate-100 flex flex-row md:flex-col justify-between md:justify-start gap-2">
-                    <div>
-                      <span class="text-xs font-mono text-slate-400 block mb-1">
+                <div class="w-full md:w-1/2">
+                  <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:border-rust/30 transition-colors group">
+                    <div class="flex justify-between items-start mb-4">
+                      <span class="inline-block px-3 py-1 rounded bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider">
                         {phase.period}
                       </span>
-                      <h3
-                        class={`font-bold text-lg ${phase.status === 'En cours' ? 'text-green-700' : 'text-slate-900'}`}
-                      >
-                        {phase.name}
-                      </h3>
-                    </div>
-                    <div>
                       <span
-                        class={`text-[10px] px-2 py-1 rounded-full border font-bold uppercase w-fit block
-                                    ${phase.status === 'En cours' ? 'bg-green-100 text-green-700 border-green-200' : 'bg-slate-100 text-slate-500 border-slate-200'}
-                                `}
+                        class={`text-xs font-bold ${phase.status === 'En cours' ? 'text-rust' : 'text-slate-400'}`}
                       >
                         {phase.status}
                       </span>
                     </div>
-                  </div>
 
-                  <div class="md:col-span-9 p-6 md:p-8">
-                    <p class="text-slate-600 mb-6 text-sm leading-relaxed">{phase.desc}</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">{phase.name}</h3>
+                    <p class="text-slate-600 mb-6">{phase.desc}</p>
 
-                    <div class="flex flex-wrap gap-4 md:gap-8 mb-6 border-b border-slate-100 pb-6">
+                    <div class="bg-slate-50 rounded-lg p-4 mb-6 border border-slate-100">
+                      <div class="text-[10px] uppercase text-slate-400 font-bold mb-2 flex items-center gap-2">
+                        <span>🤖 Rôle de l'Agent Dev</span>
+                      </div>
+                      <p class="text-sm text-slate-700 italic">"{phase.agent_task}"</p>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 border-t border-slate-100 pt-4">
                       {phase.kpis.map((kpi) => (
-                        <div class="flex flex-col">
-                          <span
-                            class={`font-bold text-lg font-mono ${phase.status === 'En cours' ? 'text-green-600' : 'text-slate-700'}`}
-                          >
-                            {kpi.value}
-                          </span>
-                          <span class="text-[9px] uppercase tracking-wide text-slate-400 font-bold">
+                        <div class="text-center">
+                          <div class="text-lg font-black text-slate-800">{kpi.value}</div>
+                          <div class="text-[9px] uppercase text-slate-400 font-bold">
                             {kpi.label}
-                          </span>
+                          </div>
                         </div>
                       ))}
                     </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div class="bg-slate-50 rounded-lg p-3 border-l-2 border-rust">
-                        <span class="text-[10px] font-bold text-rust uppercase block mb-1">
-                          🤖 Tâche Agent
-                        </span>
-                        <p class="text-xs text-slate-500 italic">"{phase.agent_task}"</p>
-                      </div>
-                      <div>
-                        <span class="text-[10px] font-bold text-slate-400 uppercase block mb-2">
-                          Livrables Clés
-                        </span>
-                        <ul class="space-y-1">
-                          {phase.milestones.map((m) => (
-                            <li class="flex items-center gap-2 text-xs text-slate-600 font-medium">
-                              <span class="text-green-500">✓</span> {m}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
                   </div>
                 </div>
-              ))
-            }
-          </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <section class="mb-24">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-slate-900 mb-4">Transparence sur les Défis</h2>
+          <p class="text-slate-600 max-w-2xl mx-auto">
+            Un projet d'ingénierie complexe comporte des risques. Voici comment notre architecture
+            les adresse nativement.
+          </p>
         </div>
 
-        <div class="flex items-center gap-4 mt-6 mb-8 opacity-80">
-          <div class="w-3 h-3 bg-rust rounded-full animate-pulse"></div>
-          <h3 class="font-bold text-rust uppercase text-xs tracking-widest">
-            Finish : MVP v1.0 (Ready to Ship)
-          </h3>
-        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {
+            risks.map((risk) => (
+              <div class="bg-slate-900 rounded-2xl p-8 text-white relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl group-hover:scale-125 transition-transform duration-500">
+                  {risk.icon}
+                </div>
 
-        <div
-          class="bg-linear-to-r from-slate-900 to-slate-800 text-white rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8"
-        >
-          <div class="absolute top-0 right-0 w-64 h-64 bg-rust/10 rounded-full blur-3xl"></div>
+                <div class="relative z-10">
+                  <div class="text-rust font-bold text-xs uppercase tracking-widest mb-2">
+                    Défi #{risk.id}
+                  </div>
+                  <h3 class="text-xl font-bold mb-2">{risk.challenge}</h3>
+                  <p class="text-slate-400 text-sm mb-6 border-l-2 border-slate-700 pl-3">
+                    {risk.context}
+                  </p>
 
-          <div>
-            <h3 class="text-2xl font-black mb-2">Prêt pour l'Industrialisation</h3>
-            <p class="text-slate-400 text-sm max-w-md">
-              Au terme du 6ème mois, le système R.A.I.S.E. est livré sous forme d'un binaire unique,
-              audité et documenté.
-            </p>
-          </div>
-
-          <div class="flex gap-4">
-            <div class="bg-white/10 px-4 py-2 rounded-lg text-center">
-              <div class="text-xl font-bold">100%</div>
-              <div class="text-[9px] uppercase opacity-70">On-Premise</div>
-            </div>
-            <div class="bg-rust px-4 py-2 rounded-lg text-center shadow-lg shadow-rust/20">
-              <div class="text-xl font-bold">Safe</div>
-              <div class="text-[9px] uppercase opacity-90">Rust Core</div>
-            </div>
-          </div>
+                  <div class="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="text-green-400 text-lg">✓</span>
+                      <span class="font-bold text-sm text-green-100">
+                        Réponse : {risk.mitigation}
+                      </span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">{risk.details}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
         </div>
       </section>
 
-      <div class="mt-24 text-center">
-        <h3 class="text-2xl font-bold text-slate-900 mb-8">Voulez-vous être le premier pilote ?</h3>
-        <p class="text-slate-600 mb-8 max-w-2xl mx-auto">
-          Nous ouvrons 3 slots pour des partenaires "Early Adopters" qui souhaitent co-construire la
-          v1.0 avec nous.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <section
+        class="bg-white border border-slate-200 rounded-[3rem] p-8 md:p-12 text-center shadow-xl"
+      >
+        <div class="max-w-3xl mx-auto">
+          <h3 class="text-3xl font-bold text-slate-900 mb-6">Objectif : Zero "Vaporware"</h3>
+          <p class="text-slate-600 mb-8 text-lg">
+            Dans 6 mois, le système R.A.I.S.E. est livré sous forme d'un binaire unique, audité et
+            documenté. Nous cherchons 3 partenaires pour valider la v1.0.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center gap-6 mb-8">
+            <div class="bg-slate-50 px-6 py-4 rounded-xl border border-slate-100">
+              <div class="text-2xl font-bold text-slate-900">100%</div>
+              <div class="text-xs uppercase text-slate-500 font-bold">On-Premise</div>
+            </div>
+            <div class="bg-slate-50 px-6 py-4 rounded-xl border border-slate-100">
+              <div class="text-2xl font-bold text-rust">Safe</div>
+              <div class="text-xs uppercase text-slate-500 font-bold">Rust Core</div>
+            </div>
+            <div class="bg-slate-50 px-6 py-4 rounded-xl border border-slate-100">
+              <div class="text-2xl font-bold text-slate-900">Open</div>
+              <div class="text-xs uppercase text-slate-500 font-bold">Audit-Ready</div>
+            </div>
+          </div>
+
           <a
             href="/pilot"
-            class="bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-10 rounded-full transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2"
+            class="inline-flex items-center bg-slate-900 hover:bg-rust text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg hover:shadow-xl group gap-2"
           >
-            Rejoindre le programme Pilote
-            <span class="text-rust">→</span>
+            <span>Devenir Pilote Industriel</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </div>
-      </div>
+      </section>
     </main>
     <Footer />
   </body>

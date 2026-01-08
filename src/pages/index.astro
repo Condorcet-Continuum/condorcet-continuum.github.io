@@ -2,11 +2,10 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import logo from '../assets/logo-continuum.svg';
 
-const title = 'R.A.I.S.E. | Intelligence Souveraine & Déterministe';
+const title = "R.A.I.S.E. | L'IA Industrielle sous Haute Surveillance";
 const description =
-  "L'architecture Neuro-Symbolique pour les industries critiques. Passez de la boîte noire à la preuve formelle.";
+  'La première plateforme de gouvernance IA par Mandat. Orchestrez vos agents avec des règles mathématiques strictes, pas des prompts.';
 ---
 
 <!doctype html>
@@ -19,241 +18,251 @@ const description =
 
     <main>
       <section class="relative pt-20 pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8 animate-fade-in-down"
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-bold uppercase tracking-widest mb-8 animate-fade-in"
           >
-            <span class="w-2 h-2 rounded-full bg-rust animate-pulse"></span>
-            <span class="text-xs font-bold text-slate-600 tracking-widest uppercase"
-              >Système Neuro-Symbolique v1.0</span
-            >
+            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+            Compatible Directive Seveso & SIL4
           </div>
 
-          <h1
-            class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-tight animate-fade-in"
-          >
-            Ne subissez plus l'IA.<br />
-            <span class="text-transparent bg-clip-text bg-linear-to-r from-rust to-orange-600"
-              >Mandatez-la.</span
+          <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tight">
+            Déployez l'IA.<br />
+            <span class="text-transparent bg-clip-text bg-linear-to-r from-rust to-orange-500"
+              >Gardez le Contrôle.</span
             >
           </h1>
 
-          <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600 mb-10 animate-fade-in delay-100">
-            Pour l'Industrie, la Finance et la Défense. Remplacez l'incertitude des modèles
-            probabilistes par la <strong>rigueur déterministe</strong> d'une architecture auditable.
+          <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed">
+            R.A.I.S.E. est le premier <strong>Hyperviseur de Gouvernance</strong> qui intercepte les décisions
+            de vos IAs. Si une action viole votre <a
+              href="/curseur"
+              class="text-rust underline decoration-rust/30 underline-offset-4 hover:decoration-rust transition-all"
+              >Mandat de Sécurité</a
+            >, elle est bloquée mathématiquement.
           </p>
 
-          <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-200">
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="/vision"
-              class="group bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2"
+              href="/curseur"
+              class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-slate-900 rounded-full hover:bg-rust transition-all shadow-lg hover:shadow-xl group"
             >
-              Lire le Manifeste
-              <span class="group-hover:translate-x-1 transition-transform">→</span>
+              <span>Configurer un Mandat</span>
+              <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </a>
             <a
-              href="/use-cases"
-              class="bg-white text-slate-900 border border-slate-300 px-8 py-4 rounded-full font-bold hover:bg-slate-50 transition-colors"
+              href="/architecture"
+              class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-600 bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-all"
             >
-              Voir les preuves (Cas d'usage)
+              Voir l'Architecture
             </a>
           </div>
         </div>
 
         <div
-          class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-slate-200/50 rounded-full blur-3xl -z-10 opacity-50"
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-blue-100/50 rounded-full blur-[100px] -z-10 pointer-events-none opacity-50"
         >
         </div>
       </section>
 
-      <section class="py-24 bg-white border-y border-slate-200">
+      <section class="py-24 bg-white border-y border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="group">
+              <div
+                class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300"
+              >
+                ⚖️
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">Médiation Hybride</h3>
+              <p class="text-slate-500 leading-relaxed">
+                L'humain ne code pas, il arbitre. Définissez l'équilibre des pouvoirs entre vos
+                agents (Performance vs Sécurité) via des curseurs visuels.
+              </p>
+            </div>
+
+            <div class="group">
+              <div
+                class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300"
+              >
+                🗳️
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">Vote de Condorcet</h3>
+              <p class="text-slate-500 leading-relaxed">
+                Fini les hallucinations. Une décision n'est exécutée que si elle remporte le
+                consensus mathématique de vos modèles experts.
+              </p>
+            </div>
+
+            <div class="group">
+              <div
+                class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300"
+              >
+                🛡️
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">Souveraineté Rust</h3>
+              <p class="text-slate-500 leading-relaxed">
+                Pas de boîte noire dans le Cloud. Le moteur d'arbitrage (Kernel) tourne en local,
+                sur vos serveurs, compilé en Rust pour une sûreté mémoire totale.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 bg-slate-900 overflow-hidden relative">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-rust/10 rounded-full blur-[120px] pointer-events-none"
+        >
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-slate-900">
-              L'Architecture de la <span class="text-rust">Confiance</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+              Le <span class="text-rust">Registre</span> Incorruptible
             </h2>
-            <p class="text-slate-500 mt-4">
-              Trois piliers pour transformer le chaos des données en décisions certifiées.
+            <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+              Ne faites pas confiance à l'algorithme. Faites confiance à la preuve. Chaque décision
+              du moteur est signée cryptographiquement dans un journal auditable et immuable.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[500px]">
-            <div
-              class="md:col-span-2 bg-slate-900 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden group hover:shadow-2xl transition-all duration-500 flex flex-col justify-between text-white"
-            >
-              <div
-                class="absolute top-0 right-0 w-64 h-64 bg-rust/20 rounded-full blur-3xl group-hover:bg-rust/30 transition-colors"
-              >
-              </div>
-
-              <div class="relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-10">
+              <div class="flex gap-6 group">
                 <div
-                  class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl mb-6 backdrop-blur-sm"
+                  class="w-12 h-12 rounded-xl bg-slate-800 group-hover:bg-rust transition-colors flex items-center justify-center text-2xl border border-slate-700 shrink-0 shadow-lg"
                 >
-                  🧠
+                  ⚖️
                 </div>
-                <h3 class="text-2xl font-bold mb-4">Moteur R.A.I.S.E.</h3>
-                <p class="text-slate-300 max-w-md leading-relaxed">
-                  L'alliance du <strong>Neuro</strong> (pour percevoir le monde flou) et du <strong
-                    >Symbolique</strong
-                  > (pour raisonner logiquement). Fini les hallucinations : si le système ne sait pas,
-                  il ne devine pas.
-                </p>
+                <div>
+                  <h3 class="text-xl font-bold text-white mb-2">Protection Juridique</h3>
+                  <p class="text-slate-400 leading-relaxed text-sm">
+                    En cas d'incident, vous pouvez prouver mathématiquement que vos paramètres de
+                    sécurité (le Mandat) étaient actifs et respectés à la milliseconde près.
+                  </p>
+                </div>
               </div>
 
-              <div class="mt-8 flex gap-2">
-                <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono">Perception</span>
-                <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-mono">Mémoire</span>
-                <span class="px-3 py-1 bg-rust text-white rounded-full text-xs font-mono"
-                  >Décision</span
-                >
-              </div>
-
-              <a
-                href="/cognition"
-                class="absolute bottom-8 right-8 w-12 h-12 bg-white text-slate-900 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
-                >↗</a
-              >
-            </div>
-
-            <div class="flex flex-col gap-6">
-              <div
-                class="bg-slate-50 rounded-[2.5rem] p-8 border border-slate-200 hover:border-rust/30 transition-colors flex-1 flex flex-col justify-center relative overflow-hidden"
-              >
+              <div class="flex gap-6 group">
                 <div
-                  class="absolute -right-4 -top-4 text-9xl text-slate-100 font-bold -z-10 select-none"
+                  class="w-12 h-12 rounded-xl bg-slate-800 group-hover:bg-rust transition-colors flex items-center justify-center text-2xl border border-slate-700 shrink-0 shadow-lg"
                 >
-                  Fn
+                  🔍
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-2">Rust & Wasm</h3>
-                <p class="text-sm text-slate-600 mb-4">
-                  Performance native, sécurité mémoire absolue et frugalité énergétique (Green IT).
-                </p>
-                <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-                  <div class="bg-rust h-full w-[95%]"></div>
+                <div>
+                  <h3 class="text-xl font-bold text-white mb-2">Traçabilité Totale</h3>
+                  <p class="text-slate-400 leading-relaxed text-sm">
+                    Qui a changé le seuil de tolérance ? Quand ? Pourquoi ? R.A.I.S.E. capture le
+                    contexte (Input Humain) et l'exécution (Input Agent) dans le même bloc de
+                    preuve.
+                  </p>
                 </div>
-                <div class="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
-                  <span>Safety</span>
-                  <span>99.9%</span>
+              </div>
+
+              <div class="flex gap-6 group">
+                <div
+                  class="w-12 h-12 rounded-xl bg-slate-800 group-hover:bg-rust transition-colors flex items-center justify-center text-2xl border border-slate-700 shrink-0 shadow-lg"
+                >
+                  🔐
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white mb-2">Signature Ed25519</h3>
+                  <p class="text-slate-400 leading-relaxed text-sm">
+                    Nous utilisons les standards de signature les plus robustes (Rust Crypto). Le
+                    journal est infalsifiable, même par un administrateur système.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-black rounded-2xl border border-slate-800 shadow-2xl p-6 font-mono text-xs relative overflow-hidden group hover:border-rust/30 transition-colors duration-500"
+            >
+              <div class="flex justify-between items-center mb-4 border-b border-slate-800 pb-4">
+                <div class="flex gap-2">
+                  <div class="w-3 h-3 rounded-full bg-slate-700"></div>
+                  <div class="w-3 h-3 rounded-full bg-slate-700"></div>
+                </div>
+                <div class="text-slate-500 font-bold tracking-widest uppercase">
+                  Immutable Ledger (ReadOnly)
+                </div>
+              </div>
+
+              <div class="space-y-4 h-[400px] overflow-hidden relative">
+                <div
+                  class="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-black to-transparent z-10"
+                >
+                </div>
+
+                <div class="opacity-30 flex gap-4 text-slate-500">
+                  <span class="w-20">10:42:01.050</span>
+                  <span class="text-blue-900">INFO</span>
+                  <span>System Init...</span>
+                </div>
+
+                <div class="opacity-50 flex gap-4 text-slate-400">
+                  <span class="w-20">10:42:01.200</span>
+                  <span class="text-green-900">LOAD</span>
+                  <span>Mandate #A7F loaded</span>
+                  <span
+                    class="ml-auto text-[10px] border border-slate-800 px-1 rounded text-slate-600"
+                    >Sig: ax7...9f</span
+                  >
+                </div>
+
+                <div
+                  class="bg-slate-900/50 p-3 rounded border-l-2 border-rust flex flex-col gap-2 shadow-inner"
+                >
+                  <div class="flex gap-4 text-slate-300">
+                    <span class="w-20 font-bold text-white">10:42:05.892</span>
+                    <span class="text-rust font-bold">DECISION</span>
+                    <span>EMERGENCY_STOP Triggered</span>
+                  </div>
+                  <div class="pl-24 text-slate-500">
+                    > Reason: <span class="text-orange-400">Vibration (4.2G) > Max (3.0G)</span><br
+                    />
+                    > Agent: <span class="text-blue-400">Security_Agent (Vote: 5.0)</span><br />
+                    > Hash: <span class="text-green-500 font-bold">e7a9...c4b2</span>
+                    <span class="text-green-800 ml-2">✓ VERIFIED</span>
+                  </div>
+                </div>
+
+                <div class="flex gap-4 text-slate-400 animate-pulse">
+                  <span class="w-20">10:42:05.950</span>
+                  <span class="text-blue-500">ACTION</span>
+                  <span>Signal sent to PLC (Modbus)</span>
                 </div>
               </div>
 
               <div
-                class="bg-slate-50 rounded-[2.5rem] p-8 border border-slate-200 hover:border-rust/30 transition-colors flex-1 flex flex-col justify-center"
+                class="absolute bottom-0 left-0 w-full bg-slate-900/90 backdrop-blur border-t border-slate-800 p-3 flex justify-between items-center text-[10px] text-slate-400"
               >
-                <div class="flex items-center gap-3 mb-3">
-                  <span class="text-2xl">⚖️</span>
-                  <h3 class="text-xl font-bold text-slate-900">Condorcet</h3>
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                  Sealed to Block
                 </div>
-                <p class="text-sm text-slate-600">
-                  Le consensus mathématique plutôt que les seuils arbitraires. Résolvez les conflits
-                  d'intérêts par le vote.
-                </p>
+                <div>Encryption: <span class="text-white">ChaCha20-Poly1305</span></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-slate-900 rounded-[3rem] p-8 md:p-20 text-center relative overflow-hidden">
-          <div
-            class="absolute inset-0 opacity-10"
-            style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 32px 32px;"
-          >
-          </div>
-
-          <div class="relative z-10">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-8">
-              Vous êtes le <span class="text-blue-400">Législateur</span>.<br />
-              L'IA est votre <span class="text-rust">Exécutif</span>.
-            </h2>
-            <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-              Nous formalisons le contrat social numérique. Vous définissez la finalité et l'éthique
-              (le "Quoi"). Nos agents autonomes gèrent la complexité (le "Comment") sous votre
-              supervision stricte.
-            </p>
-
-            <a
-              href="/value"
-              class="inline-flex items-center gap-3 text-white border-b border-rust pb-1 hover:text-rust transition-colors font-bold tracking-wide"
-            >
-              DÉCOUVRIR LE MODÈLE DE VALEUR
-              <span>→</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-slate-100 pb-8"
-          >
-            <div>
-              <h2 class="text-3xl font-bold text-slate-900">
-                Conçu pour le <span class="text-rust">Critique</span>
-              </h2>
-              <p class="text-slate-500 mt-2">Là où l'erreur n'est pas une option.</p>
-            </div>
-            <a
-              href="/use-cases"
-              class="hidden md:block text-sm font-bold text-slate-900 hover:text-rust transition-colors"
-              >Explorer tous les cas →</a
-            >
-          </div>
-
-          <div
-            class="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
-          >
-            <div
-              class="flex flex-col items-center gap-4 p-6 border border-slate-100 rounded-2xl hover:border-slate-300 hover:bg-slate-50 transition-colors"
-            >
-              <span class="text-4xl">🏭</span>
-              <span class="font-bold text-slate-700">Industrie 4.0</span>
-            </div>
-            <div
-              class="flex flex-col items-center gap-4 p-6 border border-slate-100 rounded-2xl hover:border-slate-300 hover:bg-slate-50 transition-colors"
-            >
-              <span class="text-4xl">⚡</span>
-              <span class="font-bold text-slate-700">Énergie</span>
-            </div>
-            <div
-              class="flex flex-col items-center gap-4 p-6 border border-slate-100 rounded-2xl hover:border-slate-300 hover:bg-slate-50 transition-colors"
-            >
-              <span class="text-4xl">🚉</span>
-              <span class="font-bold text-slate-700">Transport</span>
-            </div>
-            <div
-              class="flex flex-col items-center gap-4 p-6 border border-slate-100 rounded-2xl hover:border-slate-300 hover:bg-slate-50 transition-colors"
-            >
-              <span class="text-4xl">🏦</span>
-              <span class="font-bold text-slate-700">Finance</span>
-            </div>
-          </div>
-
-          <div class="mt-8 text-center md:hidden">
-            <a href="/use-cases" class="text-sm font-bold text-slate-900">Explorer tous les cas →</a
-            >
-          </div>
-        </div>
-      </section>
-
-      <section class="py-24 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-4xl mx-auto text-center px-4">
-          <h2 class="text-4xl font-extrabold text-slate-900 mb-6">
-            Prêt à auditer votre processus ?
-          </h2>
-          <p class="text-xl text-slate-600 mb-10">
-            Ne laissez pas vos données critiques dans une boîte noire. Construisons votre preuve de
-            concept souveraine.
+      <section class="py-20 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">Prêt à reprendre le pouvoir ?</h2>
+          <p class="text-lg text-slate-600 mb-10">
+            La technologie est prête. Les cas d'usages sont validés. <br />
+            Il ne manque que votre décision stratégique.
           </p>
           <a
-            href="/contact"
-            class="inline-block bg-rust hover:bg-orange-700 text-white font-bold py-4 px-12 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+            href="/pilot"
+            class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-rust rounded-full hover:bg-orange-600 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
           >
-            Lancer un Audit
+            Devenir Partenaire Pilote
           </a>
+          <p class="mt-4 text-sm text-slate-400">3 slots restants pour le programme Q4 2024</p>
         </div>
       </section>
     </main>

@@ -3,117 +3,131 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const title = "Cas d'Usage & Projections | R.A.I.S.E.";
-const description = "Scénarios d'application industrielle de l'architecture Neuro-Symbolique. Projections et cibles de performance.";
+const title = 'Bibliothèque de Mandats | R.A.I.S.E.';
+const description =
+  'Ne partez pas de zéro. Déployez des modèles de gouvernance pré-configurés pour votre industrie.';
 
-// Définition des blocs cognitifs
-const allBlocks = [
-  { id: 'perception', icon: '👁️', label: 'Perception' },
-  { id: 'attention', icon: '🔎', label: 'Attention' },
-  { id: 'memoire', icon: '🧠', label: 'Mémoire' },
-  { id: 'apprentissage', icon: '📚', label: 'Apprentissage' },
-  { id: 'langage', icon: '🗣️', label: 'Langage' },
-  { id: 'raisonnement', icon: '⚙️', label: 'Raisonnement' },
-  { id: 'decision', icon: '⚖️', label: 'Décision' },
-  { id: 'resolution', icon: '✅', label: 'Résolution' },
-];
-
-// SCÉNARIOS (Exemples Anonymisés)
-const scenarios = [
+// LES TEMPLATES (DONNÉES AVEC KPIs)
+const templates = [
   {
-    id: 'maintenance',
-    title: 'Arbitrage Critique (Maintenance)',
-    subtitle: 'Secteur Énergie (Simulation)',
-    context: 'Scénario type : Turbine Gaz T-400. Dérive vibratoire sur l\'axe Z. Risque de casse imminent vs Coût d\'arrêt (200k€/h).',
-    actors: {
-        mediator: { role: 'Directeur de Site', icon: '👨‍💼', type: 'Législateur' },
-        agent: { role: 'Agent Sûreté', icon: '🛡️', type: 'Exécutif' },
-        mandate: 'Priorité absolue : Zéro blessé (Poids x3)'
-    },
-    activeBlocks: ['perception', 'memoire', 'raisonnement', 'decision', 'resolution'],
-    flow: "IoT (Vibration) → RAG (Historique Pannes) → Calcul Probabiliste → Vote Condorcet → Ordre d'arrêt ciblé.",
-    impact: {
-      kpi_main: '2.4 M€',
-      label_main: 'Économie Cible (Casse)',
-      kpi_sec: '-90%',
-      label_sec: 'Temps de Décision'
-    }
+    id: 'ind-seveso',
+    category: 'INDUSTRIE LOURDE',
+    title: 'Directive Seveso (Haut-Risque)',
+    icon: '🏭',
+    description:
+      'Configuration stricte pour sites classés. Priorité absolue à la sécurité humaine et environnementale sur la continuité de service.',
+    weights: [
+      { agent: 'Sécurité', value: 5.0, color: 'text-rust' },
+      { agent: 'Environnement', value: 4.0, color: 'text-green-600' },
+      { agent: 'Finance', value: 1.0, color: 'text-slate-400' },
+    ],
+    vetos: 12,
+    popularity: 'Top Téléchargement',
+    kpis: [
+      { label: 'Réaction', val: '< 50ms' },
+      { label: 'Faux Nég.', val: '0%' },
+      { label: 'Trace', val: '100%' },
+    ],
   },
   {
-    id: 'sourcing',
-    title: 'Sourcing Stratégique',
-    subtitle: 'Secteur Défense (Simulation)',
-    context: 'Scénario type : Appel d\'offre "Acier Haute Résistance". Analyse de 1500 pages de documentation hétérogène pour détecter la non-conformité RSE.',
-    actors: {
-        mediator: { role: 'Lead Acheteur', icon: '👩‍💻', type: 'Législateur' },
-        agent: { role: 'Agent Strategy', icon: '📊', type: 'Exécutif' },
-        mandate: 'Exclure si Score RSE < 80/100'
-    },
-    activeBlocks: ['langage', 'attention', 'raisonnement', 'decision'],
-    flow: 'Ingestion PDF (OCR) → Extraction Critères (LLM Local) → Matrice de Comparaison → Vainqueur de Condorcet.',
-    impact: {
-      kpi_main: '3 min',
-      label_main: 'Temps Cible (vs 3 sem.)',
-      kpi_sec: '100%',
-      label_sec: 'Auditabilité'
-    }
+    id: 'fin-hft',
+    category: 'FINANCE DE MARCHÉ',
+    title: 'Trading Haute Fréquence',
+    icon: '💹',
+    description:
+      "Modèle optimisé pour la latence ultra-faible. Les agents de conformité (SEC/AMF) ont un droit de veto, mais l'exécution est prioritaire.",
+    weights: [
+      { agent: 'Performance', value: 4.5, color: 'text-blue-500' },
+      { agent: 'Conformité', value: 3.0, color: 'text-purple-500' },
+      { agent: 'Liquidité', value: 2.0, color: 'text-slate-400' },
+    ],
+    vetos: 5,
+    popularity: '',
+    kpis: [
+      { label: 'Latence', val: '< 10µs' },
+      { label: 'Tx/Sec', val: '> 50k' },
+      { label: 'Rejets', val: 'Auto' },
+    ],
   },
   {
-    id: 'quality',
-    title: 'Contrôle Qualité Zéro-Défaut',
-    subtitle: 'Secteur Pharma (Simulation)',
-    context: 'Scénario type : Ligne haute cadence (600 coups/min). Réduction des "Faux-Positifs" générés par les caméras classiques.',
-    actors: {
-        mediator: { role: 'Resp. Qualité', icon: '👨‍🔬', type: 'Législateur' },
-        agent: { role: 'Agent Vision', icon: '👁️', type: 'Exécutif' },
-        mandate: 'Seuil de tolérance : 0.05mm'
-    },
-    activeBlocks: ['perception', 'attention', 'raisonnement', 'resolution'],
-    flow: "Vision Haute Fréquence → Focalisation (Attention) → Règle Géométrique Stricte (Rust) → Éjection.",
-    impact: {
-      kpi_main: '< 0.01%',
-      label_main: 'Taux Faux-Positifs Cible',
-      kpi_sec: 'ROI',
-      label_sec: '12 Mois'
-    }
+    id: 'def-cyber',
+    category: 'CYBER DÉFENSE',
+    title: 'Sentinelle OIV (Opérateur Vital)',
+    icon: '🛡️',
+    description:
+      'Pour infrastructures critiques (Hôpitaux, Réseaux). Isolation réseau (Air-Gap) par défaut. Aucune sortie de donnée autorisée.',
+    weights: [
+      { agent: 'Confidentialité', value: 5.0, color: 'text-rust' },
+      { agent: 'Intégrité', value: 5.0, color: 'text-rust' },
+      { agent: 'Disponibilité', value: 2.0, color: 'text-slate-400' },
+    ],
+    vetos: 24,
+    popularity: 'Recommandé ANSSI',
+    kpis: [
+      { label: 'Fuite Data', val: '0 bit' },
+      { label: 'Faux Pos.', val: '< 0.1%' },
+      { label: 'Detect.', val: '< 1s' },
+    ],
   },
   {
-    id: 'engineering',
-    title: 'Modernisation Legacy',
-    subtitle: 'Secteur Banque (Simulation)',
-    context: 'Scénario type : Moteur de calcul actuariel (C++/Java) vieux de 15 ans. Refactoring automatisé vers Rust avec preuve d\'iso-fonctionnalité.',
-    actors: {
-        mediator: { role: 'Lead Architecte', icon: '👷', type: 'Législateur' },
-        agent: { role: 'Agent Refactoring', icon: '🧹', type: 'Exécutif' },
-        mandate: 'Garantir l\'iso-fonctionnalité stricte'
-    },
-    activeBlocks: ['perception', 'memoire', 'raisonnement', 'resolution'],
-    flow: "Ingestion Code (AST) → Extraction Règles (Neuro) → Vérification (Symbolique) → Transpilation Rust.",
-    impact: {
-      kpi_main: '-60%',
-      label_main: 'Dette Technique',
-      kpi_sec: 'Safe',
-      label_sec: 'Memory Safety'
-    }
+    id: 'log-jit',
+    category: 'LOGISTIQUE',
+    title: 'Just-in-Time Optimizer',
+    icon: '🚚',
+    description:
+      'Équilibre subtil entre coût carburant et délai de livraison. Autorise les dépassements mineurs pour éviter les ruptures de chaîne.',
+    weights: [
+      { agent: 'Délai', value: 3.0, color: 'text-orange-500' },
+      { agent: 'Coût', value: 2.5, color: 'text-green-600' },
+      { agent: 'Qualité', value: 2.0, color: 'text-slate-400' },
+    ],
+    vetos: 3,
+    popularity: '',
+    kpis: [
+      { label: 'Coûts', val: '-15%' },
+      { label: 'OTIF', val: '99%' },
+      { label: 'Recalcul', val: '200ms' },
+    ],
   },
   {
-    id: 'railway',
+    id: 'trans-rail',
+    category: 'TRANSPORT (SIMULATION)',
     title: 'Gestion de Crise Ferroviaire',
-    subtitle: 'Transport (Simulation)',
-    context: 'Scénario type : Nœud ferroviaire saturé. Incident signalisation. Re-planification temps réel pour minimiser l\'effet domino.',
-    actors: {
-        mediator: { role: 'Chef Régulateur', icon: '🚉', type: 'Législateur' },
-        agent: { role: 'Agent Circulation', icon: '🚦', type: 'Exécutif' },
-        mandate: 'Minimiser retard global (Poids x2)'
-    },
-    activeBlocks: ['perception', 'attention', 'raisonnement', 'decision', 'resolution'],
-    flow: "Topologie Graphe (Rust) → Simulation Scénarios → Détection Conflits → Vote Condorcet → Plan.",
-    impact: {
-      kpi_main: '-35%',
-      label_main: 'Retard Cumulé Cible',
-      kpi_sec: '15s',
-      label_sec: 'Temps de Calcul'
-    }
+    icon: '🚄',
+    description:
+      "Arbitrage temps réel lors d'incidents de signalisation. Priorité absolue à la sécurité des passagers sur la fluidité du trafic.",
+    weights: [
+      { agent: 'Sécurité', value: 5.0, color: 'text-rust' },
+      { agent: 'Fluidité', value: 3.5, color: 'text-blue-500' },
+      { agent: 'Coût', value: 1.0, color: 'text-slate-400' },
+    ],
+    vetos: 42,
+    popularity: 'Standard SIL4',
+    kpis: [
+      { label: 'Accident', val: '0' },
+      { label: 'Retards', val: '-20%' },
+      { label: 'Reprise', val: '+30%' },
+    ],
+  },
+  {
+    id: 'def-tac',
+    category: 'DÉFENSE OPÉRATIONNELLE',
+    title: 'Engagement Tactique (SCCS)',
+    icon: '🎯',
+    description:
+      "Respect des Règles d'Engagement (ROE) pour systèmes autonomes. Tir bloqué physiquement si l'identification Cible < 99.9%.",
+    weights: [
+      { agent: 'ROE (Légal)', value: 5.0, color: 'text-rust' },
+      { agent: 'Mission', value: 3.0, color: 'text-blue-500' },
+      { agent: 'Survie', value: 2.0, color: 'text-slate-400' },
+    ],
+    vetos: 150,
+    popularity: 'Certifié OTAN (Sim)',
+    kpis: [
+      { label: 'ID Cible', val: '>99.9%' },
+      { label: 'Tir Ami', val: '0%' },
+      { label: 'Decision', val: '< 5ms' },
+    ],
   },
 ];
 ---
@@ -126,20 +140,17 @@ const scenarios = [
   <body class="bg-slate-50 text-slate-900 font-sans antialiased">
     <Header />
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      
-      <div class="text-center mb-16 animate-fade-in">
-        
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded border border-blue-200 bg-blue-50 text-blue-800 text-[10px] font-mono uppercase tracking-widest mb-6">
-          <span class="text-blue-500 animate-pulse">●</span> Scénarios Prospectifs
-        </div>
-
-        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
-          L'Orchestration <span class="text-rust">en Action</span>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <div class="text-center mb-12 animate-fade-in">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6">
+          Bibliothèque de <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-rust">Mandats</span
+          >
         </h1>
-        
         <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-10">
-          Comment l'architecture R.A.I.S.E. s'appliquera au monde réel.
+          Ne configurez pas l'IA à la main. Appliquez des topologies <strong
+            >Médiateur / Agents</strong
+          > certifiées pour votre industrie (Seveso, HFT, Cyber).
         </p>
 
         <div
@@ -148,161 +159,114 @@ const scenarios = [
           <div class="text-2xl pt-1">🚧</div>
           <div>
             <h3 class="font-bold text-amber-900 text-sm uppercase tracking-wide mb-1">
-              Projections & Simulations
+              Projections &amp; Simulations
             </h3>
             <p class="text-sm text-amber-800/80 leading-snug">
               Les cas d'usage ci-dessous sont des <strong>exemples théoriques anonymisés</strong>.
-              Ils illustrent la capacité cible du moteur R.A.I.S.E. à résoudre des problèmes industriels complexes une fois le <strong>MVP (v1.0)</strong> déployé en production.
+              Ils illustrent la capacité cible du moteur R.A.I.S.E. à résoudre des problèmes
+              industriels complexes une fois le <strong>MVP (v1.0)</strong> déployé en production.
             </p>
           </div>
         </div>
-
       </div>
 
-      <div class="space-y-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
         {
-          scenarios.map((scenario, index) => (
-            <div class="group relative bg-white rounded-[2.5rem] shadow-xl border border-slate-200 overflow-hidden hover:shadow-2xl transition-shadow duration-500">
-              <div class="grid grid-cols-1 lg:grid-cols-12">
-                
-                <div class="lg:col-span-7 p-8 md:p-12 flex flex-col justify-center relative z-10">
-                  <div class="flex items-center justify-between mb-4">
-                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider border border-slate-200">
-                        Cas #{index + 1} • {scenario.subtitle}
-                     </div>
-                  </div>
-                  
-                  <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">{scenario.title}</h2>
-                  
-                  <div class="mb-8">
-                    <h3 class="text-xs font-bold text-rust uppercase tracking-widest mb-2">Le Problème (Simulation)</h3>
-                    <p class="text-slate-600 text-lg leading-relaxed border-l-4 border-rust/20 pl-4">
-                      {scenario.context}
-                    </p>
-                  </div>
+          templates.map((tpl) => (
+            <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden flex flex-col">
+              {/* Badge Popularité */}
+              {tpl.popularity && (
+                <div class="absolute top-0 right-0 bg-rust text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-widest shadow-sm z-10">
+                  {tpl.popularity}
+                </div>
+              )}
 
-                  <div class="grid grid-cols-2 gap-4 mb-8">
-                     <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 group-hover:border-green-400/50 transition-colors">
-                        <div class="text-3xl font-extrabold text-slate-900 mb-1">{scenario.impact.kpi_main}</div>
-                        <div class="text-xs font-bold text-green-600 uppercase">{scenario.impact.label_main}</div>
-                     </div>
-                     <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200">
-                        <div class="text-xl font-bold text-slate-700 mb-1">{scenario.impact.kpi_sec}</div>
-                        <div class="text-xs font-bold text-slate-400 uppercase">{scenario.impact.label_sec}</div>
-                     </div>
+              <div class="flex items-start justify-between mb-6">
+                <div class="flex items-center gap-4">
+                  <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-4xl border border-slate-100 shadow-inner group-hover:scale-110 transition-transform">
+                    {tpl.icon}
                   </div>
-
-                  <div class="bg-slate-900 text-slate-300 p-5 rounded-2xl text-xs font-mono shadow-inner border border-slate-800">
-                    <strong class="block text-rust mb-2 uppercase tracking-widest text-[10px]">
-                      > Target_Execution_Flow
-                    </strong>
-                    {scenario.flow}
+                  <div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
+                      {tpl.category}
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 leading-tight">{tpl.title}</h3>
                   </div>
                 </div>
+              </div>
 
-                <div class="lg:col-span-5 bg-slate-900 relative overflow-hidden flex flex-col justify-center p-8 border-t lg:border-t-0 lg:border-l border-slate-800">
-                  <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 20px 20px;"></div>
-                  <div class="absolute top-0 right-0 w-64 h-64 bg-rust opacity-10 rounded-full blur-3xl translate-x-10 -translate-y-10"></div>
+              <p class="text-slate-600 mb-6 h-16 leading-relaxed text-xs lg:text-sm line-clamp-3">
+                {tpl.description}
+              </p>
 
-                  <div class="relative z-20">
-                     
-                     <div class="mb-8 bg-slate-800/60 rounded-2xl p-4 border border-slate-700 backdrop-blur-sm relative group/link">
-                        <div class="flex items-center justify-between mb-4 border-b border-slate-700 pb-2">
-                           <a href="/cognition" class="text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:text-rust transition-colors">
-                             Médiateurs & Agents
-                             <span class="opacity-50 group-hover/link:opacity-100 transition-opacity">↗</span>
-                           </a>
-                           <span class="text-[10px] text-rust font-mono">Simulated</span>
-                        </div>
-                        
-                        <div class="flex items-center justify-between">
-                           <div class="flex flex-col items-center gap-1">
-                              <span class="text-2xl mb-1">{scenario.actors.mediator.icon}</span>
-                              <span class="text-[10px] font-bold text-white text-center leading-tight">{scenario.actors.mediator.role}</span>
-                              <span class="text-[9px] text-blue-400 uppercase">{scenario.actors.mediator.type}</span>
-                           </div>
-
-                           <div class="grow px-2 flex flex-col items-center">
-                              <div class="w-full h-px bg-slate-600 relative">
-                                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-900 px-2 text-[10px] text-slate-500 font-mono">
-                                    MANDAT
-                                 </div>
-                              </div>
-                           </div>
-
-                           <div class="flex flex-col items-center gap-1">
-                              <span class="text-2xl mb-1">{scenario.actors.agent.icon}</span>
-                              <span class="text-[10px] font-bold text-white text-center leading-tight">{scenario.actors.agent.role}</span>
-                              <span class="text-[9px] text-rust uppercase">{scenario.actors.agent.type}</span>
-                           </div>
-                        </div>
-
-                        <div class="mt-3 bg-slate-900 rounded p-2 text-center border border-slate-800">
-                           <p class="text-[10px] text-slate-300 font-mono">"{scenario.actors.mandate}"</p>
-                        </div>
-                     </div>
-                     <div class="flex items-center justify-between mb-6 border-b border-slate-700 pb-2">
-                        <span class="text-white font-bold text-sm flex items-center gap-2">
-                           <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-                           ACTIVATION COGNITIVE
-                        </span>
-                     </div>
-
-                     <div class="grid grid-cols-2 gap-3">
-                        {allBlocks.map((block) => {
-                           const isActive = scenario.activeBlocks.includes(block.id);
-                           return (
-                              <div
-                              class={`
-                                 relative p-3 rounded-xl border transition-all duration-500 flex items-center gap-3
-                                 ${isActive 
-                                    ? 'bg-slate-800 border-rust/50 text-white shadow-lg shadow-rust/10 scale-105' 
-                                    : 'bg-slate-900/50 border-slate-800 text-slate-600 grayscale'}
-                              `}
-                              >
-                              <span class="text-xl">{block.icon}</span>
-                              <span class="text-xs font-bold tracking-wide">{block.label}</span>
-                              
-                              {isActive && (
-                                 <div class="absolute top-2 right-2 w-1.5 h-1.5 bg-rust rounded-full shadow-[0_0_8px_#c2410c]" />
-                              )}
-                              </div>
-                           );
-                        })}
-                     </div>
+              {/* BLOC KPIs */}
+              <div class="grid grid-cols-3 gap-2 mb-6 border-y border-slate-100 py-4">
+                {tpl.kpis.map((kpi) => (
+                  <div class="text-center">
+                    <div class="text-lg font-black text-slate-800">{kpi.val}</div>
+                    <div class="text-[9px] uppercase text-slate-400 font-bold tracking-wide">
+                      {kpi.label}
+                    </div>
                   </div>
+                ))}
+              </div>
 
+              {/* Visualisation des Poids (Mini Equalizer) */}
+              <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 mb-8 grow">
+                <div class="text-xs font-bold text-slate-400 uppercase mb-3 flex justify-between">
+                  <span>Pondération (Vote)</span>
+                  <span>Priorité</span>
                 </div>
+                <div class="space-y-3">
+                  {tpl.weights.map((w) => (
+                    <div class="flex items-center gap-3">
+                      <span class={`text-xs font-bold w-20 truncate ${w.color}`}>{w.agent}</span>
+                      <div class="flex-1 h-2 bg-slate-200 rounded-full overflow-hidden">
+                        <div
+                          class={`h-full rounded-full ${w.color.replace('text-', 'bg-')}`}
+                          style={`width: ${(w.value / 5) * 100}%`}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Footer Carte */}
+              <div class="flex items-center justify-between mt-auto">
+                <div class="flex items-center gap-2 text-xs text-slate-500">
+                  <span class="w-2 h-2 rounded-full bg-red-500" />
+                  <strong>{tpl.vetos}</strong> Vétos Actifs
+                </div>
+                <button class="bg-slate-900 hover:bg-rust text-white text-xs font-bold py-2 px-4 rounded-lg transition-colors flex items-center gap-2 group">
+                  <span>Inspecter</span>
+                  <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </button>
               </div>
             </div>
           ))
         }
       </div>
 
-      <div class="mt-24 text-center bg-slate-100 rounded-[3rem] p-12 border border-slate-200">
-        <h2 class="text-3xl font-bold text-slate-900 mb-6">Vous avez un processus critique ?</h2>
-        <p class="text-slate-600 mb-8 max-w-2xl mx-auto text-lg">
-           Participez à la définition du MVP. Soumettez votre cas d'usage pour que nous puissions simuler sa résolution avec R.A.I.S.E.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a
+      <div class="bg-slate-900 rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
+        <div
+          class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"
+        >
+        </div>
+        <div class="relative z-10">
+          <h2 class="text-3xl font-bold mb-4">Votre cas est unique ?</h2>
+          <p class="text-slate-300 mb-8 max-w-2xl mx-auto">
+            Nos ingénieurs solutions peuvent modéliser votre "Topologie Décisionnelle" en 48h.
+          </p>
+          <a
             href="/contact"
-            class="inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-rust transition-colors shadow-lg hover:shadow-xl gap-2"
-            >
-            <span>Proposer mon cas (Audit)</span>
-            <span>→</span>
-            </a>
-            
-            <a
-            href="/value"
-            class="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 border border-slate-300 font-bold rounded-full hover:bg-slate-50 transition-colors"
-            >
-            Voir le modèle de ROI
-            </a>
+            class="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 font-bold rounded-full hover:bg-slate-100 transition-colors"
+          >
+            Demander un Audit Sur-Mesure
+          </a>
         </div>
       </div>
     </main>
-
     <Footer />
   </body>
 </html>

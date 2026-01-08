@@ -17,162 +17,314 @@ const description =
     <Header />
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="text-center mb-16 animate-fade-in">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
-          L'Alliance <span class="text-rust">Cognitive</span>
+      <div class="text-center mb-20 animate-fade-in pt-8">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6">
+          Médiateur / Agents : <br class="md:hidden" />
+          <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-rust">
+            L'Alliance Cognitive
+          </span>
         </h1>
-        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-          Une intelligence souveraine ne naît pas du chaos, mais de l'ordre. R.A.I.S.E. formalise le
-          contrat entre le <strong>Médiateur Humain</strong> (qui légifère) et l'<strong
-            >Agent Artificiel</strong
-          > (qui exécute).
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-12">
+          Une intelligence souveraine ne naît pas du chaos, mais de l'ordre. <br
+            class="hidden md:block"
+          />
+          <strong>R.A.I.S.E.</strong> formalise le contrat entre le <span
+            class="text-blue-700 font-bold">Médiateur Humain</span
+          > (qui légifère) et l'<span class="text-rust font-bold">Agent Artificiel</span> (qui exécute).
         </p>
+
+        <div class="max-w-5xl mx-auto relative">
+          <div
+            class="absolute top-1/2 left-0 w-full h-1 bg-slate-200 -translate-y-1/2 hidden md:block z-0"
+          >
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+            <div
+              class="bg-white p-8 rounded-3xl border border-blue-100 shadow-xl shadow-blue-900/5 relative group hover:-translate-y-1 transition-transform duration-300"
+            >
+              <div
+                class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-50 text-blue-700 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-200"
+              >
+                Législatif
+              </div>
+              <div
+                class="w-20 h-20 mx-auto bg-blue-600 text-white rounded-2xl flex items-center justify-center text-4xl mb-6 shadow-lg shadow-blue-600/30"
+              >
+                👨‍✈️
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Médiateur Humain</h3>
+              <p class="text-sm text-slate-500 leading-relaxed">
+                Définit la <strong>Finalité</strong>, les poids éthiques et les lignes rouges. Il
+                porte la responsabilité du "Pourquoi".
+              </p>
+            </div>
+
+            <div class="flex flex-col justify-center items-center relative">
+              <div
+                class="bg-slate-900 text-white rounded-2xl p-6 shadow-2xl border border-slate-700 w-full md:w-auto relative z-20"
+              >
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 flex gap-1">
+                  <div class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                  <div class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse delay-75"></div>
+                  <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse delay-150"></div>
+                </div>
+
+                <div class="text-center">
+                  <div class="text-[10px] font-mono text-slate-400 uppercase tracking-widest mb-1">
+                    Protocole
+                  </div>
+                  <div
+                    class="text-2xl font-black text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-rust mb-1"
+                  >
+                    R.A.I.S.E.
+                  </div>
+                  <div class="text-[10px] text-slate-500 font-mono">Kernel de Confiance</div>
+                </div>
+
+                <div class="mt-4 flex justify-between text-[10px] font-mono text-slate-400 gap-4">
+                  <div class="flex items-center gap-1">
+                    <span>← Mandat</span>
+                  </div>
+                  <div class="w-px h-4 bg-slate-700"></div>
+                  <div class="flex items-center gap-1">
+                    <span>Preuve →</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="md:hidden text-slate-300 text-2xl my-2">⬇️</div>
+            </div>
+
+            <div
+              class="bg-white p-8 rounded-3xl border border-orange-100 shadow-xl shadow-orange-900/5 relative group hover:-translate-y-1 transition-transform duration-300"
+            >
+              <div
+                class="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-50 text-rust px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest border border-orange-200"
+              >
+                Exécutif
+              </div>
+              <div
+                class="w-20 h-20 mx-auto bg-rust text-white rounded-2xl flex items-center justify-center text-4xl mb-6 shadow-lg shadow-rust/30"
+              >
+                🤖
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">Agent Artificiel</h3>
+              <p class="text-sm text-slate-500 leading-relaxed">
+                Applique le <strong>Mandat</strong> sans déviation. Il gère la complexité du "Comment"
+                et génère la trace d'audit.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <section class="mb-24">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-slate-900 mb-4">
+            Ne codez pas. <span class="text-rust">Pilotez.</span>
+          </h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            L'IA R.A.I.S.E. ne se programme pas, elle se manage. <br />
+            Via cette interface, vous définissez le <strong>Mandat</strong> (le Quoi) et les <strong
+              >Lignes Rouges</strong
+            > (le Non-Négociable). Le moteur se charge du reste.
+          </p>
+        </div>
+
+        <div
+          class="max-w-4xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700 font-sans"
+        >
           <div
-            class="bg-white rounded-[2.5rem] p-8 md:p-10 border border-slate-200 shadow-xl relative overflow-hidden group hover:border-blue-300 transition-colors"
+            class="bg-slate-950 px-6 py-4 border-b border-slate-800 flex justify-between items-center"
           >
-            <div class="absolute top-0 left-0 w-full h-1 bg-blue-600"></div>
-            <div class="flex items-center gap-3 mb-8">
-              <span class="text-3xl">👨‍✈️</span>
-              <div>
-                <h2 class="text-2xl font-bold text-slate-900">Le Médiateur</h2>
-                <p class="text-blue-600 font-mono text-xs uppercase tracking-widest">
-                  Pouvoir Législatif (Design & Validation)
-                </p>
+            <div class="flex items-center gap-3">
+              <div class="flex gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500"></span>
               </div>
+              <span class="text-slate-400 text-xs font-mono ml-4"
+                >R.A.I.S.E. CONTROL CENTER v1.0</span
+              >
             </div>
-
-            <ul class="space-y-6">
-              <li class="flex gap-4 items-start">
-                <div
-                  class="shrink-0 w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-xl border border-blue-100"
-                >
-                  💼
-                </div>
-                <div>
-                  <h3 class="font-bold text-slate-900 text-sm">Le Métier (Business Owner)</h3>
-                  <p class="text-xs text-slate-600 mt-1">
-                    Définit la <strong>Finalité</strong> : Objectifs de production, ROI cible et contraintes
-                    de marché.
-                  </p>
-                </div>
-              </li>
-
-              <li class="flex gap-4 items-start">
-                <div
-                  class="shrink-0 w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-xl border border-blue-100"
-                >
-                  📐
-                </div>
-                <div>
-                  <h3 class="font-bold text-slate-900 text-sm">L'Architecte</h3>
-                  <p class="text-xs text-slate-600 mt-1">
-                    Définit la <strong>Structure</strong> : Modélisation (UML, Arcadia), Simulation (Jumeaux
-                    Numériques) et sécurité système.
-                  </p>
-                </div>
-              </li>
-
-              <li class="flex gap-4 items-start">
-                <div
-                  class="shrink-0 w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-xl border border-blue-100"
-                >
-                  🧠
-                </div>
-                <div>
-                  <h3 class="font-bold text-slate-900 text-sm">Le Psychologue & Sociologue</h3>
-                  <p class="text-xs text-slate-600 mt-1">
-                    Définit l'<strong>Acceptabilité</strong> : Charge cognitive maximale, poids éthiques
-                    des votes et gestion des biais.
-                  </p>
-                </div>
-              </li>
-            </ul>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span class="text-green-500 text-xs font-bold uppercase"
+                >Connecté • Turbine T-400</span
+              >
+            </div>
           </div>
 
-          <div
-            class="bg-slate-900 rounded-[2.5rem] p-8 md:p-10 border border-slate-800 shadow-xl relative overflow-hidden group text-white"
-          >
-            <div class="absolute top-0 left-0 w-full h-1 bg-rust"></div>
+          <div class="grid grid-cols-1 md:grid-cols-12">
+            <div class="md:col-span-7 p-8 border-r border-slate-800">
+              <h3
+                class="text-white font-bold text-sm uppercase tracking-widest mb-6 flex items-center gap-2"
+              >
+                <span class="text-xl">🎛️</span> Définition du Mandat
+              </h3>
 
-            <div class="flex items-center gap-3 mb-8">
-              <span class="text-3xl">🤖</span>
+              <div class="mb-8">
+                <label class="text-xs text-slate-500 font-bold uppercase mb-3 block"
+                  >1. Stratégie Globale</label
+                >
+                <div class="grid grid-cols-3 gap-2">
+                  <button
+                    class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-2 px-3 rounded border border-slate-700 transition-colors"
+                    >Production Max</button
+                  >
+                  <button
+                    class="bg-rust text-white text-xs py-2 px-3 rounded font-bold shadow-lg shadow-rust/20 ring-2 ring-rust ring-offset-2 ring-offset-slate-900"
+                    >Sécurité Critique</button
+                  >
+                  <button
+                    class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs py-2 px-3 rounded border border-slate-700 transition-colors"
+                    >Économique</button
+                  >
+                </div>
+              </div>
+
+              <div class="mb-8 space-y-6">
+                <label class="text-xs text-slate-500 font-bold uppercase mb-1 block"
+                  >2. Pondération des Intérêts (Vote)</label
+                >
+
+                <div>
+                  <div class="flex justify-between text-xs text-slate-300 mb-2">
+                    <span>💰 Agent Finance</span>
+                    <span class="text-rust font-bold">👮 Agent Sécurité (x3)</span>
+                  </div>
+                  <div class="relative h-2 bg-slate-800 rounded-full">
+                    <div
+                      class="absolute top-0 left-0 h-full bg-linear-to-r from-blue-900 to-rust w-[75%] rounded-full"
+                    >
+                    </div>
+                    <div
+                      class="absolute top-1/2 left-[75%] w-4 h-4 bg-white rounded-full -translate-y-1/2 shadow-lg cursor-pointer hover:scale-110 transition-transform"
+                    >
+                    </div>
+                  </div>
+                  <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                    <span>Priorité Coût</span>
+                    <span>Priorité Zéro-Risque</span>
+                  </div>
+                </div>
+              </div>
+
               <div>
-                <h2 class="text-2xl font-bold text-white">L'Agent</h2>
-                <p class="text-rust font-mono text-xs uppercase tracking-widest">
-                  Pouvoir Exécutif (Orchestration)
-                </p>
+                <label class="text-xs text-slate-500 font-bold uppercase mb-3 block"
+                  >3. Lignes Rouges (Veto Formel)</label
+                >
+                <div class="space-y-3">
+                  <label class="flex items-start gap-3 cursor-pointer group">
+                    <div class="relative flex items-center">
+                      <input type="checkbox" checked class="peer sr-only" />
+                      <div
+                        class="w-5 h-5 bg-slate-800 border-2 border-slate-600 rounded peer-checked:bg-rust peer-checked:border-rust transition-colors"
+                      >
+                      </div>
+                      <svg
+                        class="absolute w-3 h-3 text-white left-1 top-1 opacity-0 peer-checked:opacity-100"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        ><path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="3"
+                          d="M5 13l4 4L19 7"></path></svg
+                      >
+                    </div>
+                    <span class="text-xs text-slate-300 group-hover:text-white transition-colors">
+                      <strong>Arrêt Immédiat</strong> si Vibration > Seuil Constructeur
+                    </span>
+                  </label>
+
+                  <label class="flex items-start gap-3 cursor-pointer group">
+                    <div class="relative flex items-center">
+                      <input type="checkbox" checked class="peer sr-only" />
+                      <div
+                        class="w-5 h-5 bg-slate-800 border-2 border-slate-600 rounded peer-checked:bg-rust peer-checked:border-rust transition-colors"
+                      >
+                      </div>
+                      <svg
+                        class="absolute w-3 h-3 text-white left-1 top-1 opacity-0 peer-checked:opacity-100"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        ><path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="3"
+                          d="M5 13l4 4L19 7"></path></svg
+                      >
+                    </div>
+                    <span class="text-xs text-slate-300 group-hover:text-white transition-colors">
+                      Interdiction de redémarrage sans <strong>Audit Physique</strong>
+                    </span>
+                  </label>
+                </div>
               </div>
             </div>
 
-            <ul class="space-y-6">
-              <li class="flex gap-4 items-start">
-                <div
-                  class="shrink-0 w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-xl border border-slate-700"
-                >
-                  🗣️
-                </div>
-                <div>
-                  <h3 class="font-bold text-white text-sm">Agents d'Interface (Acquisition)</h3>
-                  <p class="text-xs text-slate-400 mt-1 mb-2">
-                    <em>"Comprendre l'intention humaine et le signal brut."</em>
-                  </p>
-                  <div class="flex gap-2">
-                    <span class="text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300"
-                      >Orchestre: Perception</span
-                    >
-                    <span class="text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300"
-                      >Orchestre: Langage</span
-                    >
-                  </div>
-                </div>
-              </li>
+            <div
+              class="md:col-span-5 bg-slate-950 p-8 flex flex-col justify-between relative overflow-hidden"
+            >
+              <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl">
+              </div>
 
-              <li class="flex gap-4 items-start">
-                <div
-                  class="shrink-0 w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-xl border border-slate-700"
+              <div>
+                <h3
+                  class="text-blue-400 font-bold text-sm uppercase tracking-widest mb-6 flex items-center gap-2"
                 >
-                  ⚙️
-                </div>
-                <div>
-                  <h3 class="font-bold text-white text-sm">Agents de Conformité (Expertise)</h3>
-                  <p class="text-xs text-slate-400 mt-1 mb-2">
-                    <em>"Garantir la cohérence logique et réglementaire."</em>
-                  </p>
-                  <div class="flex gap-2">
-                    <span class="text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300"
-                      >Orchestre: Mémoire</span
-                    >
-                    <span class="text-[10px] bg-slate-700 px-2 py-0.5 rounded text-slate-300"
-                      >Orchestre: Raisonnement</span
-                    >
-                  </div>
-                </div>
-              </li>
+                  <span class="text-xl">🔮</span> Simulation
+                </h3>
 
-              <li class="flex gap-4 items-start">
-                <div
-                  class="shrink-0 w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-xl border border-slate-700"
-                >
-                  🗳️
-                </div>
-                <div>
-                  <h3 class="font-bold text-white text-sm">Agents de Stratégie (Arbitrage)</h3>
-                  <p class="text-xs text-slate-400 mt-1 mb-2">
-                    <em>"Négocier le meilleur compromis opérationnel."</em>
-                  </p>
-                  <div class="flex gap-2">
-                    <span
-                      class="text-[10px] bg-rust/20 text-rust px-2 py-0.5 rounded border border-rust/30"
-                      >Orchestre: Décision (Condorcet)</span
-                    >
+                <div class="space-y-4 font-mono text-xs">
+                  <div
+                    class="bg-slate-900 p-3 rounded border-l-2 border-yellow-500 text-yellow-100"
+                  >
+                    <span class="opacity-50">> INPUT:</span> Vibration Sensor Z = 8.2mm/s<br />
+                    <span class="opacity-50">> TIME:</span> 03:14:00 AM
+                  </div>
+
+                  <div class="flex justify-center py-2">
+                    <span class="text-slate-600">⬇️ Moteur Condorcet</span>
+                  </div>
+
+                  <div
+                    class="bg-slate-900 p-3 rounded border-l-2 border-rust text-white shadow-lg shadow-rust/10"
+                  >
+                    <div class="mb-2 border-b border-slate-800 pb-2">
+                      <span class="text-rust font-bold">DECISION : ARRÊT D'URGENCE</span>
+                    </div>
+                    <div class="space-y-1 opacity-80">
+                      <div class="flex justify-between">
+                        <span>Duel Sécurité vs Finance:</span>
+                        <span class="text-green-400">WIN (3.0 vs 1.0)</span>
+                      </div>
+                      <div class="flex justify-between">
+                        <span>Check Veto #1:</span>
+                        <span class="text-green-400">TRIGGERED</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </li>
-            </ul>
+              </div>
+
+              <div class="mt-8">
+                <a
+                  href="/curseur"
+                  class="w-full bg-white hover:bg-slate-200 text-slate-900 font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 group"
+                >
+                  <span>Signer & Ancrer le Mandat</span>
+                  <span class="text-rust group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <p class="text-[10px] text-center text-slate-600 mt-2 font-mono">
+                  Configuration vers le Ledger (Simulation)
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
