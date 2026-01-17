@@ -3,31 +3,68 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { Image } from 'astro:assets'; // Import indispensable pour les images locales
+import { Image } from 'astro:assets';
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+// Helper pour obtenir l'URL de l'image (compatible avec les assets Astro ou les chaînes simples)
+const resolveImageURL = (img: any) => {
+  if (!img) return undefined;
+  return typeof img === 'string' ? img : img.src;
+};
+
+const imageURL = resolveImageURL(heroImage);
+
+// Construction du Schema.org pour Google (BlogPosting)
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description: description,
+  datePublished: pubDate.toISOString(),
+  dateModified: updatedDate ? updatedDate.toISOString() : pubDate.toISOString(),
+  author: {
+    '@type': 'Organization',
+    name: 'Condorcet Continuum',
+  },
+  ...(imageURL && { image: new URL(imageURL, Astro.site).toString() }),
+};
 ---
 
 <html lang="fr">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} image={imageURL} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
 
   <body class="bg-slate-50 text-slate-900 font-sans antialiased">
     <Header />
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="mb-8">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-rust transition-colors group"
+        >
+          <span class="group-hover:-translate-x-1 transition-transform">←</span>
+          Retour au Journal
+        </a>
+      </div>
+
       <article class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
         <div
-          class="w-full bg-slate-100 flex justify-center items-center py-12 border-b border-slate-100"
+          class="w-full bg-slate-50 flex justify-center items-center py-16 border-b border-slate-100"
         >
           {
             heroImage && (
-              // On utilise <Image /> au lieu de <img> pour gérer l'objet importé
-              <div class="w-48 h-48 md:w-64 md:h-64">
-                <Image src={heroImage} alt={title} class="w-full h-full object-contain" />
+              <div class="w-full max-w-4xl px-6">
+                <Image
+                  src={heroImage}
+                  alt={title}
+                  class="w-full h-auto object-contain max-h-[500px] drop-shadow-xl"
+                />
               </div>
             )
           }

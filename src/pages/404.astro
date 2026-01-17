@@ -1,0 +1,33 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+
+const title = `Page introuvable | ${SITE_TITLE}`;
+const description = '404 Error - Page not found';
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <Header />
+    <main class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+      <h1 class="text-9xl font-extrabold text-slate-200 mb-4">404</h1>
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">Page introuvable</h2>
+      <p class="text-slate-600 mb-8 max-w-md">
+        Il semble que cette page se soit perdue dans le continuum.
+      </p>
+      <a
+        href="/"
+        class="px-8 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-rust transition-colors shadow-lg"
+      >
+        Retour à l'accueil
+      </a>
+    </main>
+    <Footer />
+  </body>
+</html>

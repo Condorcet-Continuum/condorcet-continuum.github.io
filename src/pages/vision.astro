@@ -4,7 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import logo from '../assets/logo-continuum.svg';
 
-const title = 'Vision & Manifeste | R.A.I.S.E.';
+// Optimisation 1 : Titre propre sans suffixe en dur (géré par BaseHead)
+const title = 'Vision & Manifeste';
 const description =
   'De la Boîte Noire à la Boîte de Verre : Restaurer la souveraineté humaine par la preuve.';
 ---
@@ -22,13 +23,13 @@ const description =
         <div
           class="inline-flex items-center gap-2 px-3 py-1 rounded border border-amber-200 bg-amber-50 text-amber-900 text-[10px] font-mono uppercase tracking-widest mb-6"
         >
-          <span class="text-amber-600 animate-pulse">●</span> Prototype v0.1.0
+          <span class="text-amber-600 animate-pulse">●</span> Standard de Gouvernance IA | Prototype v0.1.0
         </div>
 
         <div
           class="w-32 h-32 mb-8 flex items-center justify-center p-4 bg-white rounded-full shadow-lg border border-slate-100 hover:scale-105 transition-transform duration-500"
         >
-          <img src={logo.src} alt="Logo Continuum" class="w-full h-full object-contain" />
+          <img src={logo.src} alt="Logo Condorcet Continuum" class="w-full h-full object-contain" />
         </div>
 
         <div
@@ -47,8 +48,11 @@ const description =
         </h1>
         <p class="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-light">
           Nous refusons l'avenir où l'humain est spectateur d'algorithmes opaques.
-          <strong class="text-slate-900 font-bold">R.A.I.S.E.</strong> est l'infrastructure de la reprise
-          de contrôle.
+          <a
+            href="/raise"
+            class="text-slate-900 font-bold hover:text-rust transition-colors underline decoration-slate-300 underline-offset-4"
+            >R.A.I.S.E.</a
+          > est l'infrastructure de la reprise de contrôle.
         </p>
       </div>
 
@@ -71,9 +75,8 @@ const description =
               Les modèles probabilistes (LLM purs) sont des boîtes magiques. Ils "hallucinent",
               changent d'avis et ne peuvent pas expliquer leurs choix.
               <br /><br />
-              Dans un contexte industriel ou critique, l'incertitude est un risque inacceptable. <strong
-                class="text-red-700">On ne bâtit pas une stratégie sur un jet de dés.</strong
-              >
+              Dans un contexte industriel ou critique, l'incertitude est un risque inacceptable.
+              <strong class="text-red-700">On ne bâtit pas une stratégie sur un jet de dés.</strong>
             </p>
             <div class="flex gap-4 opacity-50 grayscale">
               <div class="bg-white p-4 rounded-xl text-center w-full">
@@ -105,7 +108,8 @@ const description =
               Nous construisons des systèmes <strong>Déterministes</strong>. Pour une entrée donnée,
               la sortie est mathématiquement certaine, traçable et auditable.
               <br /><br />
-              L'IA redevient un outil de précision. <strong class="text-white"
+              L'IA redevient un outil de précision.
+              <strong class="text-white"
                 >Le Médiateur humain légifère, l'Agent machine exécute et prouve.</strong
               >
             </p>
@@ -151,7 +155,10 @@ const description =
             <h3 class="text-xl font-bold text-slate-900 mb-3">1. Légiférer</h3>
             <p class="text-sm text-slate-600 leading-relaxed">
               Le pouvoir reste humain. Le <strong>Médiateur</strong> définit les règles, les poids éthiques
-              et les interdictions formelles. L'IA n'a pas d'agenda propre, elle suit un mandat.
+              et les interdictions formelles. L'IA n'a pas d'agenda propre, elle suit un <a
+                href="/curseur"
+                class="text-rust hover:underline">mandat</a
+              >.
             </p>
           </div>
 
@@ -166,7 +173,12 @@ const description =
             <h3 class="text-xl font-bold text-slate-900 mb-3">2. Exécuter</h3>
             <p class="text-sm text-slate-600 leading-relaxed">
               Le moteur <strong>Neuro-Symbolique</strong> (Rust) exécute le mandat sans déviation. Il
-              filtre le bruit, raisonne logiquement et applique la Méthode Condorcet pour trancher.
+              filtre le bruit, raisonne logiquement et applique la
+              <a
+                href="/architecture"
+                class="text-blue-600 hover:text-blue-800 font-bold hover:underline"
+                >Méthode Condorcet</a
+              > pour trancher.
             </p>
           </div>
 
